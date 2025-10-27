@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mizo Production — Премиум фото & видео</title>
+<meta name="description" content="Mizo Production — профессиональная фото и видеостудия. Свадьбы, реклама, love-story, клипы. Закажите съёмку премиум-класса." />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-row">
+    <div class="brand">
+      <div class="logo-circle">M</div>
+      <div>
+        <div class="brand-title">Mizo Production</div>
+        <div class="brand-sub">Фото & Видео — премиум</div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Главная</a>
+      <a href="portfolio.html">Портфолио</a>
+      <a href="contact.html">Контакты</a>
+      <a class="btn-ghost" href="#order">Заказать</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="overlay"></div>
+  <video class="hero-video" autoplay muted loop playsinline src="https://cdn.coverr.co/videos/coverr-couple-walking-at-sunset-1678?token=eyJhbGciOiJIUzI1NiJ9"></video>
+  <div class="container hero-content">
+    <h1>Создаём истории, которые остаются</h1>
+    <p class="lead">Свадьбы, рекламные ролики, love-story и коммерческие проекты — все в премиальном стиле.</p>
+    <div class="hero-cta">
+      <a href="#order" class="btn-primary">Заказать съемку</a>
+      <a href="portfolio.html" class="btn-ghost">Посмотреть портфолио</a>
+    </div>
+  </div>
+</section>
+
+<section class="why container">
+  <h2>Почему выбирают нас</h2>
+  <div class="cards">
+    <div class="card"><strong>Премиальное оборудование</strong><p>Кинематографические камеры, дрон, кран и свет.</p></div>
+    <div class="card"><strong>Команда профи</strong><p>Операторы, режиссёры, монтаж — всё в одном пакете.</p></div>
+    <div class="card"><strong>Гарантия качества</strong><p>Сроки, цветокоррекция и сдача исходников.</p></div>
+  </div>
+</section>
+
+<section id="order" class="order container">
+  <h2>Быстрый заказ</h2>
+  <p class="text-muted">Выберите пакет и добавьте опции — цена обновится мгновенно.</p>
+  <div class="order-wrap">
+    <div class="packages">
+      <div class="pkg" data-price="500" data-id="wedding">
+        <div class="pkg-title">Свадебный пакет (премиум)</div>
+        <div class="pkg-sub">Полный день, оператор, монтаж</div>
+        <div class="pkg-price">500$</div>
+      </div>
+      <div class="pkg" data-price="300" data-id="commercial">
+        <div class="pkg-title">Рекламный ролик</div>
+        <div class="pkg-sub">Съёмка, режиссура, монтаж</div>
+        <div class="pkg-price">300$</div>
+      </div>
+      <div class="pkg" data-price="200" data-id="lovestory">
+        <div class="pkg-title">Love Story / Портрет</div>
+        <div class="pkg-sub">Короткая съёмка и обработка</div>
+        <div class="pkg-price">200$</div>
+      </div>
+    </div>
+
+    <div class="config">
+      <h3>Дополнительные опции</h3>
+      <div class="addons">
+        <label class="addon"><input type="checkbox" data-price="120" id="addon_camera"> Доп. камера — 120$</label>
+        <label class="addon"><input type="checkbox" data-price="180" id="addon_crane"> Кран / Jib — 180$</label>
+        <label class="addon"><input type="checkbox" data-price="90" id="addon_gimbal"> Стабилизация — 90$</label>
+        <label class="addon"><input type="checkbox" data-price="250" id="addon_drone"> Дрон — 250$</label>
+        <label class="addon"><input type="checkbox" data-price="200" id="addon_car"> Кабриолет / машина — 200$</label>
+      </div>
+
+      <div class="client-info">
+        <input type="text" id="client_name" placeholder="Ваше имя" />
+        <input type="tel" id="client_phone" placeholder="Телефон (+992...)" />
+        <input type="date" id="client_date" />
+      </div>
+
+      <div class="total-row">
+        <div>Итого:</div>
+        <div class="total"><span id="totalAmount">0</span>$</div>
+      </div>
+
+      <div class="order-actions">
+        <button id="btnPay" class="btn-primary">Отправить заявку</button>
+        <a class="btn-whatsapp" id="whatsappLink" href="https://wa.me/992000000000" target="_blank">Написать в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio-preview container">
+  <h2>Избранные работы — свадьбы</h2>
+  <div class="gallery-grid">
+    <a class="gal-item" href="portfolio.html#weddings"><img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=900&q=60" alt=""></a>
+    <a class="gal-item" href="portfolio.html#weddings"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=60" alt=""></a>
+    <a class="gal-item" href="portfolio.html#weddings"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=60" alt=""></a>
+  </div>
+</section>
+
+<section class="managers container">
+  <h2>Менеджеры</h2>
+  <div class="managers-grid">
+    <div class="manager">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=60" alt="manager">
+      <div class="manager-info"><strong>Алина</strong><span>Менеджер по съёмкам</span><a href="tel:+992000000001">Позвонить</a></div>
+    </div>
+    <div class="manager">
+      <img src="https://images.unsplash.com/photo-1545996124-1a291b7f6d45?auto=format&fit=crop&w=400&q=60" alt="manager">
+      <div class="manager-info"><strong>Руслан</strong><span>Координатор проектов</span><a href="tel:+992000000002">Позвонить</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="brand-small">Mizo Production</div>
+    <div class="socials">
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/" target="_blank">TikTok</a>
+      <a href="https://youtube.com/" target="_blank">YouTube</a>
+    </div>
+    <div class="contacts">
+      <a href="tel:+992000000000">+992 000 000 000</a>
+      <a id="emailLink" href="mailto:info@mizo.studio">info@mizo.studio</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal success -->
+<div id="modalSuccess" class="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <h3>Спасибо! Ваша заявка принята</h3>
+    <p>Менеджер свяжется с вами в ближайшее время.</p>
+    <a class="btn-primary" href="tel:+992000000000">Позвонить нам</a>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
