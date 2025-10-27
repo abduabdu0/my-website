@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simo Studio — Фото & Видео</title>
+  <meta name="description" content="Декоративный сайт фотографа/видеографа с фоновым видео, портфолио и контактной формой." />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <!-- Decorative background video (external) -->
+  <video id="bg-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder">
+    <source src="https://cdn.coverr.co/videos/coverr-wedding-dancing-1575?token=eyJhbGciOiJIUzI1NiJ9" type="video/mp4">
+    <!-- Fallback: poster image shown via CSS -->
+  </video>
+
+  <header class="topbar">
+    <div class="container flex">
+      <div class="brand">Simo Studio</div>
+      <nav class="nav">
+        <a href="#services">Услуги</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#pricing">Цены</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>Создаём визуальные истории, которые продают</h1>
+          <p class="lead">Профессиональная фото- и видеосъёмка — свадьбы, мероприятия, реклама. Декоративный дизайн и кинематографичный монтаж.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#contacts">Заказать съёмку</a>
+            <a class="btn ghost" href="#portfolio">Посмотреть работы</a>
+          </div>
+          <blockquote class="quote">«Каждый кадр — это шанс сохранить момент навсегда.»</blockquote>
+        </div>
+
+        <div class="hero-media">
+          <div class="card video-card">
+            <video muted loop playsinline id="sample-preview" poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder">
+              <source src="https://cdn.coverr.co/videos/coverr-wedding-dancing-1575?token=eyJhbGciOiJIUzI1NiJ9" type="video/mp4">
+            </video>
+            <div class="card-info">
+              <div class="title">Короткий фильм</div>
+              <div class="meta">Свадебная съёмка — 5 минут</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Услуги</h2>
+        <p class="muted">От съёмки до монтажа и цветокоррекции — комплексный подход.</p>
+
+        <div class="grid-3">
+          <article class="service card">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="wedding">
+            <h3>Свадебная съёмка</h3>
+            <p>Полный пакет: подготовка, съёмка, монтаж — от 8 часов.</p>
+          </article>
+
+          <article class="service card">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="event">
+            <h3>Корпоратив и мероприятия</h3>
+            <p>Репортажная и постановочная съёмка для бизнеса и событий.</p>
+          </article>
+
+          <article class="service card">
+            <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="commercial">
+            <h3>Коммерческая съёмка</h3>
+            <p>Продуктовая фотография, рекламные ролики и контент для соцсетей.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section dark">
+      <div class="container">
+        <h2>Портфолио</h2>
+        <p class="muted">Подборка наших любимых работ.</p>
+        <div class="grid-3 portfolio-grid">
+          <!-- Using external images -->
+          <figure class="work card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Проект #1 — Свадьба</figcaption></figure>
+          <figure class="work card"><img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Проект #2 — Реклама</figcaption></figure>
+          <figure class="work card"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Проект #3 — Репортаж</figcaption></figure>
+          <figure class="work card"><img src="https://images.unsplash.com/photo-1520697222861-5b0efb8e3b8c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Проект #4 — Студия</figcaption></figure>
+          <figure class="work card"><img src="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Проект #5 — Портрет</figcaption></figure>
+          <figure class="work card"><img src="https://images.unsplash.com/photo-1520975929909-5fd3a1f2a9c4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Проект #6 — Продукт</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2>Пакеты и стоимость</h2>
+        <div class="grid-3">
+          <div class="card plan">
+            <div class="label">Базовый</div>
+            <div class="price">₽15,000</div>
+            <p>2 часа, базовый монтаж, 30 фото</p>
+          </div>
+          <div class="card plan featured">
+            <div class="label">Стандарт</div>
+            <div class="price">₽40,000</div>
+            <p>5 часов, монтаж 5–7 минут, 150 фото</p>
+          </div>
+          <div class="card plan">
+            <div class="label">Премиум</div>
+            <div class="price">₽80,000+</div>
+            <p>Полный день, оператор + ассистент, мини-фильм</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section dark">
+      <div class="container contacts-grid">
+        <div class="card contact-card">
+          <h2>Свяжитесь с нами</h2>
+          <p class="muted">Оставьте заявку — мы перезвоним.</p>
+          <form id="contactForm">
+            <label>Имя<input type="text" name="name" required></label>
+            <label>Телефон или e-mail<input type="text" name="contact" required></label>
+            <label>Сообщение<textarea name="message" rows="4"></textarea></label>
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Отправить</button>
+              <button type="button" id="callBtn" class="btn ghost">Позвонить</button>
+            </div>
+          </form>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">Instagram</a> · <a href="#" aria-label="Telegram">Telegram</a> · <a href="#" aria-label="WhatsApp">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="card map-card">
+          <h3>Локация и менеджеры</h3>
+          <p class="muted">Добавьте свой iframe Google / Yandex Maps здесь.</p>
+          <div class="manager">
+            <strong>Мария — менеджер</strong><br>+7 (900) 000-00-00
+          </div>
+          <div class="manager">
+            <strong>Иван — продакшн</strong><br>+7 (900) 000-00-01
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="year"></span> Simo Studio — Все права защищены.</div>
+      <div class="foot-links"><a href="#">Политика конфиденциальности</a> · <a href="#">Условия</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
