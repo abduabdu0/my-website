@@ -1,0 +1,5 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'>
+  <rect width='100%' height='100%' fill='#fbf6f3'/>
+  <text x='50%' y='48%' dominant-baseline='middle' text-anchor='middle' font-size='36' fill='#8b6b55'>StudioPro — замените видео в assets/video/neutral.mp4</text>
+  <text x='50%' y='56%' dominant-baseline='middle' text-anchor='middle' font-size='20' fill='#b59a87'>Фон — свадебное видео (без звука)</text>
+</svg>
