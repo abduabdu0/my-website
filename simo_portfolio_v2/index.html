@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simo Studio — Главная</title>
+  <meta name="description" content="Simo Studio — фото и видео. Декоративный сайт с большим портфолио." />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container flex">
+    <div class="brand">Simo Studio</div>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="portfolio.html">Портфолио</a>
+      <a href="pricing.html">Цены</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+<main>
+    <section class="hero large-hero">
+      <div class="bg-player">
+        <video id="bg-rotator" autoplay muted playsinline></video>
+      </div>
+      <div class="container hero-content-center">
+        <h1>Кинематографичные фото и видео — Simo Studio</h1>
+        <p class="lead">Мы создаём сторителлинг: свадьбы, рекламные ролики, студийные проекты.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="contacts.html">Заказать съёмку</a>
+          <a class="btn ghost" href="portfolio.html">Портфолио — вдохновение</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>+700</strong><span>съёмок</span></div>
+          <div><strong>4.9</strong><span>средняя оценка</span></div>
+          <div><strong>10+</strong><span>мин фон. ролик</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+<footer class="footer">
+  <div class="container">
+    <div>© <span id="year"></span> Simo Studio — Все права защищены.</div>
+    <div class="foot-links"><a href="#">Политика конфиденциальности</a> · <a href="#">Условия</a></div>
+  </div>
+</footer>
+<script>
+  const videoUrls = ["https://cdn.coverr.co/videos/coverr-wedding-dancing-1575?token=eyJhbGciOiJIUzI1NiJ9", "https://cdn.coverr.co/videos/coverr-sunset-beach-1547?token=eyJhbGciOiJIUzI1NiJ9", "https://cdn.coverr.co/videos/coverr-city-night-1508?token=eyJhbGciOiJIUzI1NiJ9", "https://cdn.coverr.co/videos/coverr-cinematic-couple-1599?token=eyJhbGciOiJIUzI1NiJ9", "https://cdn.coverr.co/videos/coverr-cinematic-waves-1608?token=eyJhbGciOiJIUzI1NiJ9", "https://cdn.coverr.co/videos/coverr-urban-walk-1620?token=eyJhbGciOiJIUzI1NiJ9", "https://cdn.coverr.co/videos/coverr-forest-trail-1615?token=eyJhbGciOiJIUzI1NiJ9", "https://cdn.coverr.co/videos/coverr-slow-motion-flowers-1569?token=eyJhbGciOiJIUzI1NiJ9", "https://cdn.coverr.co/videos/coverr-drone-coast-1584?token=eyJhbGciOiJIUzI1NiJ9", "https://cdn.coverr.co/videos/coverr-couple-lake-1632?token=eyJhbGciOiJIUzI1NiJ9"];
+  const player = document.getElementById('bg-rotator');
+  let idx = 0;
+  function playNext(){
+    player.src = videoUrls[idx];
+    player.play().catch(()=>{});
+    idx = (idx + 1) % videoUrls.length;
+  }
+  player.addEventListener('ended', playNext);
+  playNext();
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

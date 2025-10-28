@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Портфолио — Simo Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container flex">
+    <div class="brand">Simo Studio</div>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="portfolio.html">Портфолио</a>
+      <a href="pricing.html">Цены</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+<main>
+    <section class="section">
+      <div class="container">
+        <h1>Портфолио</h1>
+        <p class="muted">Лучшие кейсы, разделы и крупные визуалы. Нажмите на карточку для просмотра в лайтбоксе.</p>
+
+        <div class="portfolio-controls">
+          <button class="filter active" data-filter="all">Все</button>
+          <button class="filter" data-filter="wedding">Свадьбы</button>
+          <button class="filter" data-filter="commercial">Реклама</button>
+          <button class="filter" data-filter="portrait">Портрет</button>
+        </div>
+
+        <div class="portfolio-grid grid-3" id="portfolioGrid">
+          <figure class="work card" data-category="wedding"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Свадьба — Утро невесты</figcaption></figure>
+          <figure class="work card" data-category="commercial"><img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Рекламный ролик — продукт</figcaption></figure>
+          <figure class="work card" data-category="portrait"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Портрет — студия</figcaption></figure>
+          <figure class="work card" data-category="wedding"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Свадьба — Танец</figcaption></figure>
+          <figure class="work card" data-category="commercial"><img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Рекламный кейс</figcaption></figure>
+          <figure class="work card" data-category="portrait"><img src="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt=""><figcaption>Портрет — естественный свет</figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+<footer class="footer">
+  <div class="container">
+    <div>© <span id="year"></span> Simo Studio — Все права защищены.</div>
+    <div class="foot-links"><a href="#">Политика конфиденциальности</a> · <a href="#">Условия</a></div>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('.filter').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.getAttribute('data-filter');
+      document.querySelectorAll('#portfolioGrid .work').forEach(card=>{
+        if(f==='all'||card.dataset.category===f) card.style.display='block'; else card.style.display='none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

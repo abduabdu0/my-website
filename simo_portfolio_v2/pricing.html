@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Цены — Simo Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container flex">
+    <div class="brand">Simo Studio</div>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="portfolio.html">Портфолио</a>
+      <a href="pricing.html">Цены</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+<main>
+    <section class="section">
+      <div class="container">
+        <h1>Пакеты и цены</h1>
+        <p class="muted">Прозрачные пакеты с дополнительными услугами.</p>
+        <div class="grid-3">
+          <div class="card plan">
+            <div class="label">Базовый</div>
+            <div class="price">₽15,000</div>
+            <p>2 часа, 30 фото, прим. монтаж</p>
+          </div>
+          <div class="card plan featured">
+            <div class="label">Стандарт</div>
+            <div class="price">₽40,000</div>
+            <p>5 часов, 150 фото, мини-фильм</p>
+          </div>
+          <div class="card plan">
+            <div class="label">Премиум</div>
+            <div class="price">₽80,000+</div>
+            <p>Полный день, много камер, короткометражка</p>
+          </div>
+        </div>
+
+        <h2>Дополнительные услуги</h2>
+        <ul>
+          <li>Стилизованная цветокоррекция — от ₽3,000</li>
+          <li>Экспресс монтаж (3 дня) — доплата</li>
+          <li>Аренда техники и ассистент — по запросу</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+
+<footer class="footer">
+  <div class="container">
+    <div>© <span id="year"></span> Simo Studio — Все права защищены.</div>
+    <div class="foot-links"><a href="#">Политика конфиденциальности</a> · <a href="#">Условия</a></div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
