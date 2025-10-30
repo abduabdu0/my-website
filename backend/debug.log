@@ -1,0 +1,2925 @@
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 115128
+"GET / HTTP/1.1" 500 115128
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 114991
+"GET / HTTP/1.1" 500 114991
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 2721
+"GET /contact.html HTTP/1.1" 404 2721
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116273
+"GET / HTTP/1.1" 500 116273
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116273
+"GET / HTTP/1.1" 500 116273
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116273
+"GET / HTTP/1.1" 500 116273
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116410
+"GET / HTTP/1.1" 500 116410
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116412
+"GET / HTTP/1.1" 500 116412
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116412
+"GET / HTTP/1.1" 500 116412
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116412
+"GET / HTTP/1.1" 500 116412
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116412
+"GET / HTTP/1.1" 500 116412
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116412
+"GET / HTTP/1.1" 500 116412
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116412
+"GET / HTTP/1.1" 500 116412
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116412
+"GET / HTTP/1.1" 500 116412
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116412
+"GET / HTTP/1.1" 500 116412
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py", line 16, in home
+    return render(request, 'contact.html')
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\ABDURAHIM\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio' not found. 'portfolio' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 116412
+"GET / HTTP/1.1" 500 116412
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET /static/script.js HTTP/1.1" 200 1547
+"GET /static/script.js HTTP/1.1" 200 1547
+"GET /static/style.css HTTP/1.1" 200 692
+"GET /static/style.css HTTP/1.1" 200 692
+Получены данные POST: {'csrfmiddlewaretoken': ['lW4TREeQDilmAZAryNiHwaVEQQFAnfffV2A9O6ervnsMQrkfGspSyN9WBmbxPoCP'], 'firstname': ['qwertyu'], 'lastname': ['asdfghj'], 'city': ['dushanbe'], 'phone': ['1234567890'], 'subject': ['wsetrysx5x6rudytcuo8']}
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Получены данные POST: {'csrfmiddlewaretoken': ['lW4TREeQDilmAZAryNiHwaVEQQFAnfffV2A9O6ervnsMQrkfGspSyN9WBmbxPoCP'], 'firstname': ['qwertyu'], 'lastname': ['asdfghj'], 'city': ['dushanbe'], 'phone': ['1234567890'], 'subject': ['wsetrysx5x6rudytcuo8']}
+Сообщение успешно отправлено в Telegram
+"POST /send_order/ HTTP/1.1" 200 21
+"POST /send_order/ HTTP/1.1" 200 21
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/script.js HTTP/1.1" 304 0
+"GET /static/script.js HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/script.js HTTP/1.1" 200 1547
+"GET /static/script.js HTTP/1.1" 200 1547
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+Not Found: /portfolio
+Not Found: /portfolio
+"GET /portfolio HTTP/1.1" 404 2973
+"GET /portfolio HTTP/1.1" 404 2973
+Not Found: /portfolio
+Not Found: /portfolio
+"GET /portfolio HTTP/1.1" 404 2973
+"GET /portfolio HTTP/1.1" 404 2973
+Not Found: /contact
+Not Found: /contact
+"GET /contact HTTP/1.1" 404 2967
+"GET /contact HTTP/1.1" 404 2967
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+Not Found: /contact
+Not Found: /contact
+"GET /contact HTTP/1.1" 404 2967
+"GET /contact HTTP/1.1" 404 2967
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET /static/script.js HTTP/1.1" 304 0
+"GET /static/script.js HTTP/1.1" 304 0
+Not Found: /portfolio
+Not Found: /portfolio
+"GET /portfolio HTTP/1.1" 404 2973
+"GET /portfolio HTTP/1.1" 404 2973
+Not Found: /contact
+Not Found: /contact
+"GET /contact HTTP/1.1" 404 2967
+"GET /contact HTTP/1.1" 404 2967
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /script.js
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /script.js
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /script.js
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /portfolio.html
+Not Found: /portfolio.html
+"GET /portfolio.html HTTP/1.1" 404 3245
+"GET /portfolio.html HTTP/1.1" 404 3245
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3239
+"GET /contact.html HTTP/1.1" 404 3239
+Not Found: /portfolio.html
+Not Found: /portfolio.html
+"GET /portfolio.html HTTP/1.1" 404 3245
+"GET /portfolio.html HTTP/1.1" 404 3245
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3239
+"GET /contact.html HTTP/1.1" 404 3239
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /script.js
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /portfolio.html
+Not Found: /portfolio.html
+"GET /portfolio.html HTTP/1.1" 404 3245
+"GET /portfolio.html HTTP/1.1" 404 3245
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3239
+"GET /contact.html HTTP/1.1" 404 3239
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /script.js
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /script.js
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /script.js
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /portfolio.html
+Not Found: /portfolio.html
+"GET /portfolio.html HTTP/1.1" 404 3245
+"GET /portfolio.html HTTP/1.1" 404 3245
+Not Found: /portfolio.html
+Not Found: /portfolio.html
+"GET /portfolio.html HTTP/1.1" 404 3245
+"GET /portfolio.html HTTP/1.1" 404 3245
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3239
+"GET /contact.html HTTP/1.1" 404 3239
+Not Found: /index.html
+Not Found: /index.html
+"GET /index.html HTTP/1.1" 404 3233
+"GET /index.html HTTP/1.1" 404 3233
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3239
+"GET /contact.html HTTP/1.1" 404 3239
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+"GET /style.css HTTP/1.1" 404 3230
+"GET /script.js HTTP/1.1" 404 3230
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET /static/style.css HTTP/1.1" 200 1609
+"GET /static/style.css HTTP/1.1" 200 1609
+"GET /static/script.js HTTP/1.1" 200 1547
+"GET /static/script.js HTTP/1.1" 200 1547
+Not Found: /contact
+Not Found: /contact
+"GET /contact HTTP/1.1" 404 2967
+"GET /contact HTTP/1.1" 404 2967
+Получены данные POST: {'csrfmiddlewaretoken': ['6pcgmcwG6K6v48FuGi7MA4AxQULFevl1GvIwjEwhYPdVkApiOXeXCHOPBqhCGEIB'], 'firstname': ['qwertyu'], 'lastname': ['asdfghj'], 'city': ['dushanbe'], 'phone': ['1234567890'], 'subject': ['syeftigubino']}
+Получены данные POST: {'csrfmiddlewaretoken': ['6pcgmcwG6K6v48FuGi7MA4AxQULFevl1GvIwjEwhYPdVkApiOXeXCHOPBqhCGEIB'], 'firstname': ['qwertyu'], 'lastname': ['asdfghj'], 'city': ['dushanbe'], 'phone': ['1234567890'], 'subject': ['syeftigubino']}
+Сообщение успешно отправлено в Telegram
+"POST /send_order/ HTTP/1.1" 200 21
+"POST /send_order/ HTTP/1.1" 200 21
+Сообщение успешно отправлено в Telegram
+"POST /send_order/ HTTP/1.1" 200 21
+"POST /send_order/ HTTP/1.1" 200 21
+Not Found: /portfolio
+Not Found: /portfolio
+"GET /portfolio HTTP/1.1" 404 2973
+"GET /portfolio HTTP/1.1" 404 2973
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/script.js HTTP/1.1" 304 0
+"GET /static/script.js HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+Not Found: /portfolio
+Not Found: /portfolio
+"GET /portfolio HTTP/1.1" 404 2973
+"GET /portfolio HTTP/1.1" 404 2973
+Not Found: /contact
+Not Found: /contact
+"GET /contact HTTP/1.1" 404 2967
+"GET /contact HTTP/1.1" 404 2967
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET /static/script.js HTTP/1.1" 304 0
+"GET /static/script.js HTTP/1.1" 304 0
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/style.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+Not Found: /portfolio
+Not Found: /portfolio
+"GET /portfolio HTTP/1.1" 404 2973
+"GET /portfolio HTTP/1.1" 404 2973
+Not Found: /contact
+Not Found: /contact
+"GET /contact HTTP/1.1" 404 2967
+"GET /contact HTTP/1.1" 404 2967
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /
+Not Found: /
+"GET / HTTP/1.1" 404 2682
+"GET / HTTP/1.1" 404 2682
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/script.js HTTP/1.1" 304 0
+"GET /static/script.js HTTP/1.1" 304 0
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+"GET /style.css HTTP/1.1" 404 3751
+"GET /style.css HTTP/1.1" 404 3751
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+"GET /style.css HTTP/1.1" 404 3751
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3751
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+Not Found: /style.css
+"GET /style.css HTTP/1.1" 404 3751
+"GET /style.css HTTP/1.1" 404 3751
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3751
+"GET /style.css HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+"GET /style.css HTTP/1.1" 404 3751
+"GET /style.css HTTP/1.1" 404 3751
+Not Found: /script.js
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+"GET /style.css HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3751
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3751
+"GET /style.css HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+"GET /style.css HTTP/1.1" 404 3751
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3751
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3751
+"GET /script.js HTTP/1.1" 404 3751
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3760
+"GET /contact.html HTTP/1.1" 404 3760
+Not Found: /portfolio.html
+Not Found: /portfolio.html
+"GET /portfolio.html HTTP/1.1" 404 3766
+"GET /portfolio.html HTTP/1.1" 404 3766
+Not Found: /index.html
+Not Found: /index.html
+"GET /index.html HTTP/1.1" 404 3754
+"GET /index.html HTTP/1.1" 404 3754
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+"GET /style.css HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+Not Found: /script.js
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+"GET /style.css HTTP/1.1" 404 3231
+Not Found: /script.js
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+Not Found: /portfolio.html
+Not Found: /portfolio.html
+"GET /portfolio.html HTTP/1.1" 404 3246
+"GET /portfolio.html HTTP/1.1" 404 3246
+Not Found: /index.html
+Not Found: /index.html
+"GET /index.html HTTP/1.1" 404 3234
+"GET /index.html HTTP/1.1" 404 3234
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /script.js HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3231
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+Not Found: /portfolio.html
+Not Found: /portfolio.html
+"GET /portfolio.html HTTP/1.1" 404 3246
+"GET /portfolio.html HTTP/1.1" 404 3246
+Not Found: /index.html
+Not Found: /index.html
+"GET /index.html HTTP/1.1" 404 3234
+"GET /index.html HTTP/1.1" 404 3234
+Not Found: /contact.html
+Not Found: /contact.html
+"GET /contact.html HTTP/1.1" 404 3240
+"GET /contact.html HTTP/1.1" 404 3240
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /style.css
+Not Found: /script.js
+Not Found: /style.css
+Not Found: /script.js
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET /script.js HTTP/1.1" 404 3231
+"GET / HTTP/1.1" 200 2280
+"GET / HTTP/1.1" 200 2280
+Not Found: /script.js
+Not Found: /script.js
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3231
+Not Found: /style.css
+"GET /script.js HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+"GET /style.css HTTP/1.1" 404 3231
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\backend\settings.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+C:\Users\ABDURAHIM\Downloads\photo_video_site\backend\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET /static/script.js HTTP/1.1" 200 1547
+"GET /static/script.js HTTP/1.1" 200 1547
+"GET /static/style.css HTTP/1.1" 200 1609
+"GET /static/style.css HTTP/1.1" 200 1609
+"GET / HTTP/1.1" 200 1898
+"GET / HTTP/1.1" 200 1898
+"GET /static/style.css HTTP/1.1" 200 1609
+"GET /static/style.css HTTP/1.1" 200 1609
+"GET /static/script.js HTTP/1.1" 200 1547
+"GET /static/script.js HTTP/1.1" 200 1547

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Фото & Видео</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <script src="{% static 'script.js' %}" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Связаться с нами</h1>
+    <nav>
+      <a href="/">Главная</a>
+      <a href="/portfolio">Портфолио</a>
+      <a href="/contact">Контакты</a>
+    </nav>
+  </header>
+
+  <section class="order-section">
+    <h2>Оставьте сообщение</h2>
+    <div class="container">
+      <form id="orderForm" action="{% url 'send_order' %}" method="post">
+        {% csrf_token %}
+        <label for="fname">Имя</label>
+        <input type="text" id="fname" name="firstname" placeholder="Ваше имя.." required>
+
+        <label for="lname">Фамилия</label>
+        <input type="text" id="lname" name="lastname" placeholder="Ваша фамилия..">
+
+        <label for="city">Город</label>
+        <select id="city" name="city" required>
+          <option value="">Выберите город</option>
+          <option value="khujand">Худҷанд</option>
+          <option value="dushanbe">Душанбе</option>
+        </select>
+
+        <label for="phone">Номер телефона</label>
+        <input type="tel" id="phone" name="phone" placeholder="Ваш номер телефона.." required>
+
+        <label for="subject">Сообщение</label>
+        <textarea id="subject" name="subject" placeholder="Напишите что-нибудь.." style="height:200px"></textarea>
+
+        <input type="submit" value="Отправить">
+      </form>
+    </div>
+  </section>
+</body>
+</html>
