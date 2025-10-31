@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Фото & Видео</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Simo_isfara</h1>
+  </header>
+
+  <section class="order-section">
+    <h2>Оставьте сообщение</h2>
+    <div class="container">
+      <form id="orderForm">
+        <label for="fname">Имя</label>
+        <input type="text" id="fname" name="firstname" placeholder="Ваше имя.." required>
+
+        <label for="lname">Фамилия</label>
+        <input type="text" id="lname" name="lastname" placeholder="Ваша фамилия..">
+
+        <label for="city">Город</label>
+        <select id="city" name="city" required>
+          <option value="">Выберите город</option>
+          <option value="khujand">Худҷанд</option>
+          <option value="isfara">Исфара</option>
+          <option value="konibod">Конибод</option>
+          <option value="dushanbe">Душанбе</option>
+        </select>
+
+        <label for="phone">Номер телефона</label>
+        <input type="tel" id="phone" name="phone" placeholder="Ваш номер телефона.." required>
+
+        <label for="subject">Сообщение</label>
+        <textarea id="subject" name="subject" placeholder="Напишите что-нибудь.." style="height:200px"></textarea>
+
+        <input type="submit" value="Отправить">
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Фото & Видео Студия 
+      <a href="https://www.instagram.com/simo_isfara" class="logoi">Simo_isfara</a>
+    </p>
+  </footer>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand(); // делает окно на весь экран
+
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const data = {
+        firstname: document.getElementById('fname').value,
+        lastname: document.getElementById('lname').value,
+        city: document.getElementById('city').value,
+        phone: document.getElementById('phone').value,
+        subject: document.getElementById('subject').value
+      };
+
+      tg.sendData(JSON.stringify(data)); // 📤 отправляем в Telegram-бота
+      tg.close(); // ✅ закрываем WebApp
+    });
+  </script>
+</body>
+</html>
