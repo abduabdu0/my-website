@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff758c">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Для тебя ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: white;
+    text-align: center;
+}
+body {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(1.05); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.container {
+    padding: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #ff4f81;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.event {
+    background: rgba(255,255,255,0.2);
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.answer {
+    display: block;
+    margin: 10px;
+}
+
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+
+.logo {
+    font-size: 60px;
+    animation: pulse 1.5s infinite;
+}
+
+.loader {
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    border: 4px solid white;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#lockscreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpeg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: 0.8s;
+}
+
+#lockscreen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: -1;
+}
+
+.time {
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 150px;
+}
+
+.date {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.lock-text {
+    position: absolute;
+    bottom: 40px;
+    font-size: 16px;
+    opacity: 0.8;
+    animation: slideUp 1.5s infinite;
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+#notif {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: black;
+    padding: 12px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: drop 1s ease;
+}
+
+@keyframes drop {
+    from { transform: translate(-50%, -100px); }
+    to { transform: translate(-50%, 0); }
+}
+
+#surpButton {
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff4f81 50%, #ff84a9 100%);
+    padding: 16px 32px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 8px 25px rgba(255, 79, 129, 0.4);
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+#surpButton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 35px rgba(255, 79, 129, 0.6);
+}
+
+#surpButton:active {
+    transform: scale(0.95);
+}
+</style>
+
+</head>
+<body>
+    
+      <div id="lockscreen">
+        <div class="time" id="time"></div>
+        <div class="date" id="date"></div>
+
+        <div class="lock-text">Проведи вверх 🔓</div>
+    </div>
+    
+    <div id="notif" class="hidden">
+      💌 Новое сообщение: "Открой меня ❤️"
+    </div>
+    
+<div id="splash">
+    <div class="logo">❤️</div>
+    <div class="loader"></div>
+</div>
+<div class="container">
+
+<!-- 🔒 Пароль -->
+<div id="login">
+    <h2>Введите пароль 💌</h2>
+    <input type="password" id="password">
+    <br>
+    <button onclick="checkPassword()">Открыть</button>
+    <p id="error"></p>
+</div>
+
+<!-- 💖 Контент -->
+<div id="main" class="hidden">
+
+    <h1>С Днём Рождения ❤️</h1>
+
+    <div class="event">
+        <p>📅 Наш день знакомства</p>
+        <p id="placeDate">НАПИШИ ДАТУ</p>
+        <input type="text" id="dateInput" placeholder="Введите дату" style="width: 70%; padding: 8px; border-radius: 8px; border: 1px solid #ffd0e2; margin-top: 8px;">
+        <img src="photo1.jpeg">
+    </div>
+
+    <div class="event">
+        <p>💫 Наш момент</p>
+        <p id="placeMoment">ОПИШИ МОМЕНТ</p>
+        <input type="text" id="momentInput" placeholder="Опиши момент" style="width: 70%; padding: 8px; border-radius: 8px; border: 1px solid #ffd0e2; margin-top: 8px;">
+        <img src="photo2.jpeg">
+    </div>
+
+    <div style="display:flex; gap:10px; justify-content:center; margin-top: 14px;">
+      <button onclick="saveDateMoment()" style="padding:12px 18px;">Сохранить</button>
+      <button onclick="clearDateMoment()" style="padding:12px 18px; background:#ffffff; color:#ff4f81;">Очистить</button>
+    </div>
+
+    <button onclick="startGame()">Играть 🎮</button>
+
+    <!-- 🎮 Игра -->
+    <div id="game" class="hidden">
+        <h2>Вопрос 😏</h2>
+        <p>Где мы впервые встретились?</p>
+
+        <button class="answer" onclick="wrong()">В школе</button>
+        <button class="answer" onclick="correct()">В университете</button>
+        <button class="answer" onclick="wrong()">В магазине</button>
+
+        <p id="gameResult"></p>
+    </div>
+
+    <!-- 🎁 Финал -->
+    <div id="final" class="hidden">
+        <p>Ты — самое лучшее, что у меня есть ❤️</p>
+        <p>Я тебя люблю 💖</p>
+        <a href="index1.html" id="surpButton">🎁 Сюрприз<br>Нажми</a>
+    </div>
+
+</div>
+
+
+
+</div>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const realPassword = "11012026"; // поменяй!
+
+function checkPassword() {
+    let input = document.getElementById("password").value;
+    if (input === realPassword) {
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("main").classList.remove("hidden");
+        document.getElementById("music").play();
+    } else {
+        document.getElementById("error").innerText = "Неверный пароль 😢";
+    }
+}
+
+function startGame() {
+    document.getElementById("game").classList.remove("hidden");
+}
+
+function correct() {
+    document.getElementById("gameResult").innerText = "Правильно 😍";
+    document.getElementById("final").classList.remove("hidden");
+}
+
+function wrong() {
+    document.getElementById("gameResult").innerText = "Неправильно 😢 попробуй ещё";
+}
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+
+window.addEventListener("load", () => {
+    document.getElementById("music").play(); // музыка сразу после загрузки
+    setTimeout(() => {
+        const splash = document.getElementById("splash");
+        splash.style.opacity = "0";
+        setTimeout(() => splash.style.display = "none", 1000);
+        showNotification(); // показываем уведомление один раз при загрузке
+    }, 2000);
+});
+function updateTime() {
+    const now = new Date();
+    document.getElementById("time").innerText =
+        now.getHours().toString().padStart(2, "0") + ":" +
+        now.getMinutes().toString().padStart(2, "0");
+
+    document.getElementById("date").innerText =
+        now.toLocaleDateString("ru-RU", { weekday: 'long', day: 'numeric', month: 'long' });
+}
+
+setInterval(updateTime, 1000);
+updateTime();
+
+// свайп вверх
+let startY = 0;
+
+document.addEventListener("touchstart", e => {
+    startY = e.touches[0].clientY;
+});
+
+document.addEventListener("touchend", e => {
+    let endY = e.changedTouches[0].clientY;
+
+    if (startY - endY > 80) {
+        unlock();
+    }
+});
+let notificationShown = false;
+
+function unlock() {
+    document.getElementById("lockscreen").style.transform = "translateY(-100%)";
+    navigator.vibrate && navigator.vibrate(100);
+    setTimeout(() => showInstallHint(), 400);
+}
+
+function showNotification() {
+    if (notificationShown) return;
+    notificationShown = true;
+
+    const notif = document.getElementById("notif");
+    notif.classList.remove("hidden");
+
+    setTimeout(() => {
+        notif.classList.add("hidden");
+    }, 3000);
+}
+
+let installHintShown = false;
+
+function showInstallHint() {
+    if (localStorage.getItem("appInstalled") === "1") return;
+    if (installHintShown) return;
+    installHintShown = true;
+    document.getElementById("installHint").classList.remove("hidden");
+}
+
+function startInstall() {
+    const button = document.getElementById("installBtn");
+    const progressRow = document.getElementById("installProgress");
+    const bar = document.querySelector("#installProgress .bar");
+    const status = document.getElementById("installStatus");
+
+    button.disabled = true;
+    progressRow.style.display = "block";
+    status.innerText = "Установка...";
+
+    let value = 0;
+    const timer = setInterval(() => {
+        value += Math.floor(Math.random() * 12) + 7;
+        if (value > 100) value = 100;
+        bar.style.width = value + "%";
+
+        if (value >= 100) {
+            clearInterval(timer);
+            status.innerText = "Установлено! 🎉";
+            localStorage.setItem("appInstalled", "1");
+            setTimeout(() => {
+                document.getElementById("installHint").classList.add("hidden");
+            }, 800);
+        }
+    }, 350);
+}
+
+function saveDateMoment() {
+    const dateValue = document.getElementById("dateInput").value.trim();
+    const momentValue = document.getElementById("momentInput").value.trim();
+
+    if (dateValue !== "") {
+        localStorage.setItem("myDate", dateValue);
+        document.getElementById("placeDate").innerText = dateValue;
+    }
+
+    if (momentValue !== "") {
+        localStorage.setItem("myMoment", momentValue);
+        document.getElementById("placeMoment").innerText = momentValue;
+    }
+
+    if (dateValue === "" && momentValue === "") {
+        return;
+    }
+
+    const saveNotice = document.createElement("div");
+    saveNotice.innerText = "Сохранено ✅";
+    saveNotice.style.color = "#fff";
+    saveNotice.style.background = "rgba(255, 81, 145, 0.9)";
+    saveNotice.style.padding = "8px 14px";
+    saveNotice.style.borderRadius = "12px";
+    saveNotice.style.position = "fixed";
+    saveNotice.style.bottom = "20px";
+    saveNotice.style.right = "20px";
+    saveNotice.style.zIndex = "10000";
+    document.body.appendChild(saveNotice);
+
+    setTimeout(() => saveNotice.remove(), 1500);
+}
+
+function clearDateMoment() {
+    localStorage.removeItem("myDate");
+    localStorage.removeItem("myMoment");
+    document.getElementById("placeDate").innerText = "НАПИШИ ДАТУ";
+    document.getElementById("placeMoment").innerText = "ОПИШИ МОМЕНТ";
+    document.getElementById("dateInput").value = "";
+    document.getElementById("momentInput").value = "";
+}
+
+function loadDateMoment() {
+    const date = localStorage.getItem("myDate");
+    const moment = localStorage.getItem("myMoment");
+
+    if (date) {
+        document.getElementById("placeDate").innerText = date;
+        document.getElementById("dateInput").value = date;
+    }
+    if (moment) {
+        document.getElementById("placeMoment").innerText = moment;
+        document.getElementById("momentInput").value = moment;
+    }
+}
+
+window.addEventListener("load", () => {
+    document.getElementById("music").play(); // музыка сразу после загрузки
+    setTimeout(() => {
+        const splash = document.getElementById("splash");
+        splash.style.opacity = "0";
+        setTimeout(() => splash.style.display = "none", 1000);
+        showNotification(); // показываем уведомление один раз при загрузке
+        loadDateMoment();
+    }, 2000);
+});
+
+</script>
+
+<div id="installHint" class="hidden">
+  <div class="hint-row">
+    <div class="hint-text">📲 Нажми «Установить» и добавь на рабочий стол</div>
+    <button id="installBtn" onclick="startInstall()">Установить</button>
+  </div>
+  <div id="installProgress">
+    <div class="bar"></div>
+  </div>
+  <div id="installStatus" class="hint-text">Готово к установке</div>
+</div>
+</body>
+</html>
