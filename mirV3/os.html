@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Катя ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+    color: white;
+}
+
+/* экраны */
+.screen {
+    display: none;
+    padding: 20px;
+    padding-bottom: 80px;
+}
+
+.active {
+    display: block;
+}
+
+/* карточки */
+.card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 20px;
+}
+
+/* нижнее меню */
+#nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+}
+
+#nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+/* кнопки */
+button {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    background: white;
+    color: #ff4f81;
+    margin-top: 10px;
+}
+
+/* анимация */
+.fade {
+    animation: fade 0.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🏠 Главный экран -->
+<div id="home" class="screen active fade">
+    <h1>Катя ❤️</h1>
+
+    <div class="card">
+        <h3>💖 Мы вместе</h3>
+        <p id="loveTimer"></p>
+    </div>
+
+    <div class="card">
+        <h3>💌 Сообщение</h3>
+        <p>Ты самое лучшее, что у меня есть ❤️</p>
+    </div>
+</div>
+
+<!-- 🎮 Игра -->
+<div id="game" class="screen">
+    <h2>🎮 Поймай сердечки</h2>
+    <div id="gameArea" style="height:300px; position:relative;"></div>
+    <p>Очки: <span id="score">0</span></p>
+</div>
+
+<!-- 🎁 Сюрприз -->
+<div id="gift" class="screen">
+    <h2>🎁 Сюрприз</h2>
+    <button onclick="openGift()">Открыть 🎁</button>
+    <p id="giftText"></p>
+</div>
+
+<!-- ❤️ Любовь -->
+<div id="love" class="screen">
+    <h2>❤️ Почему я тебя люблю</h2>
+    <div class="card">Ты делаешь меня счастливым 💖</div>
+    <div class="card">С тобой всё становится лучше 🌸</div>
+</div>
+
+<!-- 📱 Навигация -->
+<div id="nav">
+    <button onclick="show('home')">🏠</button>
+    <button onclick="show('game')">🎮</button>
+    <button onclick="show('gift')">🎁</button>
+    <button onclick="show('love')">❤️</button>
+</div>
+
+<script>
+// переключение экранов
+function show(id) {
+    document.querySelectorAll(".screen").forEach(s => {
+        s.classList.remove("active");
+    });
+
+    const el = document.getElementById(id);
+    el.classList.add("active");
+    el.classList.add("fade");
+
+    navigator.vibrate && navigator.vibrate(30);
+}
+
+// ❤️ таймер
+const startDate = new Date("2024-01-01");
+
+function updateTimer() {
+    const now = new Date();
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000*60*60*24));
+    document.getElementById("loveTimer").innerText =
+        days + " дней вместе ❤️";
+}
+setInterval(updateTimer, 1000);
+
+// 🎁 подарок
+const gifts = [
+    "Я тебя люблю ❤️",
+    "Ты моя жизнь 💖",
+    "Ты самая лучшая 🌸"
+];
+
+function openGift() {
+    let r = Math.floor(Math.random()*gifts.length);
+    document.getElementById("giftText").innerText = gifts[r];
+}
+
+// 🎮 игра
+let score = 0;
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.position = "absolute";
+    heart.style.left = Math.random()*90 + "%";
+    heart.style.top = "0px";
+
+    heart.onclick = () => {
+        score++;
+        document.getElementById("score").innerText = score;
+        heart.remove();
+    };
+
+    document.getElementById("gameArea").appendChild(heart);
+
+    let fall = setInterval(() => {
+        heart.style.top = (heart.offsetTop + 5) + "px";
+        if (heart.offsetTop > 300) {
+            heart.remove();
+            clearInterval(fall);
+        }
+    }, 50);
+}
+
+setInterval(createHeart, 800);
+</script>
+
+</body>
+</html>
