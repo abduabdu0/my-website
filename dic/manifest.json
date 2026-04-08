@@ -1,6 +1,6 @@
 {
   "name": "Орфография Диктант",
-  "short_name": "Диктант v3",
+  "short_name": "Диктант v5",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
