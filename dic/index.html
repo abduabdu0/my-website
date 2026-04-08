@@ -3,52 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Диктант Pro MAX</title>
+<title>Русский Диктант: Улучши свой язык!</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#4CAF50">
 <style>
-:root{--accent:#0A84FF;--bg:#f2f2f7;--card:#fff;--good:#16a34a;--bad:#ef4444}
-body{margin:0;font-family:-apple-system;background:var(--bg)}
-.app{max-width:420px;margin:auto}
-.header{padding:15px;text-align:center;background:#111;color:#fff}
-.card{background:var(--card);margin:15px;border-radius:16px;padding:15px;box-shadow:0 10px 20px rgba(0,0,0,.1)}
-button{width:100%;padding:12px;margin-top:10px;border:none;border-radius:12px;background:var(--accent);color:#fff}
-.install-banner{display:none;position:fixed;left:15px;right:15px;bottom:15px;padding:12px 14px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.12);gap:10px;align-items:center;justify-content:space-between;z-index:1000;}
-.install-banner p{margin:0;font-size:14px;color:#111;flex:1}
-.install-banner button{width:auto;min-width:130px}
+:root{--accent:#0A84FF;--bg:#f2f2f7;--card:#fff;--good:#16a34a;--bad:#ef4444;--text:#333;--header-bg:#111}
+body{margin:0;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;background:linear-gradient(135deg, var(--bg) 0%, #e0e7ff 100%);font-size:18px;color:var(--text)}
+.app{max-width:450px;margin:auto;padding:20px}
+.header{padding:20px;text-align:center;background:linear-gradient(135deg, var(--header-bg) 0%, #333 100%);color:#fff;border-radius:20px;margin-bottom:20px;font-size:24px;font-weight:bold}
+.card{background:var(--card);margin:20px;border-radius:20px;padding:20px;box-shadow:0 15px 30px rgba(0,0,0,.15);border:1px solid rgba(0,0,0,.1)}
+button{width:100%;padding:15px;margin-top:15px;border:none;border-radius:15px;background:linear-gradient(135deg, var(--accent) 0%, #007AFF 100%);color:#fff;font-size:18px;font-weight:600;cursor:pointer;transition:transform 0.2s}
+button:hover{transform:scale(1.05)}
+.install-banner{display:none;position:fixed;left:20px;right:20px;bottom:20px;padding:15px 20px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.15);gap:15px;align-items:center;justify-content:space-between;z-index:1000;}
+.install-banner p{margin:0;font-size:16px;color:#111;flex:1}
+.install-banner button{width:auto;min-width:140px}
 .text-button{background:transparent;color:#0A84FF;font-weight:700;box-shadow:none}
-.sentence{font-size:18px;margin-bottom:10px}
-.gap{border-bottom:2px dashed #999;padding:2px 5px}
-.row{display:flex;gap:5px;flex-wrap:wrap}
-.chip{padding:8px 10px;background:#e5e7eb;border-radius:8px;cursor:pointer}
-.chip.active{background:var(--accent);color:#fff;transform:scale(1.1)}
-.good{color:var(--good)}
-.bad{color:var(--bad)}
+.sentence{font-size:22px;margin-bottom:15px;line-height:1.4;text-align:justify}
+.gap{border-bottom:3px dashed #999;padding:3px 8px;font-size:20px}
+.row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.chip{padding:12px 15px;background:#e5e7eb;border-radius:12px;cursor:pointer;font-size:18px;transition:background 0.2s, transform 0.2s}
+.chip:hover{background:#d1d5db}
+.chip.active{background:linear-gradient(135deg, var(--accent) 0%, #007AFF 100%);color:#fff;transform:scale(1.1)}
+.good{color:var(--good);font-weight:bold}
+.bad{color:var(--bad);font-weight:bold}
+.description{text-align:center;margin-bottom:20px;font-size:16px;color:#666}
+.progress{margin-bottom:15px;text-align:center;font-size:16px}
 </style>
 </head>
 <body>
 <div class="app">
-<div class="header">📚 Диктант Pro MAX</div>
+<div class="header">📚 Русский Диктант: Улучши свой язык! Мой дорогой Marifatkhon❤️</div>
+<div class="description">Практикуйся в диктантах, чтобы стать мастером русского языка. Выбери уровень сложности и начни Marifatkhon!</div>
 <div class="install-banner" id="installBanner">
-  <p>Нажмите «Установить», чтобы добавить приложение на главный экран.</p>
+  <p>Установите приложение на главный экран для удобного доступа.</p>
   <button id="installBtn">Установить</button>
   <button id="closeInstallBtn" class="text-button">Закрыть</button>
 </div>
 
 <div class="card" id="menu">
-<button onclick="start('easy')">Лёгкий</button>
-<button onclick="start('medium')">Средний</button>
-<button onclick="start('hard')">Сложный</button>
+<h3 style="text-align:center;margin-top:0">Выберите уровень сложности:</h3>
+<div id="stats" style="text-align:center;margin-bottom:15px;font-size:16px"></div>
+<button onclick="start('easy')">Лёгкий уровень</button>
+<button onclick="start('medium')">Средний уровень</button>
+<button onclick="start('hard')">Сложный уровень</button>
 </div>
 
 <div class="card" id="game" style="display:none">
+<div class="progress" id="progress">Задание 1 из 26</div>
 <div id="sentence" class="sentence"></div>
 <div id="choices"></div>
 
-<button onclick="check()">Проверить</button>
-<button onclick="showAnswer()">Показать ответ</button>
-<button onclick="next()">Далее</button>
-<button onclick="goMenu()">Меню</button>
+<button onclick="check()">Проверить ответ</button>
+<button onclick="showAnswer()">Показать правильный ответ</button>
+<button onclick="next()">Следующее задание</button>
+<button onclick="goMenu()">Вернуться в меню</button>
 
 <div id="result"></div>
 </div>
@@ -59,46 +67,71 @@ function shuffle(arr){return arr.sort(()=>Math.random()-0.5)}
 
 // 26 заданий
 const tasks=[
- {text:'Он учи_ся в школ_',gaps:[{i:6,options:['т','ть','д','л'],correct:'т'},{i:17,options:['е','и','а','о'],correct:'е'}]},
- {text:'Птиц_ летят над рощ_й',gaps:[{i:4,options:['ы','и','а','я'],correct:'ы'},{i:20,options:['е','о','а','у'],correct:'е'}]},
- {text:'Жи_нь прекрасна',gaps:[{i:2,options:['з','с','ш','щ'],correct:'з'}]},
- {text:'Он берё_ книгу',gaps:[{i:6,options:['т','ть','д','п'],correct:'т'}]},
- {text:'Малыш плач_т',gaps:[{i:10,options:['е','и','а','о'],correct:'е'}]},
- {text:'Ребёнок смеёт_ся',gaps:[{i:14,options:['с','сь'],correct:'с'}]},
- {text:'Мы ид_м домой',gaps:[{i:6,options:['е','ё','и','а'],correct:'ё'}]},
- {text:'На улиц_ холодно',gaps:[{i:7,options:['е','и','а','о'],correct:'е'}]},
- {text:'Он чита_т книгу',gaps:[{i:8,options:['е','и','а','о'],correct:'е'}]},
- {text:'Солнц_ светит',gaps:[{i:6,options:['е','и','а','о'],correct:'е'}]},
- {text:'Машин_ едет',gaps:[{i:6,options:['а','о','е','и'],correct:'а'}]},
- {text:'Кошк_ спит',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}]},
- {text:'Он люб_т играть',gaps:[{i:6,options:['и','ы','е','о'],correct:'и'}]},
- {text:'Мы уч_мся вместе',gaps:[{i:5,options:['и','е','а','о'],correct:'и'}]},
- {text:'Собак_ бежит',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}]},
- {text:'Дерев_ высокое',gaps:[{i:7,options:['о','а','е','и'],correct:'о'}]},
- {text:'Мор_ синее',gaps:[{i:4,options:['е','я','а','о'],correct:'е'}]},
- {text:'Зим_ холодная',gaps:[{i:3,options:['а','о','е','и'],correct:'а'}]},
- {text:'Весн_ пришла',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}]},
- {text:'Лет_ жаркое',gaps:[{i:4,options:['о','а','е','и'],correct:'о'}]},
- {text:'Осен_ дождливая',gaps:[{i:5,options:['ь','н','л','й'],correct:'ь'}]},
- {text:'Он пиш_т письмо',gaps:[{i:7,options:['е','и','а','о'],correct:'е'}]},
- {text:'Она по_т песню',gaps:[{i:7,options:['ё','е','и','а'],correct:'ё'}]},
- {text:'Они сид_т дома',gaps:[{i:8,options:['я','а','е','и'],correct:'я'}]},
- {text:'Учител_ объясняет',gaps:[{i:7,options:['ь','й','е','и'],correct:'ь'}]},
- {text:'Мальчи_ играет',gaps:[{i:6,options:['к','г','ч','ш'],correct:'к'}]}
+ {text:'Он учи_ся в школ_',gaps:[{i:6,options:['т','ть','д','л'],correct:'т'},{i:17,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В слове "учится" пишется "т" после шипящих, а "школе" - окончание -е для существительных женского рода.'},
+ {text:'Птиц_ летят над рощ_й',gaps:[{i:4,options:['ы','и','а','я'],correct:'ы'},{i:20,options:['е','о','а','у'],correct:'е'}],level:'easy',explanation:'"Птицы" - окончание -ы для множественного числа, "рощой" - окончание -ей для существительных женского рода.'},
+ {text:'Жи_нь прекрасна',gaps:[{i:2,options:['з','с','ш','щ'],correct:'з'}],level:'easy',explanation:'В слове "жизнь" пишется "з" перед н.'},
+ {text:'Он берё_ книгу',gaps:[{i:6,options:['т','ть','д','п'],correct:'т'}],level:'easy',explanation:'В глаголе "берёт" пишется "т" в окончании.'},
+ {text:'Малыш плач_т',gaps:[{i:10,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В глаголе "плачет" пишется "е" в окончании.'},
+ {text:'Ребёнок смеёт_ся',gaps:[{i:14,options:['с','сь'],correct:'с'}],level:'medium',explanation:'В глаголе "смеётся" пишется "с" перед -ся.'},
+ {text:'Мы ид_м домой',gaps:[{i:6,options:['е','ё','и','а'],correct:'ё'}],level:'easy',explanation:'В глаголе "идём" пишется "ё" под ударением.'},
+ {text:'На улиц_ холодно',gaps:[{i:7,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В слове "улице" пишется "е" в окончании.'},
+ {text:'Он чита_т книгу',gaps:[{i:8,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В глаголе "читает" пишется "е" в окончании.'},
+ {text:'Солнц_ светит',gaps:[{i:6,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В слове "солнце" пишется "е" в окончании.'},
+ {text:'Машин_ едет',gaps:[{i:6,options:['а','о','е','и'],correct:'а'}],level:'easy',explanation:'В слове "машина" пишется "а" в окончании.'},
+ {text:'Кошк_ спит',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}],level:'easy',explanation:'В слове "кошка" пишется "а" в окончании.'},
+ {text:'Он люб_т играть',gaps:[{i:6,options:['и','ы','е','о'],correct:'и'}],level:'easy',explanation:'В глаголе "любит" пишется "и" в окончании.'},
+ {text:'Мы уч_мся вместе',gaps:[{i:5,options:['и','е','а','о'],correct:'и'}],level:'easy',explanation:'В глаголе "учимся" пишется "и" в окончании.'},
+ {text:'Собак_ бежит',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}],level:'easy',explanation:'В слове "собака" пишется "а" в окончании.'},
+ {text:'Дерев_ высокое',gaps:[{i:7,options:['о','а','е','и'],correct:'о'}],level:'easy',explanation:'В слове "дерево" пишется "о" в окончании.'},
+ {text:'Мор_ синее',gaps:[{i:4,options:['е','я','а','о'],correct:'е'}],level:'easy',explanation:'В слове "море" пишется "е" в окончании.'},
+ {text:'Зим_ холодная',gaps:[{i:3,options:['а','о','е','и'],correct:'а'}],level:'easy',explanation:'В слове "зима" пишется "а" в окончании.'},
+ {text:'Весн_ пришла',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}],level:'easy',explanation:'В слове "весна" пишется "а" в окончании.'},
+ {text:'Лет_ жаркое',gaps:[{i:4,options:['о','а','е','и'],correct:'о'}],level:'easy',explanation:'В слове "лето" пишется "о" в окончании.'},
+ {text:'Осен_ дождливая',gaps:[{i:5,options:['ь','н','л','й'],correct:'ь'}],level:'medium',explanation:'В слове "осень" пишется "ь" в конце.'},
+ {text:'Он пиш_т письмо',gaps:[{i:7,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В глаголе "пишет" пишется "е" в окончании.'},
+ {text:'Она по_т песню',gaps:[{i:7,options:['ё','е','и','а'],correct:'ё'}],level:'medium',explanation:'В глаголе "поёт" пишется "ё" под ударением.'},
+ {text:'Они сид_т дома',gaps:[{i:8,options:['я','а','е','и'],correct:'я'}],level:'easy',explanation:'В глаголе "сидят" пишется "я" в окончании.'},
+ {text:'Учител_ объясняет',gaps:[{i:7,options:['ь','й','е','и'],correct:'ь'}],level:'medium',explanation:'В слове "учитель" пишется "ь" перед окончанием.'},
+ {text:'Мальчи_ играет',gaps:[{i:6,options:['к','г','ч','ш'],correct:'к'}],level:'hard',explanation:'В слове "мальчик" пишется "к" перед "и".'}
 ];
 
-let current=0,answers=[];
+let current=0,answers=[],filteredTasks=[],correctCount=0,totalAttempts=0,selectedLevel='easy';
 
-function start(){
+// Загрузка статистики из localStorage
+function loadStats(){
+let stats = JSON.parse(localStorage.getItem('dictationStats') || '{}');
+correctCount = stats.correct || 0;
+totalAttempts = stats.attempts || 0;
+updateStatsDisplay();
+}
+
+function saveStats(){
+localStorage.setItem('dictationStats', JSON.stringify({correct: correctCount, attempts: totalAttempts}));
+updateStatsDisplay();
+}
+
+function updateStatsDisplay(){
+let percentage = totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0;
+document.getElementById('stats').innerText = `Общая статистика: ${correctCount}/${totalAttempts} (${percentage}%)`;
+}
+
+function start(level){
+selectedLevel=level;
+filteredTasks=tasks.filter(t=>t.level===level).sort(()=>Math.random()-0.5); // Перемешать
 current=0;
 document.getElementById('menu').style.display='none';
 document.getElementById('game').style.display='block';
 load();
 }
+document.getElementById('menu').style.display='none';
+document.getElementById('game').style.display='block';
+load();
+
 
 function load(){
+document.getElementById('progress').innerText=`Задание ${current+1} из ${filteredTasks.length} | Правильно: ${correctCount}/${totalAttempts}`;
 answers=[];
-const item=tasks[current];
+const item=filteredTasks[current];
 let s=item.text.split('');
 
 item.gaps.forEach((g,i)=>{
@@ -135,8 +168,8 @@ document.querySelector(`[data-gap='${i}']`).innerText=val;
 }
 
 function check(){
-const item=tasks[current];
-let errors=0,res='';
+const item=filteredTasks[current];
+let errors=0,res='',correctGaps=0;
 
 item.gaps.forEach((g,i)=>{
 let gap=document.querySelector(`[data-gap='${i}']`);
@@ -144,6 +177,7 @@ let gap=document.querySelector(`[data-gap='${i}']`);
 if(answers[i]===g.correct){
 gap.style.color='green';
 res+='<div class="good">✔ правильно</div>';
+correctGaps++;
 }else{
 gap.style.color='red';
 res+=`<div class="bad">✖ ошибка → ${g.correct}</div>`;
@@ -151,11 +185,15 @@ errors++;
 }
 });
 
+totalAttempts += item.gaps.length;
+correctCount += correctGaps;
+
+res += `<br><strong>Объяснение:</strong> ${item.explanation}`;
 document.getElementById('result').innerHTML=res+`<br>Ошибок: ${errors}`;
 }
 
 function showAnswer(){
-const item=tasks[current];
+const item=filteredTasks[current];
 item.gaps.forEach((g,i)=>{
 let gap=document.querySelector(`[data-gap='${i}']`);
 gap.innerText=g.correct;
@@ -165,7 +203,13 @@ gap.style.color='green';
 
 function next(){
 current++;
-if(current>=tasks.length) current=0;
+if(current>=filteredTasks.length){
+let percentage = Math.round((correctCount / totalAttempts) * 100);
+let message = percentage >= 90 ? 'Отлично! Ты мастер диктантов!' : percentage >= 70 ? 'Хорошо! Продолжай тренироваться.' : 'Неплохо, но нужно больше практики.';
+document.getElementById('result').innerHTML += `<br><br><strong>Итог:</strong> Правильно ${correctCount} из ${totalAttempts} (${percentage}%). ${message}<br><button onclick="start(selectedLevel)">Повторить уровень</button>`;
+saveStats();
+return;
+}
 document.getElementById('result').innerHTML='';
 load();
 }
@@ -219,6 +263,7 @@ window.addEventListener('appinstalled', () => {
 });
 
 window.addEventListener('load', () => {
+  loadStats();
   if (!localStorage.getItem(installKey)) {
     installBanner.style.display = 'flex';
   }
