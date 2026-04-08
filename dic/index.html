@@ -3,60 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Русский Диктант: Улучши свой язык!</title>
+<title>Диктант Pro MAX</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#4CAF50">
 <style>
-:root{--accent:#0A84FF;--bg:#f2f2f7;--card:#fff;--good:#16a34a;--bad:#ef4444;--text:#333;--header-bg:#111}
-body{margin:0;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;background:linear-gradient(135deg, var(--bg) 0%, #e0e7ff 100%);font-size:18px;color:var(--text)}
+:root{--accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);--bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);--card: rgba(255, 255, 255, 0.95);--good:#10b981;--bad:#ef4444;--shadow: 0 8px 32px rgba(31, 38, 135, 0.37);--pulse: pulse 2s infinite}
+body{margin:0;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;background:var(--bg);background-attachment:fixed;min-height:100vh}
 .app{max-width:450px;margin:auto;padding:20px}
-.header{padding:20px;text-align:center;background:linear-gradient(135deg, var(--header-bg) 0%, #333 100%);color:#fff;border-radius:20px;margin-bottom:20px;font-size:24px;font-weight:bold}
-.card{background:var(--card);margin:20px;border-radius:20px;padding:20px;box-shadow:0 15px 30px rgba(0,0,0,.15);border:1px solid rgba(0,0,0,.1)}
-button{width:100%;padding:15px;margin-top:15px;border:none;border-radius:15px;background:linear-gradient(135deg, var(--accent) 0%, #007AFF 100%);color:#fff;font-size:18px;font-weight:600;cursor:pointer;transition:transform 0.2s}
-button:hover{transform:scale(1.05)}
-.install-banner{display:none;position:fixed;left:20px;right:20px;bottom:20px;padding:15px 20px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.15);gap:15px;align-items:center;justify-content:space-between;z-index:1000;}
-.install-banner p{margin:0;font-size:16px;color:#111;flex:1}
-.install-banner button{width:auto;min-width:140px}
-.text-button{background:transparent;color:#0A84FF;font-weight:700;box-shadow:none}
-.sentence{font-size:22px;margin-bottom:15px;line-height:1.4;text-align:justify}
-.gap{border-bottom:3px dashed #999;padding:3px 8px;font-size:20px}
-.row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-.chip{padding:12px 15px;background:#e5e7eb;border-radius:12px;cursor:pointer;font-size:18px;transition:background 0.2s, transform 0.2s}
-.chip:hover{background:#d1d5db}
-.chip.active{background:linear-gradient(135deg, var(--accent) 0%, #007AFF 100%);color:#fff;transform:scale(1.1)}
-.good{color:var(--good);font-weight:bold}
-.bad{color:var(--bad);font-weight:bold}
-.description{text-align:center;margin-bottom:20px;font-size:16px;color:#666}
-.progress{margin-bottom:15px;text-align:center;font-size:16px}
+.header{padding:25px;text-align:center;background:var(--accent);color:#fff;border-radius:25px;margin-bottom:25px;box-shadow:var(--shadow);font-size:26px;font-weight:bold;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);z-index:1}
+.header span{position:relative;z-index:2}
+.card{background:var(--card);backdrop-filter:blur(15px);border-radius:25px;padding:25px;margin:25px 0;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.25);transition:transform 0.3s ease, box-shadow 0.3s ease;animation:fadeIn 0.5s ease}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.25)}
+button{width:100%;padding:18px;margin-top:18px;border:none;border-radius:18px;background:var(--accent);color:#fff;font-size:18px;font-weight:600;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;box-shadow:0 6px 20px rgba(0,0,0,0.25);position:relative;overflow:hidden}
+button::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);transition:left 0.5s}
+button:hover::before{left:100%}
+button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.35)}
+.install-banner{display:none;position:fixed;left:20px;right:20px;bottom:20px;padding:18px 22px;background:var(--card);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,0.25);border-radius:25px;box-shadow:var(--shadow);gap:18px;align-items:center;justify-content:space-between;z-index:1000;animation:slideUp 0.5s ease}
+.install-banner p{margin:0;font-size:17px;color:#333;flex:1}
+.install-banner button{width:auto;min-width:150px}
+.text-button{background:transparent;color:#667eea;font-weight:700;box-shadow:none;border:2px solid #667eea;border-radius:12px;padding:8px 16px}
+.text-button:hover{color:#764ba2;border-color:#764ba2;background:rgba(102,126,234,0.1)}
+.sentence{font-size:22px;margin-bottom:18px;line-height:1.6;color:#333;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
+.gap{border-bottom:4px dashed #667eea;padding:4px 10px;transition:color 0.3s ease, transform 0.2s ease;font-weight:bold;border-radius:4px}
+.gap:hover{transform:scale(1.05)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.chip{padding:12px 15px;background:linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);border-radius:15px;cursor:pointer;transition:all 0.3s ease;font-weight:500;color:#333;border:2px solid transparent;position:relative;overflow:hidden}
+.chip::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);transition:left 0.5s}
+.chip:hover::before{left:100%}
+.chip:hover{transform:scale(1.08);box-shadow:0 6px 15px rgba(0,0,0,0.2)}
+.chip.active{background:var(--accent);color:#fff;transform:scale(1.15);box-shadow:0 8px 25px rgba(102,126,234,0.5);animation:var(--pulse)}
+.good{color:var(--good);font-weight:bold;text-shadow:0 1px 2px rgba(16,185,129,0.3)}
+.bad{color:var(--bad);font-weight:bold;text-shadow:0 1px 2px rgba(239,68,68,0.3)}
+#stats{font-size:20px;color:#555;margin-bottom:15px;text-align:center;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{transform:translateY(100px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes pulse{0%,100%{transform:scale(1.15)}50%{transform:scale(1.2)}}
+@media (max-width: 600px){
+.app{max-width:100%;padding:15px}
+.header{font-size:22px;padding:20px;border-radius:20px}
+.card{padding:20px;border-radius:20px;margin:20px 0}
+button{font-size:16px;padding:16px;border-radius:16px}
+.sentence{font-size:20px}
+.chip{padding:10px 12px;font-size:14px}
+.install-banner{left:10px;right:10px;bottom:10px;padding:15px 18px;border-radius:20px}
+.install-banner p{font-size:15px}
+}
 </style>
 </head>
 <body>
+  
 <div class="app">
-<div class="header">📚 Русский Диктант: Улучши свой язык! Мой дорогой Marifatkhon❤️</div>
-<div class="description">Практикуйся в диктантах, чтобы стать мастером русского языка. Выбери уровень сложности и начни Marifatkhon!</div>
+  <div class="header"><span>Это приложения для тебя МАЪРИФАТХОН ❤️</span></div>
+  <h3 title=""></h3>
 <div class="install-banner" id="installBanner">
-  <p>Установите приложение на главный экран для удобного доступа.</p>
+  <p>Нажмите «Установить», чтобы добавить приложение на главный экран.</p>
   <button id="installBtn">Установить</button>
   <button id="closeInstallBtn" class="text-button">Закрыть</button>
 </div>
 
 <div class="card" id="menu">
-<h3 style="text-align:center;margin-top:0">Выберите уровень сложности:</h3>
-<div id="stats" style="text-align:center;margin-bottom:15px;font-size:16px"></div>
-<button onclick="start('easy')">Лёгкий уровень</button>
-<button onclick="start('medium')">Средний уровень</button>
-<button onclick="start('hard')">Сложный уровень</button>
+<div id="stats"></div>
+
+<button onclick="start('easy')">🎓 Лёгкий</button>
+<button onclick="start('medium')">📖 Средний</button>
+<button onclick="start('hard')">🔥 Сложный</button>
 </div>
 
 <div class="card" id="game" style="display:none">
-<div class="progress" id="progress">Задание 1 из 26</div>
 <div id="sentence" class="sentence"></div>
 <div id="choices"></div>
-
-<button onclick="check()">Проверить ответ</button>
-<button onclick="showAnswer()">Показать правильный ответ</button>
-<button onclick="next()">Следующее задание</button>
-<button onclick="goMenu()">Вернуться в меню</button>
+✅ Проверить</button>
+<button onclick="showAnswer()">💡 Показать ответ</button>
+<button onclick="next()">➡️ Далее</button>
+<button onclick="goMenu()">🏠 Далее</button>
+<button onclick="goMenu()">Меню</button>
 
 <div id="result"></div>
 </div>
@@ -67,35 +88,35 @@ function shuffle(arr){return arr.sort(()=>Math.random()-0.5)}
 
 // 26 заданий
 const tasks=[
- {text:'Он учи_ся в школ_',gaps:[{i:6,options:['т','ть','д','л'],correct:'т'},{i:17,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В слове "учится" пишется "т" после шипящих, а "школе" - окончание -е для существительных женского рода.'},
- {text:'Птиц_ летят над рощ_й',gaps:[{i:4,options:['ы','и','а','я'],correct:'ы'},{i:20,options:['е','о','а','у'],correct:'е'}],level:'easy',explanation:'"Птицы" - окончание -ы для множественного числа, "рощой" - окончание -ей для существительных женского рода.'},
- {text:'Жи_нь прекрасна',gaps:[{i:2,options:['з','с','ш','щ'],correct:'з'}],level:'easy',explanation:'В слове "жизнь" пишется "з" перед н.'},
- {text:'Он берё_ книгу',gaps:[{i:6,options:['т','ть','д','п'],correct:'т'}],level:'easy',explanation:'В глаголе "берёт" пишется "т" в окончании.'},
- {text:'Малыш плач_т',gaps:[{i:10,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В глаголе "плачет" пишется "е" в окончании.'},
- {text:'Ребёнок смеёт_ся',gaps:[{i:14,options:['с','сь'],correct:'с'}],level:'medium',explanation:'В глаголе "смеётся" пишется "с" перед -ся.'},
- {text:'Мы ид_м домой',gaps:[{i:6,options:['е','ё','и','а'],correct:'ё'}],level:'easy',explanation:'В глаголе "идём" пишется "ё" под ударением.'},
- {text:'На улиц_ холодно',gaps:[{i:7,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В слове "улице" пишется "е" в окончании.'},
- {text:'Он чита_т книгу',gaps:[{i:8,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В глаголе "читает" пишется "е" в окончании.'},
- {text:'Солнц_ светит',gaps:[{i:6,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В слове "солнце" пишется "е" в окончании.'},
- {text:'Машин_ едет',gaps:[{i:6,options:['а','о','е','и'],correct:'а'}],level:'easy',explanation:'В слове "машина" пишется "а" в окончании.'},
- {text:'Кошк_ спит',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}],level:'easy',explanation:'В слове "кошка" пишется "а" в окончании.'},
- {text:'Он люб_т играть',gaps:[{i:6,options:['и','ы','е','о'],correct:'и'}],level:'easy',explanation:'В глаголе "любит" пишется "и" в окончании.'},
- {text:'Мы уч_мся вместе',gaps:[{i:5,options:['и','е','а','о'],correct:'и'}],level:'easy',explanation:'В глаголе "учимся" пишется "и" в окончании.'},
- {text:'Собак_ бежит',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}],level:'easy',explanation:'В слове "собака" пишется "а" в окончании.'},
- {text:'Дерев_ высокое',gaps:[{i:7,options:['о','а','е','и'],correct:'о'}],level:'easy',explanation:'В слове "дерево" пишется "о" в окончании.'},
- {text:'Мор_ синее',gaps:[{i:4,options:['е','я','а','о'],correct:'е'}],level:'easy',explanation:'В слове "море" пишется "е" в окончании.'},
- {text:'Зим_ холодная',gaps:[{i:3,options:['а','о','е','и'],correct:'а'}],level:'easy',explanation:'В слове "зима" пишется "а" в окончании.'},
- {text:'Весн_ пришла',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}],level:'easy',explanation:'В слове "весна" пишется "а" в окончании.'},
- {text:'Лет_ жаркое',gaps:[{i:4,options:['о','а','е','и'],correct:'о'}],level:'easy',explanation:'В слове "лето" пишется "о" в окончании.'},
- {text:'Осен_ дождливая',gaps:[{i:5,options:['ь','н','л','й'],correct:'ь'}],level:'medium',explanation:'В слове "осень" пишется "ь" в конце.'},
- {text:'Он пиш_т письмо',gaps:[{i:7,options:['е','и','а','о'],correct:'е'}],level:'easy',explanation:'В глаголе "пишет" пишется "е" в окончании.'},
- {text:'Она по_т песню',gaps:[{i:7,options:['ё','е','и','а'],correct:'ё'}],level:'medium',explanation:'В глаголе "поёт" пишется "ё" под ударением.'},
- {text:'Они сид_т дома',gaps:[{i:8,options:['я','а','е','и'],correct:'я'}],level:'easy',explanation:'В глаголе "сидят" пишется "я" в окончании.'},
- {text:'Учител_ объясняет',gaps:[{i:7,options:['ь','й','е','и'],correct:'ь'}],level:'medium',explanation:'В слове "учитель" пишется "ь" перед окончанием.'},
- {text:'Мальчи_ играет',gaps:[{i:6,options:['к','г','ч','ш'],correct:'к'}],level:'hard',explanation:'В слове "мальчик" пишется "к" перед "и".'}
+ {difficulty:'easy', text:'Он учи_ся в школ_',gaps:[{i:6,options:['т','ть','д','л'],correct:'т'},{i:17,options:['е','и','а','о'],correct:'е'}]},
+ {difficulty:'easy', text:'Птиц_ летят над рощ_й',gaps:[{i:4,options:['ы','и','а','я'],correct:'ы'},{i:20,options:['е','о','а','у'],correct:'е'}]},
+ {difficulty:'easy', text:'Жи_нь прекрасна',gaps:[{i:2,options:['з','с','ш','щ'],correct:'з'}]},
+ {difficulty:'easy', text:'Он берё_ книгу',gaps:[{i:6,options:['т','ть','д','п'],correct:'т'}]},
+ {difficulty:'easy', text:'Малыш плач_т',gaps:[{i:10,options:['е','и','а','о'],correct:'е'}]},
+ {difficulty:'easy', text:'Ребёнок смеёт_ся',gaps:[{i:14,options:['с','сь'],correct:'с'}]},
+ {difficulty:'easy', text:'Мы ид_м домой',gaps:[{i:6,options:['е','ё','и','а'],correct:'ё'}]},
+ {difficulty:'easy', text:'На улиц_ холодно',gaps:[{i:7,options:['е','и','а','о'],correct:'е'}]},
+ {difficulty:'easy', text:'Он чита_т книгу',gaps:[{i:8,options:['е','и','а','о'],correct:'е'}]},
+ {difficulty:'easy', text:'Солнц_ светит',gaps:[{i:6,options:['е','и','а','о'],correct:'е'}]},
+ {difficulty:'medium', text:'Машин_ едет',gaps:[{i:6,options:['а','о','е','и'],correct:'а'}]},
+ {difficulty:'medium', text:'Кошк_ спит',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}]},
+ {difficulty:'medium', text:'Он люб_т играть',gaps:[{i:6,options:['и','ы','е','о'],correct:'и'}]},
+ {difficulty:'medium', text:'Мы уч_мся вместе',gaps:[{i:5,options:['и','е','а','о'],correct:'и'}]},
+ {difficulty:'medium', text:'Собак_ бежит',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}]},
+ {difficulty:'medium', text:'Дерев_ высокое',gaps:[{i:7,options:['о','а','е','и'],correct:'о'}]},
+ {difficulty:'medium', text:'Мор_ синее',gaps:[{i:4,options:['е','я','а','о'],correct:'е'}]},
+ {difficulty:'medium', text:'Зим_ холодная',gaps:[{i:3,options:['а','о','е','и'],correct:'а'}]},
+ {difficulty:'medium', text:'Весн_ пришла',gaps:[{i:5,options:['а','о','е','и'],correct:'а'}]},
+ {difficulty:'medium', text:'Лет_ жаркое',gaps:[{i:4,options:['о','а','е','и'],correct:'о'}]},
+ {difficulty:'hard', text:'Осен_ дождливая',gaps:[{i:5,options:['ь','н','л','й'],correct:'ь'}]},
+ {difficulty:'hard', text:'Он пиш_т письмо',gaps:[{i:7,options:['е','и','а','о'],correct:'е'}]},
+ {difficulty:'hard', text:'Она по_т песню',gaps:[{i:7,options:['ё','е','и','а'],correct:'ё'}]},
+ {difficulty:'hard', text:'Они сид_т дома',gaps:[{i:8,options:['я','а','е','и'],correct:'я'}]},
+ {difficulty:'hard', text:'Учител_ объясняет',gaps:[{i:7,options:['ь','й','е','и'],correct:'ь'}]},
+ {difficulty:'hard', text:'Мальчи_ играет',gaps:[{i:6,options:['к','г','ч','ш'],correct:'к'}]}
 ];
 
-let current=0,answers=[],filteredTasks=[],correctCount=0,totalAttempts=0,selectedLevel='easy';
+let current=0,answers=[], currentTasks=[], correctCount=0, totalAttempts=0;
 
 // Загрузка статистики из localStorage
 function loadStats(){
@@ -115,23 +136,32 @@ let percentage = totalAttempts > 0 ? Math.round((correctCount / totalAttempts) *
 document.getElementById('stats').innerText = `Общая статистика: ${correctCount}/${totalAttempts} (${percentage}%)`;
 }
 
-function start(level){
-selectedLevel=level;
-filteredTasks=tasks.filter(t=>t.level===level).sort(()=>Math.random()-0.5); // Перемешать
+function start(difficulty){
 current=0;
+answers=[];
+
+let filteredTasks;
+if(difficulty === 'easy'){
+filteredTasks = tasks.filter(t => t.difficulty === 'easy');
+}else if(difficulty === 'medium'){
+filteredTasks = tasks.filter(t => t.difficulty === 'medium');
+}else if(difficulty === 'hard'){
+filteredTasks = tasks.filter(t => t.difficulty === 'hard');
+}else{
+filteredTasks = tasks;
+}
+
+currentTasks = shuffle(filteredTasks);
+
 document.getElementById('menu').style.display='none';
 document.getElementById('game').style.display='block';
 load();
 }
-document.getElementById('menu').style.display='none';
-document.getElementById('game').style.display='block';
-load();
 
 
 function load(){
-document.getElementById('progress').innerText=`Задание ${current+1} из ${filteredTasks.length} | Правильно: ${correctCount}/${totalAttempts}`;
 answers=[];
-const item=filteredTasks[current];
+const item=currentTasks[current];
 let s=item.text.split('');
 
 item.gaps.forEach((g,i)=>{
@@ -168,8 +198,8 @@ document.querySelector(`[data-gap='${i}']`).innerText=val;
 }
 
 function check(){
-const item=filteredTasks[current];
-let errors=0,res='',correctGaps=0;
+const item=currentTasks[current];
+let errors=0,res='';
 
 item.gaps.forEach((g,i)=>{
 let gap=document.querySelector(`[data-gap='${i}']`);
@@ -177,7 +207,6 @@ let gap=document.querySelector(`[data-gap='${i}']`);
 if(answers[i]===g.correct){
 gap.style.color='green';
 res+='<div class="good">✔ правильно</div>';
-correctGaps++;
 }else{
 gap.style.color='red';
 res+=`<div class="bad">✖ ошибка → ${g.correct}</div>`;
@@ -185,15 +214,18 @@ errors++;
 }
 });
 
-totalAttempts += item.gaps.length;
-correctCount += correctGaps;
+// Обновление статистики
+totalAttempts++;
+if(errors === 0){
+correctCount++;
+}
+saveStats();
 
-res += `<br><strong>Объяснение:</strong> ${item.explanation}`;
 document.getElementById('result').innerHTML=res+`<br>Ошибок: ${errors}`;
 }
 
 function showAnswer(){
-const item=filteredTasks[current];
+const item=currentTasks[current];
 item.gaps.forEach((g,i)=>{
 let gap=document.querySelector(`[data-gap='${i}']`);
 gap.innerText=g.correct;
@@ -203,20 +235,29 @@ gap.style.color='green';
 
 function next(){
 current++;
-if(current>=filteredTasks.length){
-let percentage = Math.round((correctCount / totalAttempts) * 100);
-let message = percentage >= 90 ? 'Отлично! Ты мастер диктантов!' : percentage >= 70 ? 'Хорошо! Продолжай тренироваться.' : 'Неплохо, но нужно больше практики.';
-document.getElementById('result').innerHTML += `<br><br><strong>Итог:</strong> Правильно ${correctCount} из ${totalAttempts} (${percentage}%). ${message}<br><button onclick="start(selectedLevel)">Повторить уровень</button>`;
-saveStats();
-return;
-}
+if(current>=currentTasks.length) current=0;
 document.getElementById('result').innerHTML='';
+
+// Сброс цветов пропусков
+const gaps = document.querySelectorAll('.gap');
+gaps.forEach(gap => {
+gap.style.color = '';
+gap.innerText = '_';
+});
+
 load();
 }
 
 function goMenu(){
 document.getElementById('game').style.display='none';
 document.getElementById('menu').style.display='block';
+
+// Сброс цветов пропусков при возврате в меню
+const gaps = document.querySelectorAll('.gap');
+gaps.forEach(gap => {
+gap.style.color = '';
+gap.innerText = '_';
+});
 }
 
 const installKey = 'pwaInstallPromptShown';
