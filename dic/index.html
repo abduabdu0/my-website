@@ -470,10 +470,15 @@ function showAnswer(){
 
 function toggleAudio(){
   const item = currentTasks[current];
+  const correctAnswers = item.gaps.map(g => g.correct).join(' ');
+  const message = item.gaps.length === 1
+    ? `Правильный ответ: ${correctAnswers}`
+    : `Правильные ответы: ${correctAnswers}`;
+
   // Используем Web Speech API
   if ('speechSynthesis' in window) {
     speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(item.text);
+    const utterance = new SpeechSynthesisUtterance(message);
     utterance.lang = 'ru-RU';
     utterance.rate = 0.9;
     speechSynthesis.speak(utterance);
