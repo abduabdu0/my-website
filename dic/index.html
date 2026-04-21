@@ -1,75 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Диктант Pro - Обучение орфографии</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+<link rel="icon" href="images.jpg">
+<title>Забономӯзӣ</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#4CAF50">
-<style>
-:root{--accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);--bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);--card: rgba(255, 255, 255, 0.95);--good:#10b981;--bad:#ef4444;--shadow: 0 8px 32px rgba(31, 38, 135, 0.37);--pulse: pulse 2s infinite}
-body{margin:0;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;background:var(--bg);background-attachment:fixed;min-height:100vh}
-.app{max-width:500px;margin:auto;padding:20px}
-.header{padding:25px;text-align:center;background:var(--accent);color:#fff;border-radius:25px;margin-bottom:25px;box-shadow:var(--shadow);font-size:26px;font-weight:bold;position:relative;overflow:hidden}
-.header::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);z-index:1}
-.header span{position:relative;z-index:2}
-.card{background:var(--card);backdrop-filter:blur(20px);border-radius:30px;padding:30px;margin:30px 0;box-shadow:var(--shadow), var(--glow);border:1px solid rgba(255,255,255,0.3);transition:transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;animation:slideInUp 0.8s ease;filter:drop-shadow(0 0 10px rgba(255, 154, 158, 0.2))}
-.card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.25)}
-button{width:100%;padding:18px;margin-top:18px;border:none;border-radius:18px;background:var(--accent);color:#fff;font-size:18px;font-weight:600;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;box-shadow:0 6px 20px rgba(0,0,0,0.25);position:relative;overflow:hidden}
-button::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);transition:left 0.5s}
-button:hover::before{left:100%}
-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.35)}
-.install-banner{display:none;position:fixed;left:20px;right:20px;bottom:20px;padding:18px 22px;background:var(--card);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,0.25);border-radius:25px;box-shadow:var(--shadow);gap:18px;align-items:center;justify-content:space-between;z-index:1000;animation:slideUp 0.5s ease}
-.install-banner p{margin:0;font-size:17px;color:#333;flex:1}
-.install-banner button{width:auto;min-width:150px}
-.text-button{background:transparent;color:#667eea;font-weight:700;box-shadow:none;border:2px solid #667eea;border-radius:12px;padding:8px 16px;font-size:16px}
-.text-button:hover{color:#764ba2;border-color:#764ba2;background:rgba(102,126,234,0.1)}
-.sentence{font-size:22px;margin-bottom:18px;line-height:1.6;color:#333;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
-.gap{border-bottom:4px dashed #667eea;padding:4px 10px;transition:color 0.3s ease, transform 0.2s ease;font-weight:bold;border-radius:4px}
-.gap:hover{transform:scale(1.05)}
-.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-.chip{padding:12px 15px;background:linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);border-radius:15px;cursor:pointer;transition:all 0.3s ease;font-weight:500;color:#333;border:2px solid transparent;position:relative;overflow:hidden}
-.chip::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);transition:left 0.5s}
-.chip:hover::before{left:100%}
-.chip:hover{transform:scale(1.08);box-shadow:0 6px 15px rgba(0,0,0,0.2)}
-.chip.active{background:var(--accent);color:#fff;transform:scale(1.15);box-shadow:0 8px 25px rgba(102,126,234,0.5);animation:var(--pulse)}
-.good{color:var(--good);font-weight:bold;text-shadow:0 1px 2px rgba(16,185,129,0.3)}
-.bad{color:var(--bad);font-weight:bold;text-shadow:0 1px 2px rgba(239,68,68,0.3)}
-#stats{font-size:18px;color:#555;margin-bottom:15px;text-align:center;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
-.theory{background:linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);padding:20px;border-radius:15px;margin-bottom:20px;border-left:5px solid #ffc107;line-height:1.7;color:#333}
-.theory h4{margin:0 0 10px 0;color:#ff9800;font-size:18px}
-.theory p{margin:8px 0;font-size:15px}
-.example{background:#f0f4ff;padding:12px;border-radius:10px;margin:8px 0;border-left:3px solid #667eea;font-weight:500}
-.rule-list{list-style:none;padding:0;margin:10px 0}
-.rule-list li{padding:8px;margin:5px 0;background:#f5f5f5;border-radius:8px;padding-left:25px;position:relative}
-.rule-list li:before{content:'✓';position:absolute;left:5px;color:#667eea;font-weight:bold}
-.lesson-button{background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);margin:10px 0!important}
-.lesson-progress{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
-.lesson-item{flex:1;min-width:100px;padding:15px;background:linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);border-radius:15px;text-align:center;cursor:pointer;transition:all 0.3s ease;border:2px solid transparent}
-.lesson-item:hover{transform:translateY(-3px);box-shadow:0 6px 15px rgba(0,0,0,0.15)}
-.lesson-item.active{background:var(--accent);color:#fff;border-color:#fff;box-shadow:0 8px 25px rgba(102,126,234,0.5)}
-.lesson-item h5{margin:0 0 5px 0;font-size:14px}
-.lesson-item p{margin:0;font-size:12px;opacity:0.8}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slideUp{from{transform:translateY(100px);opacity:0}to{transform:translateY(0);opacity:1}}
-@keyframes pulse{0%,100%{transform:scale(1.15)}50%{transform:scale(1.2)}}
-@media (max-width: 600px){
-.app{max-width:100%;padding:15px}
-.header{font-size:22px;padding:20px;border-radius:20px}
-.card{padding:20px;border-radius:20px;margin:20px 0}
-button{font-size:16px;padding:16px;border-radius:16px}
-.sentence{font-size:20px}
-.chip{padding:10px 12px;font-size:14px}
-.install-banner{left:10px;right:10px;bottom:10px;padding:15px 18px;border-radius:20px}
-.install-banner p{font-size:15px}
-.theory{padding:15px;font-size:14px}
-.lesson-item{min-width:80px;padding:12px}
-}
-</style>
+
 </head>
 <body>
 <div class="app">
-  <div class="header"><span>📚 Школа Диктантов</span></div>
+  <div class="header"><span>📚 Забономӯзӣ</span></div>
 
 <div class="install-banner" id="installBanner">
   <p>Нажмите «Установить», чтобы добавить приложение на главный экран.</p>
@@ -77,10 +21,49 @@ button{font-size:16px;padding:16px;border-radius:16px}
   <button id="closeInstallBtn" class="text-button">Закрыть</button>
 </div>
 
+<!-- Выбор языка -->
+<div class="card" id="languageSelect" style="display:none">
+<h3 style="text-align:center;color:#667eea;margin-top:0">🌍 Выберите язык:</h3>
+<div class="lesson-progress" id="languageList"></div>
+</div>
+
+<!-- Алфавит -->
+<div class="card" id="alphabet" style="display:none">
+<button onclick="goMenu()" class="text-button">← Вернуться</button>
+<h3 style="color:#667eea;margin-top:10px;text-align:center">🔤 Алфавит</h3>
+<div id="alphabetGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:10px;margin:20px 0"></div>
+</div>
+
+<!-- Карточка буквы -->
+<div class="card" id="letterCard" style="display:none">
+<button onclick="goAlphabet()" class="text-button">← К алфавиту</button>
+<div style="text-align:center;margin:20px 0">
+  <div style="font-size:80px;margin-bottom:15px" id="letterDisplay"></div>
+  <div id="letterImage" style="font-size:60px;margin:10px auto;text-align:center"></div>
+  <h2 id="letterName" style="color:#667eea;margin:10px 0"></h2>
+  <p id="letterSound" style="font-size:18px;color:#666;margin:10px 0"></p>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:15px 0">
+    <button onclick="playLetterSound()" class="text-button" style="width:auto;margin:0;padding:10px 20px">🔊 Слушать</button>
+    <button onclick="startRecording()" id="recordBtn" class="text-button" style="width:auto;margin:0;padding:10px 20px;background:#4CAF50">🎤 Записать</button>
+    <button onclick="stopRecording()" id="stopBtn" class="text-button" style="width:auto;margin:0;padding:10px 20px;background:#ff9800;display:none">⏹️ Стоп</button>
+  </div>
+  <div id="recordingResult" style="margin:15px 0;padding:10px;border-radius:8px;display:none;background:#f0f0f0">
+    <p id="resultText" style="margin:0;color:#333"></p>
+  </div>
+</div>
+<div style="background:#f9f9f9;padding:15px;border-radius:10px;margin:20px 0">
+  <h4 style="color:#ff9800">Примеры слов:</h4>
+  <div id="examplesDiv"></div>
+</div>
+</div>
+
 <!-- Главное меню -->
 <div class="card" id="menu" style="display:block">
+<div id="currentLang" style="text-align:center;font-size:14px;color:#667eea;margin-bottom:10px;font-weight:600"></div>
 <div id="stats"></div>
+<button onclick="showLanguageSelect()" style="background:#764ba2;margin-bottom:20px">🌍 Сменить язык</button>
 
+<button onclick="goAlphabet()" style="background:#FF6B6B;margin-bottom:5px">🔤 Алфавит</button>
 <button onclick="goLessons()">📖 Уроки с теорией</button>
 <button onclick="start('easy')">🎓 Тренировка: Лёгкий уровень</button>
 <button onclick="start('medium')">📖 Тренировка: Средний уровень</button>
@@ -128,452 +111,7 @@ button{font-size:16px;padding:16px;border-radius:16px}
 </div>
 </div>
 
-<script>
-// ТЕОРИЯ И УРОКИ
-const lessons = [
-  {
-    id: 1,
-    title: '📕 Гласные в корне слова',
-    icon: '🔤',
-    theory: `
-      <div class="theory">
-        <h4>Проверяемые безударные гласные</h4>
-        <p>Если в слове безударная гласная, нужно подобрать проверочное слово, где эта гласная ударная.</p>
-        <p><strong>Примеры:</strong></p>
-        <div class="example">волн**а** → волны (ударение на а)<br>тр**а**ва → тр**а**вка (ударение на а)</div>
-        <ul class="rule-list">
-          <li>Подбирайте однокоренные слова</li>
-          <li>Меняйте форму слова (единственное → множественное)</li>
-          <li>Помните: о ≠ а, е ≠ и, е ≠ я</li>
-        </ul>
-      </div>
-    `,
-    tasks: [
-      {difficulty:'easy', text:'Тр_ва растёт в поле',gaps:[{i:3,options:['а','о','е','и'],correct:'а',rule:'травка - ударение на а'}]},
-      {difficulty:'easy', text:'М_ст покрыт льдом',gaps:[{i:1,options:['о','а','е','и'],correct:'о',rule:'мост - ударение на о'}]},
-      {difficulty:'easy', text:'Слез_ текут по щекам',gaps:[{i:4,options:['ы','и','а','о'],correct:'ы',rule:'слёзка - ударение на е'}]},
-      {difficulty:'easy', text:'Хл_б нужен каждому',gaps:[{i:3,options:['о','а','е','и'],correct:'о',rule:'хлеб - но хлеба (безуд.)'}]},
-      {difficulty:'easy', text:'L_со́в сок лечит',gaps:[{i:1,options:['и','е','а','о'],correct:'и',rule:'лиса - ударение на и'}]},
-      {difficulty:'easy', text:'Гн_здо птицы',gaps:[{i:2,options:['е','и','а','о'],correct:'е',rule:'гнёзда - ударение на е'}]},
-    ]
-  },
-  {
-    id: 2,
-    title: '📗 Согласные в корне слова',
-    icon: '🔤',
-    theory: `
-      <div class="theory">
-        <h4>Звонкие и глухие согласные</h4>
-        <p>Замену звонких согласных на глухие можно проверить подбором проверочного слова.</p>
-        <p><strong>Звонкие:</strong> б, в, г, д, ж, з</p>
-        <p><strong>Глухие:</strong> п, ф, к, т, ш, с</p>
-        <div class="example">гла́в**к**а → гла́в**н**-ый (слышна звонкая н)</div>
-        <ul class="rule-list">
-          <li>Подбирайте слова, где согласная в сильной позиции</li>
-          <li>Используйте форму именительного падежа единственного числа</li>
-        </ul>
-      </div>
-    `,
-    tasks: [
-      {difficulty:'medium', text:'У_кий коридор',gaps:[{i:2,options:['з','с','х','к'],correct:'з',rule:'узкий - узок'}]},
-      {difficulty:'medium', text:'Мя_кий диван',gaps:[{i:3,options:['г','к','х','ф'],correct:'г',rule:'мягкий - от мяг-'}]},
-      {difficulty:'medium', text:'Гла_кая доска',gaps:[{i:4,options:['д','т','з','с'],correct:'д',rule:'гладкий - гладь'}]},
-      {difficulty:'medium', text:'Жи_ь полна чудес',gaps:[{i:3,options:['з','с','х','ш'],correct:'з',rule:'жизнь - жизни'}]},
-      {difficulty:'medium', text:'Кре_кий мороз',gaps:[{i:4,options:['п','б','ф','в'],correct:'п',rule:'крепкий - крепь'}]},
-    ]
-  },
-  {
-    id: 3,
-    title: '📙 Буквы Ы и И после Ц',
-    icon: '📝',
-    theory: `
-      <div class="theory">
-        <h4>Правило Ы и И после Ц</h4>
-        <p><strong>В корне слова:</strong> после Ц пишется И (редко Ы в заимствованных словах)</p>
-        <div class="example">ци́рк, циклон, циклический</div>
-        <p><strong>В суффиксе и окончании:</strong> после Ц пишется Ы</p>
-        <div class="example">сестриц**ы**, огурцы́, львиц**ы**</div>
-        <ul class="rule-list">
-          <li>Ц + И → почти всегда в корне</li>
-          <li>Ц + Ы → в суффиксах и окончаниях (множ. число)</li>
-        </ul>
-      </div>
-    `,
-    tasks: [
-      {difficulty:'medium', text:'Ц_рк приехал в город',gaps:[{i:1,options:['и','ы','е','а'],correct:'и',rule:'в корне слова пишется и'}]},
-      {difficulty:'medium', text:'Огурц_ солены',gaps:[{i:6,options:['и','ы','а','о'],correct:'ы',rule:'в окончании пишется ы'}]},
-      {difficulty:'medium', text:'Ц_линдр и ц_рку́левка',gaps:[{i:1,options:['и','ы','е','а'],correct:'и',rule:'оба в корне - пишем и'},{i:12,options:['и','ы','е','а'],correct:'и'}]},
-    ]
-  },
-  {
-    id: 4,
-    title: '📕 ЧК, ЧН, РЩ без мягкого знака',
-    icon: '🔤',
-    theory: `
-      <div class="theory">
-        <h4>Сочетания ЧН, ЧК, РЩ, НЩ, ЩН</h4>
-        <p>В этих сочетаниях мягкий знак НЕ пишется, так как согласная автоматически мягкая!</p>
-        <div class="example">ночной, дочка, хлеб-ница, щетка</div>
-        <ul class="rule-list">
-          <li>ч + н = чн (без ь)</li>
-          <li>ч + к = чк (без ь)</li>
-          <li>р + щ = рщ (без ь)</li>
-          <li>щ + н = щн (без ь)</li>
-        </ul>
-      </div>
-    `,
-    tasks: [
-      {difficulty:'easy', text:'Доч_ка спит',gaps:[{i:4,options:['к','ка','к;','кь'],correct:'к',rule:'ЧК пишется без мягкого знака'}]},
-      {difficulty:'easy', text:'Ноч_ной город',gaps:[{i:4,options:['ной','н','кн','ньной'],correct:'н',rule:'ЧН пишется без мягкого знака'}]},
-      {difficulty:'easy', text:'Хлебни_ка полна',gaps:[{i:7,options:['ца','ца','нца','нцa'],correct:'ца',rule:'НЩ пишется без мягкого знака'}]},
-    ]
-  },
-  {
-    id: 5,
-    title: '📗 Окончания -ТСЯ и -ТЬСЯ',
-    icon: '🔤',
-    theory: `
-      <div class="theory">
-        <h4>Мягкий знак в глаголах</h4>
-        <p><strong>-ТСЯ:</strong> пишется после глагольной формы (он начинает<strong>ся</strong>)</p>
-        <p><strong>-ТЬСЯ:</strong> пишется в неопределённой форме глагола (нач <strong>ать</strong>ся)</p>
-        <div class="example">Он (что делает?) учится → учиТСЯ (без ь)<br>Ему нравится (что делать?) учиТЬСЯ → учиТЬСЯ (с ь)</div>
-        <ul class="rule-list">
-          <li>Задайте вопрос: что делает? → -ТСЯ</li>
-          <li>Задайте вопрос: что делать? → -ТЬСЯ</li>
-        </ul>
-      </div>
-    `,
-    tasks: [
-      {difficulty:'hard', text:'Он учи_ся в школе',gaps:[{i:7,options:['тся','ться'],correct:'тся',rule:'Что делает? учиТСЯ'}]},
-      {difficulty:'hard', text:'Дети хотят учи_ся',gaps:[{i:15,options:['тся','ться'],correct:'ться',rule:'Что делать? учиТЬСЯ'}]},
-      {difficulty:'hard', text:'Собака оши_ается часто',gaps:[{i:7,options:['бился','бка'],correct:'б',rule:'оши́баЮТСЯ'}]},
-    ]
-  },
-  {
-    id: 6,
-    title: '📙 ЖИ, ШИ, ЧА, ЩА, ЧУ, ЩУ',
-    icon: '🔤',
-    theory: `
-      <div class="theory">
-        <h4>Непроверяемые написания с шипящими</h4>
-        <p>После шипящих Ж, Ш, Ч, Щ есть традиционные правила:</p>
-        <div class="example">ж<strong>и</strong> - ш<strong>и</strong> - с <strong>и</strong>,<br>ч<strong>а</strong>, щ<strong>а</strong> - с <strong>а</strong>,<br>ч<strong>у</strong>, щ<strong>у</strong> - с <strong>у</strong></div>
-        <ul class="rule-list">
-          <li>ЖИ-ШИ (с И, никогда с Ы!)</li>
-          <li>ЧА-ЩА (с А, никогда с О!)</li>
-          <li>ЧУ-ЩУ (с У, никогда с Ю!)</li>
-        </ul>
-      </div>
-    `,
-    tasks: [
-      {difficulty:'easy', text:'Ж_вотные живут в лесу',gaps:[{i:1,options:['и','ы','е','а'],correct:'и',rule:'ЖИ пишется с И'}]},
-      {difficulty:'easy', text:'Карандаш_шек лежит на столе',gaps:[{i:10,options:['и','ы','е','а'],correct:'и',rule:'ШИ пишется с И'}]},
-      {difficulty:'easy', text:'Ч_йка кричит на берегу',gaps:[{i:1,options:['а','о','и','е'],correct:'а',rule:'ЧА пишется с А'}]},
-      {difficulty:'easy', text:'Щ_ка чистит зубы',gaps:[{i:1,options:['а','о','и','е'],correct:'а',rule:'ЩА пишется с А'}]},
-    ]
-  }
-];
 
-// ЗАДАНИЯ
-const allTasks = [
- // EASY - Базовые
- {difficulty:'easy', text:'Тр_ва растёт',gaps:[{i:2,options:['а','о','е','и'],correct:'а'}]},
- {difficulty:'easy', text:'М_ст высокий',gaps:[{i:1,options:['о','а','е','и'],correct:'о'}]},
- {difficulty:'easy', text:'Гл_з открыт',gaps:[{i:2,options:['а','о','е','и'],correct:'а'}]},
- {difficulty:'easy', text:'Хл_б чёрный',gaps:[{i:2,options:['о','а','е','и'],correct:'е'}]},
- {difficulty:'easy', text:'Сл_зы текут',gaps:[{i:2,options:['ё','а','е','и'],correct:'ё'}]},
- {difficulty:'easy', text:'Гн_здо птицы',gaps:[{i:2,options:['е','и','а','о'],correct:'е'}]},
- {difficulty:'easy', text:'Р_ка течёт',gaps:[{i:1,options:['е','и','а','о'],correct:'е'}]},
- {difficulty:'easy', text:'Гор_ высока',gaps:[{i:3,options:['а','о','е','и'],correct:'а'}]},
- {difficulty:'easy', text:'Ж_вотное бежит',gaps:[{i:1,options:['и','ы','е','а'],correct:'и'}]},
- {difficulty:'easy', text:'Ч_йка летит',gaps:[{i:1,options:['а','о','и','е'],correct:'а'}]},
- {difficulty:'easy', text:'Щ_ка острая',gaps:[{i:1,options:['ё','о','и','е'],correct:'ё'}]},
- {difficulty:'easy', text:'Караванш_к едет',gaps:[{i:8,options:['и','ы','е','а'],correct:'и'}]},
- {difficulty:'easy', text:'Ц_рк в городе',gaps:[{i:1,options:['и','ы','е','а'],correct:'и'}]},
- {difficulty:'easy', text:'Огурц_',gaps:[{i:5,options:['и','ы','а','о'],correct:'ы'}]},
- {difficulty:'easy', text:'Доч_а играет',gaps:[{i:3,options:['к','ка','кь','г'],correct:'к'}]},
-
- // MEDIUM
- {difficulty:'medium', text:'У_кий проход',gaps:[{i:1,options:['з','с','х','к'],correct:'з'}]},
- {difficulty:'medium', text:'Мя_кий диван',gaps:[{i:2,options:['г','к','х','ф'],correct:'г'}]},
- {difficulty:'medium', text:'Гла_кий паркет',gaps:[{i:3,options:['д','т','з','с'],correct:'д'}]},
- {difficulty:'medium', text:'Жи_нь чудесна',gaps:[{i:2,options:['з','с','х','ш'],correct:'з'}]},
- {difficulty:'medium', text:'Кре_кий товарищ',gaps:[{i:3,options:['п','б','ф','в'],correct:'п'}]},
- {difficulty:'medium', text:'Ко_тер летит',gaps:[{i:2,options:['л','т','н','р'],correct:'л'}]},
- {difficulty:'medium', text:'Зу_острый',gaps:[{i:2,options:['б','п','в','ф'],correct:'б'}]},
-
- // HARD
- {difficulty:'hard', text:'Осен_ дождлива',gaps:[{i:4,options:['ь','н','л','й'],correct:'ь'}]},
- {difficulty:'hard', text:'Он пи_ет письмо',gaps:[{i:4,options:['ш','х','щ','с'],correct:'ш'}]},
- {difficulty:'hard', text:'Она по_т красиво',gaps:[{i:5,options:['ё','е','и','а'],correct:'ё'}]},
- {difficulty:'hard', text:'Они сид_т тихо',gaps:[{i:6,options:['я','а','е','и'],correct:'я'}]},
- {difficulty:'hard', text:'Учител_ница объясняет',gaps:[{i:6,options:['ь','й','е','и'],correct:'ь'}]},
- {difficulty:'hard', text:'Он учи_ся хорошо',gaps:[{i:5,options:['тся','ться','тьсяь'],correct:'тся'}]},
- {difficulty:'hard', text:'Хочу учи_ся лучше',gaps:[{i:7,options:['тся','ться'],correct:'ться'}]},
- {difficulty:'hard', text:'Пейза_ красивый',gaps:[{i:5,options:['ж','ш','з','х'],correct:'ж'}]},
- {difficulty:'hard', text:'Самолет взлета_т',gaps:[{i:13,options:['ё','е','и','а'],correct:'е'}]},
- {difficulty:'hard', text:'Ра_четливый молодой человек',gaps:[{i:2,options:['с','з','х','ш'],correct:'с'}]},
-];
-
-let current=0, answers=[], currentTasks=[], correctCount=0, totalAttempts=0;
-let currentLesson=null, lessonMode=false;
-
-function loadStats(){
-  let stats = JSON.parse(localStorage.getItem('dictationStats') || '{}');
-  correctCount = stats.correct || 0;
-  totalAttempts = stats.attempts || 0;
-  updateStatsDisplay();
-}
-
-function saveStats(){
-  localStorage.setItem('dictationStats', JSON.stringify({correct: correctCount, attempts: totalAttempts}));
-  updateStatsDisplay();
-}
-
-function updateStatsDisplay(){
-  let percentage = totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0;
-  document.getElementById('stats').innerText = `Статистика: ${correctCount}/${totalAttempts} правильно (${percentage}%)`;
-}
-
-function goLessons(){
-  document.getElementById('menu').style.display='none';
-  document.getElementById('lessons').style.display='block';
-  
-  let lessonsList = document.getElementById('lessonsList');
-  lessonsList.innerHTML = '';
-  lessons.forEach(lesson => {
-    let btn = document.createElement('div');
-    btn.className = 'lesson-item';
-    btn.innerHTML = `<div style="font-size:24px">${lesson.icon}</div><h5>${lesson.title}</h5><p>${lesson.tasks.length} упр.</p>`;
-    btn.onclick = () => showTheory(lesson.id);
-    lessonsList.appendChild(btn);
-  });
-}
-
-function showTheory(lessonId){
-  currentLesson = lessons.find(l => l.id === lessonId);
-  document.getElementById('lessons').style.display='none';
-  document.getElementById('theory-view').style.display='block';
-  
-  document.getElementById('theoryTitle').textContent = currentLesson.title;
-  document.getElementById('theoryContent').innerHTML = currentLesson.theory;
-}
-
-function startLesson(){
-  current = 0;
-  answers = [];
-  currentTasks = currentLesson?.tasks || allTasks;
-  lessonMode = true;
-  
-  document.getElementById('theory-view').style.display='none';
-  document.getElementById('game').style.display='block';
-  load();
-}
-
-function start(difficulty){
-  current = 0;
-  answers = [];
-  lessonMode = false;
-  
-  let filteredTasks = allTasks;
-  if(difficulty !== 'all'){
-    filteredTasks = allTasks.filter(t => t.difficulty === difficulty);
-  }
-  
-  currentTasks = shuffle(filteredTasks);
-  document.getElementById('menu').style.display='none';
-  document.getElementById('game').style.display='block';
-  load();
-}
-
-function shuffle(arr){
-  return arr.sort(() => Math.random() - 0.5);
-}
-
-function load(){
-  answers = [];
-  const item = currentTasks[current];
-  let s = item.text.split('');
-  
-  item.gaps.forEach((g, i) => {
-    s[g.i] = `<span class="gap" data-gap="${i}">_</span>`;
-  });
-  
-  document.getElementById('sentence').innerHTML = s.join('');
-  document.getElementById('progress').textContent = `Задание ${current + 1}/${currentTasks.length}`;
-  
-  const choices = document.getElementById('choices');
-  choices.innerHTML = '';
-  
-  item.gaps.forEach((g, i) => {
-    let row = document.createElement('div');
-    row.className = 'row';
-    
-    shuffle(g.options).forEach(opt => {
-      let chip = document.createElement('div');
-      chip.className = 'chip';
-      chip.innerText = opt;
-      chip.onclick = () => select(i, opt, chip);
-      row.appendChild(chip);
-    });
-    
-    choices.appendChild(row);
-  });
-  
-  document.getElementById('result').innerHTML = '';
-}
-
-function select(i, val, el){
-  let chips = el.parentElement.querySelectorAll('.chip');
-  chips.forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-  answers[i] = val;
-  document.querySelector(`[data-gap='${i}']`).innerText = val;
-}
-
-function check(){
-  const item = currentTasks[current];
-  let errors = 0, res = '';
-  
-  item.gaps.forEach((g, i) => {
-    let gap = document.querySelector(`[data-gap='${i}']`);
-    
-    if(answers[i] === g.correct){
-      gap.style.color = 'green';
-      res += '<div class="good">✔ Верно!</div>';
-    }else{
-      gap.style.color = 'red';
-      res += `<div class="bad">✖ Ошибка! Правильный ответ: <strong>${g.correct}</strong></div>`;
-      errors++;
-    }
-  });
-  
-  totalAttempts++;
-  if(errors === 0) {
-    correctCount++;
-    res = '<div class="good">🎉 Отлично! Все правильно!</div>' + res;
-  }
-  saveStats();
-  
-  document.getElementById('result').innerHTML = res;
-}
-
-function showAnswer(){
-  const item = currentTasks[current];
-  item.gaps.forEach((g, i) => {
-    let gap = document.querySelector(`[data-gap='${i}']`);
-    gap.innerText = g.correct;
-    gap.style.color = 'green';
-  });
-}
-
-function toggleAudio(){
-  const item = currentTasks[current];
-  const correctAnswers = item.gaps.map(g => g.correct).join(' ');
-  const message = item.gaps.length === 1
-    ? `Правильный ответ: ${correctAnswers}`
-    : `Правильные ответы: ${correctAnswers}`;
-
-  // Используем Web Speech API
-  if ('speechSynthesis' in window) {
-    speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(message);
-    utterance.lang = 'ru-RU';
-    utterance.rate = 0.9;
-    speechSynthesis.speak(utterance);
-  }
-}
-
-function next(){
-  current++;
-  if(current >= currentTasks.length){
-    showResults();
-    return;
-  }
-  
-  document.getElementById('result').innerHTML = '';
-  const gaps = document.querySelectorAll('.gap');
-  gaps.forEach(gap => {
-    gap.style.color = '';
-    gap.innerText = '_';
-  });
-  
-  load();
-}
-
-function showResults(){
-  document.getElementById('game').style.display = 'none';
-  document.getElementById('results').style.display = 'block';
-  
-  let percentage = totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0;
-  let resultText = percentage >= 80 ? '🎉 Отлично!' : percentage >= 60 ? '👍 Хорошо!' : '💪 Продолжай учиться!';
-  
-  document.getElementById('resultStats').innerHTML = `
-    ${resultText}<br>
-    Правильно: ${correctCount}/${totalAttempts} ответов<br>
-    Процент: ${percentage}%<br>
-    <div style="margin-top:15px;font-size:14px;color:#666">Используй уроки для лучшего понимания правил!</div>
-  `;
-}
-
-function goMenu(){
-  document.getElementById('menu').style.display = 'block';
-  document.getElementById('game').style.display = 'none';
-  document.getElementById('lessons').style.display = 'none';
-  document.getElementById('theory-view').style.display = 'none';
-  document.getElementById('results').style.display = 'none';
-  
-  const gaps = document.querySelectorAll('.gap');
-  gaps.forEach(gap => {
-    gap.style.color = '';
-    gap.innerText = '_';
-  });
-}
-
-// PWA установка
-const installKey = 'pwaInstallPromptShown';
-let deferredPrompt = null;
-const installBanner = document.getElementById('installBanner');
-const installBtn = document.getElementById('installBtn');
-const closeInstallBtn = document.getElementById('closeInstallBtn');
-
-window.addEventListener('beforeinstallprompt', (event) => {
-  event.preventDefault();
-  deferredPrompt = event;
-  if (!localStorage.getItem(installKey)) {
-    installBanner.style.display = 'flex';
-  }
-});
-
-installBtn.addEventListener('click', async () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    const choiceResult = await deferredPrompt.userChoice;
-    if (choiceResult.outcome === 'accepted') {
-      console.log('Приложение установлено');
-    }
-    deferredPrompt = null;
-    installBanner.style.display = 'none';
-    localStorage.setItem(installKey, '1');
-  } else {
-    alert('Используйте меню браузера для установки');
-    installBanner.style.display = 'none';
-    localStorage.setItem(installKey, '1');
-  }
-});
-
-closeInstallBtn.addEventListener('click', () => {
-  installBanner.style.display = 'none';
-  localStorage.setItem(installKey, '1');
-});
-
-// Service Worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js');
-}
-
-loadStats();
-</script>
 </body>
 </html>
+

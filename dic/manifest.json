@@ -1,6 +1,6 @@
 {
-  "name": "Орфография Диктант v5",
-  "short_name": "Диктант v5",
+  "name": "Забономӯзӣ",
+  "short_name": "Забономӯзӣ",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -8,9 +8,9 @@
   "theme_color": "#4CAF50",
   "icons": [
     {
-      "src": "icon.svg",
+      "src": "images.jpg",
       "sizes": "192x192",
-      "type": "image/svg+xml"
+      "type": "images.jpg"
     }
   ]
 }

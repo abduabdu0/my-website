@@ -1,0 +1,63 @@
+:root{--accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);--bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);--card: rgba(255, 255, 255, 0.95);--good:#10b981;--bad:#ef4444;--shadow: 0 8px 32px rgba(31, 38, 135, 0.37);--pulse: pulse 2s infinite}
+body{margin:0;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;background:var(--bg);background-attachment:fixed;min-height:100vh}
+.app{max-width:500px;margin:auto;padding:20px}
+.header{padding:25px;text-align:center;background:var(--accent);color:#fff;border-radius:25px;margin-bottom:25px;box-shadow:var(--shadow);font-size:26px;font-weight:bold;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);z-index:1}
+.header span{position:relative;z-index:2}
+.card{background:var(--card);backdrop-filter:blur(20px);border-radius:30px;padding:30px;margin:30px 0;box-shadow:var(--shadow), var(--glow);border:1px solid rgba(255,255,255,0.3);transition:transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;animation:slideInUp 0.8s ease;filter:drop-shadow(0 0 10px rgba(255, 154, 158, 0.2))}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.25)}
+button{width:100%;padding:18px;margin-top:18px;border:none;border-radius:18px;background:var(--accent);color:#fff;font-size:18px;font-weight:600;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;box-shadow:0 6px 20px rgba(0,0,0,0.25);position:relative;overflow:hidden}
+button::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);transition:left 0.5s}
+button:hover::before{left:100%}
+button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.35)}
+.install-banner{display:none;position:fixed;left:20px;right:20px;bottom:20px;padding:18px 22px;background:var(--card);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,0.25);border-radius:25px;box-shadow:var(--shadow);gap:18px;align-items:center;justify-content:space-between;z-index:1000;animation:slideUp 0.5s ease}
+.install-banner p{margin:0;font-size:17px;color:#333;flex:1}
+.install-banner button{width:auto;min-width:150px}
+.text-button{background:transparent;color:#667eea;font-weight:700;box-shadow:none;border:2px solid #667eea;border-radius:12px;padding:8px 16px;font-size:16px}
+.text-button:hover{color:#764ba2;border-color:#764ba2;background:rgba(102,126,234,0.1)}
+.sentence{font-size:22px;margin-bottom:18px;line-height:1.6;color:#333;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
+.gap{border-bottom:4px dashed #667eea;padding:4px 10px;transition:color 0.3s ease, transform 0.2s ease;font-weight:bold;border-radius:4px}
+.gap:hover{transform:scale(1.05)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.chip{padding:12px 15px;background:linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);border-radius:15px;cursor:pointer;transition:all 0.3s ease;font-weight:500;color:#333;border:2px solid transparent;position:relative;overflow:hidden}
+.chip::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);transition:left 0.5s}
+.chip:hover::before{left:100%}
+.chip:hover{transform:scale(1.08);box-shadow:0 6px 15px rgba(0,0,0,0.2)}
+.chip.active{background:var(--accent);color:#fff;transform:scale(1.15);box-shadow:0 8px 25px rgba(102,126,234,0.5);animation:var(--pulse)}
+.good{color:var(--good);font-weight:bold;text-shadow:0 1px 2px rgba(16,185,129,0.3)}
+.bad{color:var(--bad);font-weight:bold;text-shadow:0 1px 2px rgba(239,68,68,0.3)}
+#stats{font-size:18px;color:#555;margin-bottom:15px;text-align:center;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
+.theory{background:linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);padding:20px;border-radius:15px;margin-bottom:20px;border-left:5px solid #ffc107;line-height:1.7;color:#333}
+.theory h4{margin:0 0 10px 0;color:#ff9800;font-size:18px}
+.theory p{margin:8px 0;font-size:15px}
+.example{background:#f0f4ff;padding:12px;border-radius:10px;margin:8px 0;border-left:3px solid #667eea;font-weight:500}
+.rule-list{list-style:none;padding:0;margin:10px 0}
+.rule-list li{padding:8px;margin:5px 0;background:#f5f5f5;border-radius:8px;padding-left:25px;position:relative}
+.rule-list li:before{content:'✓';position:absolute;left:5px;color:#667eea;font-weight:bold}
+.lesson-button{background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);margin:10px 0!important}
+.lesson-progress{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.lesson-item{flex:1;min-width:100px;padding:15px;background:linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);border-radius:15px;text-align:center;cursor:pointer;transition:all 0.3s ease;border:2px solid transparent}
+.lesson-item:hover{transform:translateY(-3px);box-shadow:0 6px 15px rgba(0,0,0,0.15)}
+.lesson-item.active{background:var(--accent);color:#fff;border-color:#fff;box-shadow:0 8px 25px rgba(102,126,234,0.5)}
+.lesson-item h5{margin:0 0 5px 0;font-size:14px}
+.lesson-item p{margin:0;font-size:12px;opacity:0.8}
+.letter-btn{padding:12px;background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);color:#fff;border:none;border-radius:12px;cursor:pointer;font-size:18px;font-weight:bold;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(102,126,234,0.3)}
+.letter-btn:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(102,126,234,0.5)}
+.example-word{background:#fff;padding:10px;margin:8px 0;border-left:4px solid #667eea;border-radius:4px;font-size:16px}
+.example-word .word{font-weight:bold;color:#667eea}
+.example-word .meaning{color:#666;font-size:14px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{transform:translateY(100px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes pulse{0%,100%{transform:scale(1.15)}50%{transform:scale(1.2)}}
+@media (max-width: 600px){
+.app{max-width:100%;padding:15px}
+.header{font-size:22px;padding:20px;border-radius:20px}
+.card{padding:20px;border-radius:20px;margin:20px 0}
+button{font-size:16px;padding:16px;border-radius:16px}
+.sentence{font-size:20px}
+.chip{padding:10px 12px;font-size:14px}
+.install-banner{left:10px;right:10px;bottom:10px;padding:15px 18px;border-radius:20px}
+.install-banner p{font-size:15px}
+.theory{padding:15px;font-size:14px}
+.lesson-item{min-width:80px;padding:12px}
+}
