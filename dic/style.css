@@ -46,6 +46,12 @@ button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.35)}
 .example-word{background:#fff;padding:10px;margin:8px 0;border-left:4px solid #667eea;border-radius:4px;font-size:16px}
 .example-word .word{font-weight:bold;color:#667eea}
 .example-word .meaning{color:#666;font-size:14px}
+.draggable-word{padding:10px 15px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;border-radius:8px;margin:5px;cursor:grab;user-select:none;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
+.draggable-word:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,0.3)}
+.draggable-word:active{cursor:grabbing}
+#syllable-choices button, #word-choices button{width:auto;padding:10px 15px;margin:5px;font-size:16px}
+#sentence-drop-zone{min-height:80px;padding:15px;background:#f9f9f9;border:2px dashed #667eea;border-radius:10px;margin:20px 0}
+#sentence-drop-zone.drag-over{background:#e3f2fd;border-color:#4CAF50}
 @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes slideUp{from{transform:translateY(100px);opacity:0}to{transform:translateY(0);opacity:1}}
 @keyframes pulse{0%,100%{transform:scale(1.15)}50%{transform:scale(1.2)}}
@@ -61,3 +67,7 @@ button{font-size:16px;padding:16px;border-radius:16px}
 .theory{padding:15px;font-size:14px}
 .lesson-item{min-width:80px;padding:12px}
 }
+.letter-item { padding: 15px; background: #f0f0f0; border-radius: 10px; text-align: center; cursor: pointer; transition: all 0.3s ease; font-size: 24px; font-weight: bold; } 
+.letter-item.locked { background: #ddd; color: #999; cursor: not-allowed; } 
+.letter-item.unlocked { background: #fff; color: #333; } 
+.letter-item.completed { background: #d4edda; color: #155724; } .letter-item .letter { font-size: 30px; margin-bottom: 5px; }

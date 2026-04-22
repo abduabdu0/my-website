@@ -47,6 +47,8 @@
     <button onclick="startRecording()" id="recordBtn" class="text-button" style="width:auto;margin:0;padding:10px 20px;background:#4CAF50">🎤 Записать</button>
     <button onclick="stopRecording()" id="stopBtn" class="text-button" style="width:auto;margin:0;padding:10px 20px;background:#ff9800;display:none">⏹️ Стоп</button>
   </div>
+  <button onclick="markLetterComplete(currentLanguage, alphabets[currentLanguage][currentLetterIdx].letter)" style="margin:10px;padding:10px 20px;background:#28a745;color:white;border:none;border-radius:5px;width:auto">✅ Пройдено</button>
+  <button onclick="startSyllableGame()" id="syllableBtn" style="margin:10px;padding:10px 20px;background:#ff9800;color:white;border:none;border-radius:5px;opacity:0.5;pointer-events:none;width:auto">📝 Слогоделение</button>
   <div id="recordingResult" style="margin:15px 0;padding:10px;border-radius:8px;display:none;background:#f0f0f0">
     <p id="resultText" style="margin:0;color:#333"></p>
   </div>
@@ -63,12 +65,18 @@
 <div id="stats"></div>
 <button onclick="showLanguageSelect()" style="background:#764ba2;margin-bottom:20px">🌍 Сменить язык</button>
 
+<h4 style="color:#667eea;text-align:center;margin:20px 0">📚 Основное обучение</h4>
 <button onclick="goAlphabet()" style="background:#FF6B6B;margin-bottom:5px">🔤 Алфавит</button>
 <button onclick="goLessons()">📖 Уроки с теорией</button>
 <button onclick="start('easy')">🎓 Тренировка: Лёгкий уровень</button>
 <button onclick="start('medium')">📖 Тренировка: Средний уровень</button>
 <button onclick="start('hard')">🔥 Тренировка: Сложный уровень</button>
 <button onclick="start('all')">⭐ Смешанные задания</button>
+
+<h4 style="color:#667eea;text-align:center;margin:20px 0 15px 0">🎮 Игровые модули</h4>
+<button onclick="startSyllableGame()" style="background:#FF9800;margin-bottom:5px">📝 Слогоделение</button>
+<button onclick="startWordBuildingGame()" style="background:#9C27B0;margin-bottom:5px">🔤 Создание слов</button>
+<button onclick="startSentenceGame()" style="background:#00BCD4;margin-bottom:5px">📖 Составление предложений</button>
 </div>
 
 <!-- Уроки с теорией -->
@@ -114,4 +122,7 @@
 
 </body>
 </html>
+
+
+
 

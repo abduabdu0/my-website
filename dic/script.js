@@ -354,7 +354,6 @@ function saveStats(){
 
 function updateStatsDisplay(){
   let percentage = totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0;
-  document.getElementById('stats').innerText = `Статистика: ${correctCount}/${totalAttempts} правильно (${percentage}%)`;
   document.getElementById('currentLang').innerText = `Язык: ${getLangData().name}`;
 }
 
@@ -648,7 +647,27 @@ function goAlphabet(){
     let btn = document.createElement('button');
     btn.className = 'letter-btn';
     btn.textContent = item.letter;
-    btn.onclick = () => showLetter(idx);
+    btn.dataset.letter = item.letter;
+    
+    // Добавляем визуальный индикатор статуса
+    const status = progress.getLetterStatus(currentLanguage, item.letter);
+    if (status === 'completed') {
+      btn.style.background = '#d4edda';
+      btn.style.color = '#155724';
+      btn.innerHTML = `${item.letter} ✅`;
+    } else if (status === 'unlocked') {
+      btn.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+      btn.style.color = '#fff';
+    } else {
+      btn.style.opacity = '0.5';
+      btn.style.background = '#ddd';
+      btn.style.color = '#999';
+      btn.style.cursor = 'not-allowed';
+    }
+    
+    btn.onclick = () => {
+      if (status !== 'locked') showLetter(idx);
+    };
     grid.appendChild(btn);
   });
 }
@@ -678,12 +697,12 @@ function playLetterSound(){
     speechSynthesis.cancel();
     
     // Произносим букву 3 раза с паузой между ними
-    const repeatTimes = 3;
+    const repeatTimes = 1;
     for(let i = 0; i < repeatTimes; i++){
       setTimeout(() => {
         let utterance = new SpeechSynthesisUtterance(item.letter);
         utterance.lang = currentLanguage === 'ru' ? 'ru-RU' : currentLanguage === 'en' ? 'en-US' : currentLanguage === 'zh' ? 'zh-CN' : currentLanguage === 'hi' ? 'hi-IN' : currentLanguage === 'es' ? 'es-ES' : currentLanguage === 'fr' ? 'fr-FR' : currentLanguage === 'ar' ? 'ar-SA' : 'tg';
-        utterance.rate = 0.3;  // Медленнее для лучшего произношения
+        utterance.rate = 1;  // Медленнее для лучшего произношения
         utterance.pitch = 1.0;
         utterance.volume = 1.0;
         speechSynthesis.speak(utterance);
@@ -790,6 +809,7 @@ function recognizeRecording() {
 function selectLanguage(code){
   currentLanguage = code;
   loadStats();
+  updateLevelDisplay();
   document.getElementById('languageSelect').style.display='none';
   document.getElementById('menu').style.display='block';
 }
@@ -981,6 +1001,13 @@ function goMenu(){
   document.getElementById('alphabet').style.display = 'none';
   document.getElementById('letterCard').style.display = 'none';
   
+  // Скрываем игровые модули
+  const gameViews = ['syllable-game', 'word-building-game', 'sentence-game'];
+  gameViews.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+  
   const gaps = document.querySelectorAll('.gap');
   gaps.forEach(gap => {
     gap.style.color = '';
@@ -989,6 +1016,7 @@ function goMenu(){
   
   currentLetterIdx = 0;
   loadStats();
+  updateLevelDisplay();
 }
 
 // PWA установка
@@ -1024,9 +1052,513 @@ closeInstallBtn.addEventListener('click', () => {
   localStorage.setItem(installKey, '1');
 });
 
+// ============================================================
+// СИСТЕМА ПРОГРЕССА БУКВ И УРОВНЕЙ
+// ============================================================
+
+// Инициализация системы прогресса
+class ProgressSystem {
+  constructor() {
+    this.completed = this.loadCompleted();
+    this.userScore = this.loadScore();
+    this.leaderboard = this.loadLeaderboard();
+  }
+
+  loadCompleted() {
+    return JSON.parse(localStorage.getItem('completedLetters') || '{}');
+  }
+
+  saveCompleted() {
+    localStorage.setItem('completedLetters', JSON.stringify(this.completed));
+  }
+
+  loadScore() {
+    return parseInt(localStorage.getItem('userScore') || '0');
+  }
+
+  saveScore() {
+    localStorage.setItem('userScore', String(this.userScore));
+  }
+
+  loadLeaderboard() {
+    return JSON.parse(localStorage.getItem('leaderboard') || '[]');
+  }
+
+  saveLeaderboard() {
+    localStorage.setItem('leaderboard', JSON.stringify(this.leaderboard));
+  }
+
+  getLetterStatus(lang, letter) {
+    if (!this.completed[lang]) return 'locked';
+
+    const completedLetters = this.completed[lang];
+    const alphabet = alphabets[lang] || [];
+    const letterIndex = alphabet.findIndex(item => item.letter === letter);
+
+    if (letterIndex === -1) return 'locked';
+
+    // Буква пройдена
+    if (completedLetters.includes(letter)) return 'completed';
+
+    // Буква доступна, если предыдущая буква пройдена (или это первая буква)
+    if (letterIndex === 0) return 'unlocked';
+
+    const prevLetter = alphabet[letterIndex - 1].letter;
+    return completedLetters.includes(prevLetter) ? 'unlocked' : 'locked';
+  }
+
+  markLetterComplete(lang, letter) {
+    if (!this.completed[lang]) this.completed[lang] = [];
+    if (!this.completed[lang].includes(letter)) {
+      this.completed[lang].push(letter);
+      this.saveCompleted();
+    }
+  }
+
+  getCompletedLetters(lang) {
+    return this.completed[lang] || [];
+  }
+
+  addScore(points, message = '') {
+    this.userScore += points;
+    this.saveScore();
+    if (message) showScoreNotification(points, message);
+    updateLevelDisplay();
+  }
+
+  getUserLevel() {
+    if (this.userScore >= 600) return { name: 'Мастер', level: 4, range: '600+' };
+    if (this.userScore >= 301) return { name: 'Знаток', level: 3, range: '301-600' };
+    if (this.userScore >= 101) return { name: 'Ученик', level: 2, range: '101-300' };
+    return { name: 'Новичок', level: 1, range: '0-100' };
+  }
+
+  updateLeaderboard(playerName = 'Вы') {
+    this.leaderboard.push({ name: playerName, score: this.userScore, date: new Date().toLocaleDateString() });
+    this.leaderboard.sort((a, b) => b.score - a.score);
+    this.leaderboard = this.leaderboard.slice(0, 5);
+    this.saveLeaderboard();
+  }
+}
+
+const progress = new ProgressSystem();
+
+// ============================================================
+// СЛОВАРЬ ДЛЯ ИГРОВЫХ МОДУЛЕЙ
+// ============================================================
+
+const gameVocabulary = {
+  'ru': {
+    syllables: [
+      { word: 'ма-ма', phonetic: 'mama' },
+      { word: 'па-па', phonetic: 'papa' },
+      { word: 'ба-на-н', phonetic: 'banan' },
+      { word: 'ви-но', phonetic: 'vino' },
+      { word: 'ки-то-б', phonetic: 'kitob' },
+      { word: 'лев', phonetic: 'lev' },
+      { word: 'лу-на', phonetic: 'luna' },
+      { word: 'дом', phonetic: 'dom' },
+      { word: 'дер-е-во', phonetic: 'derevo' }
+    ],
+    words: ['ма', 'па', 'ба', 'он', 'она', 'вода', 'дом', 'лев', 'дерево'],
+    sentences: [
+      { sentence: 'Мама дома', words: ['Мама', 'дома'] },
+      { sentence: 'Папа и мама', words: ['Папа', 'и', 'мама'] },
+      { sentence: 'Вода холодная', words: ['Вода', 'холодная'] }
+    ]
+  },
+  'en': {
+    syllables: [
+      { word: 'ba-na-na', phonetic: 'banana' },
+      { word: 'ap-ple', phonetic: 'apple' },
+      { word: 'dog', phonetic: 'dog' },
+      { word: 'cat', phonetic: 'cat' },
+      { word: 'wa-ter', phonetic: 'water' }
+    ],
+    words: ['cat', 'dog', 'a', 'an', 'is', 'the'],
+    sentences: [
+      { sentence: 'The cat is here', words: ['The', 'cat', 'is', 'here'] },
+      { sentence: 'A dog is big', words: ['A', 'dog', 'is', 'big'] }
+    ]
+  },
+  'tg': {
+    syllables: [
+      { word: 'ма-ма', phonetic: 'mama' },
+      { word: 'па-па', phonetic: 'papa' },
+      { word: 'ки-то-б', phonetic: 'kitob' },
+      { word: 'до-ни-шан-бе', phonetic: 'donishanbe' }
+    ],
+    words: ['ман', 'ту', 'вай', 'мо', 'шумо', 'онҳо'],
+    sentences: [
+      { sentence: 'Ман дар Душанбе истода', words: ['Ман', 'дар', 'Душанбе', 'истода'] }
+    ]
+  }
+};
+
+// ============================================================
+// МОДУЛЬ СЛОГОДЕЛЕНИЯ
+// ============================================================
+
+function startSyllableGame() {
+  const lang = currentLanguage;
+  const completedLetters = progress.getCompletedLetters(lang);
+  
+  if (completedLetters.length === 0) {
+    alert('Сначала пройдите буквы!');
+    return;
+  }
+
+  const vocab = gameVocabulary[lang] || gameVocabulary['ru'];
+  const syllableWords = vocab.syllables.filter(item => 
+    item.word.split('-').every(part => {
+      const firstLetter = part[0].toUpperCase();
+      return completedLetters.includes(firstLetter);
+    })
+  );
+
+  if (syllableWords.length === 0) {
+    alert('Нет слов для этого уровня');
+    return;
+  }
+
+  showView('syllable-game', 'block');
+  const currentWord = syllableWords[Math.floor(Math.random() * syllableWords.length)];
+  runSyllableGame(currentWord);
+}
+
+function runSyllableGame(wordObj) {
+  const parts = wordObj.word.split('-');
+  let selected = [];
+  
+  const gameView = document.getElementById('syllable-game') || createSyllableGameView();
+  const choicesDiv = gameView.querySelector('#syllable-choices');
+  const instructionDiv = gameView.querySelector('#syllable-instruction');
+  
+  instructionDiv.innerHTML = `<h3>Разделите слово на слоги, нажимая между ними:</h3><p style="font-size:24px;font-weight:bold;margin:20px 0">${wordObj.word.replace(/-/g, ' ')}</p>`;
+  
+  choicesDiv.innerHTML = '';
+  parts.forEach((part, idx) => {
+    const btn = document.createElement('button');
+    btn.textContent = part;
+    btn.onclick = () => {
+      selected.push(idx);
+      btn.style.background = '#4CAF50';
+      btn.style.color = 'white';
+      if (selected.length === parts.length) {
+        setTimeout(() => {
+          progress.addScore(10, '✅ Слогоделение: +10 очков');
+          startSyllableGame();
+        }, 800);
+      }
+    };
+    choicesDiv.appendChild(btn);
+  });
+}
+
+function createSyllableGameView() {
+  const card = document.createElement('div');
+  card.id = 'syllable-game';
+  card.className = 'card';
+  card.style.display = 'none';
+  card.innerHTML = `
+    <button onclick="goMenu()" class="text-button">← Вернуться</button>
+    <div id="syllable-instruction"></div>
+    <div id="syllable-choices" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px 0"></div>
+  `;
+  document.querySelector('.app').appendChild(card);
+  return card;
+}
+
+// ============================================================
+// МОДУЛЬ СОЗДАНИЯ СЛОВ (Word Building)
+// ============================================================
+
+function startWordBuildingGame() {
+  const lang = currentLanguage;
+  const completedLetters = progress.getCompletedLetters(lang);
+  
+  if (completedLetters.length < 3) {
+    alert('Сначала пройдите минимум 3 буквы!');
+    return;
+  }
+
+  showView('word-building-game', 'block');
+  runWordBuildingGame();
+}
+
+let wordBuildingStreak = 0;
+
+function runWordBuildingGame() {
+  const lang = currentLanguage;
+  const completedLetters = progress.getCompletedLetters(lang);
+  const vocab = gameVocabulary[lang] || gameVocabulary['ru'];
+  
+  // Фильтруем слова только из пройденных букв
+  const availableWords = vocab.words.filter(word => 
+    word.split('').every(letter => completedLetters.includes(letter.toUpperCase()))
+  );
+
+  if (availableWords.length === 0) {
+    alert('Нет слов для вашего уровня');
+    return;
+  }
+
+  const correctWord = availableWords[Math.floor(Math.random() * availableWords.length)];
+  const letters = correctWord.split('').sort(() => Math.random() - 0.5);
+  
+  const gameView = document.getElementById('word-building-game') || createWordBuildingView();
+  const choicesDiv = gameView.querySelector('#word-choices');
+  const resultDiv = gameView.querySelector('#word-result');
+  
+  resultDiv.innerHTML = '';
+  choicesDiv.innerHTML = '<div id="word-input" style="min-height:40px;padding:10px;background:#f0f0f0;border-radius:8px;margin-bottom:20px;font-size:20px;color:#333"></div>';
+  
+  const inputDiv = choicesDiv.querySelector('#word-input');
+  let selectedLetters = [];
+
+  letters.forEach((letter, idx) => {
+    const btn = document.createElement('button');
+    btn.textContent = letter.toUpperCase();
+    btn.style.padding = '10px 15px';
+    btn.style.margin = '5px';
+    btn.onclick = () => {
+      selectedLetters.push(letter);
+      inputDiv.textContent = selectedLetters.join('');
+      btn.style.opacity = '0.3';
+      btn.disabled = true;
+
+      // Проверка слова
+      if (selectedLetters.join('').toLowerCase() === correctWord.toLowerCase()) {
+        resultDiv.innerHTML = '<p style="color:#4CAF50;font-weight:bold">✅ Правильно! +20 очков</p>';
+        wordBuildingStreak++;
+        progress.addScore(20, '');
+        
+        if (wordBuildingStreak % 3 === 0) {
+          progress.addScore(50, '🎉 Серия из 3 слов: +50 бонус');
+          resultDiv.innerHTML += '<p style="color:#FFD700;font-weight:bold">🎉 Бонус серии +50 очков!</p>';
+        }
+        
+        setTimeout(() => runWordBuildingGame(), 1500);
+      } else if (selectedLetters.length === correctWord.length) {
+        resultDiv.innerHTML = '<p style="color:#ef4444;font-weight:bold">❌ Неправильно. Правильное слово: ' + correctWord + '</p>';
+        wordBuildingStreak = 0;
+        setTimeout(() => runWordBuildingGame(), 1500);
+      }
+    };
+    choicesDiv.appendChild(btn);
+  });
+
+  // Кнопка "Ещё подсказка"
+  const hintBtn = document.createElement('button');
+  hintBtn.textContent = '💡 Подсказка: ' + correctWord;
+  hintBtn.style.marginTop = '20px';
+  hintBtn.style.background = '#FF9800';
+  choicesDiv.appendChild(hintBtn);
+}
+
+function createWordBuildingView() {
+  const card = document.createElement('div');
+  card.id = 'word-building-game';
+  card.className = 'card';
+  card.style.display = 'none';
+  card.innerHTML = `
+    <button onclick="goMenu()" class="text-button">← Вернуться</button>
+    <h3 style="text-align:center;color:#667eea">🔤 Создание слов</h3>
+    <p style="text-align:center">Нажимайте буквы чтобы собрать слово:</p>
+    <div id="word-choices" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px 0"></div>
+    <div id="word-result" style="text-align:center;margin:20px 0;min-height:30px"></div>
+  `;
+  document.querySelector('.app').appendChild(card);
+  return card;
+}
+
+// ============================================================
+// МОДУЛЬ СОСТАВЛЕНИЯ ПРЕДЛОЖЕНИЙ (Sentence Ordering)
+// ============================================================
+
+function startSentenceGame() {
+  const lang = currentLanguage;
+  const completedLetters = progress.getCompletedLetters(lang);
+  
+  if (completedLetters.length < 5) {
+    alert('Сначала пройдите минимум 5 букв!');
+    return;
+  }
+
+  showView('sentence-game', 'block');
+  runSentenceGame();
+}
+
+function runSentenceGame() {
+  const lang = currentLanguage;
+  const vocab = gameVocabulary[lang] || gameVocabulary['ru'];
+  
+  if (!vocab.sentences || vocab.sentences.length === 0) {
+    alert('Нет предложений для вашего языка');
+    return;
+  }
+
+  const sentenceObj = vocab.sentences[Math.floor(Math.random() * vocab.sentences.length)];
+  const shuffledWords = [...sentenceObj.words].sort(() => Math.random() - 0.5);
+  
+  const gameView = document.getElementById('sentence-game') || createSentenceGameView();
+  const dropZone = gameView.querySelector('#sentence-drop-zone');
+  const choicesDiv = gameView.querySelector('#sentence-choices');
+  const resultDiv = gameView.querySelector('#sentence-result');
+  
+  dropZone.innerHTML = '';
+  choicesDiv.innerHTML = '';
+  resultDiv.innerHTML = '';
+  
+  let selectedOrder = [];
+  
+  // Drag and drop карточки
+  shuffledWords.forEach((word, idx) => {
+    const card = document.createElement('div');
+    card.className = 'draggable-word';
+    card.textContent = word;
+    card.draggable = true;
+    card.style.cssText = `padding:10px 15px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;border-radius:8px;margin:5px;cursor:grab;user-select:none`;
+    
+    card.addEventListener('dragstart', (e) => {
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('word', word);
+    });
+    
+    choicesDiv.appendChild(card);
+  });
+
+  // Drop zone
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.style.background = '#e3f2fd';
+  });
+
+  dropZone.addEventListener('dragleave', () => {
+    dropZone.style.background = '#f9f9f9';
+  });
+
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    const word = e.dataTransfer.getData('word');
+    selectedOrder.push(word);
+    
+    const wordCard = document.createElement('span');
+    wordCard.textContent = word;
+    wordCard.style.cssText = `padding:8px 12px;background:#4CAF50;color:white;border-radius:6px;margin:5px;display:inline-block`;
+    dropZone.appendChild(wordCard);
+    
+    if (selectedOrder.length === sentenceObj.words.length) {
+      checkSentence(selectedOrder, sentenceObj.words, resultDiv);
+    }
+  });
+}
+
+function checkSentence(selected, correct, resultDiv) {
+  const correct_order = correct.join(' ');
+  const selected_order = selected.join(' ');
+  
+  if (selected_order === correct_order) {
+    resultDiv.innerHTML = '<p style="color:#4CAF50;font-weight:bold">✅ Правильно! +30 очков</p>';
+    progress.addScore(30, 'Предложение: +30 очков');
+    setTimeout(() => runSentenceGame(), 1500);
+  } else {
+    resultDiv.innerHTML = `<p style="color:#ef4444">❌ Неправильный порядок. Правильно: ${correct_order}</p>`;
+    setTimeout(() => runSentenceGame(), 2000);
+  }
+}
+
+function createSentenceGameView() {
+  const card = document.createElement('div');
+  card.id = 'sentence-game';
+  card.className = 'card';
+  card.style.display = 'none';
+  card.innerHTML = `
+    <button onclick="goMenu()" class="text-button">← Вернуться</button>
+    <h3 style="text-align:center;color:#667eea">📝 Составление предложений</h3>
+    <p style="text-align:center">Перетаскивайте слова в правильном порядке:</p>
+    <div id="sentence-drop-zone" style="min-height:80px;padding:15px;background:#f9f9f9;border:2px dashed #667eea;border-radius:10px;margin:20px 0"></div>
+    <div id="sentence-choices" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px 0"></div>
+    <div id="sentence-result" style="text-align:center;margin:20px 0;min-height:30px"></div>
+  `;
+  document.querySelector('.app').appendChild(card);
+  return card;
+}
+
+// ============================================================
+// СИСТЕМА ОТОБРАЖЕНИЯ ОЧКОВ И УРОВНЕЙ
+// ============================================================
+
+function updateLevelDisplay() {
+  const level = progress.getUserLevel();
+  const statsDiv = document.getElementById('stats');
+  const leaderboardHtml = progress.leaderboard.map((entry, idx) => 
+    `<div style="padding:8px;background:${idx === 0 ? '#FFD700' : '#f0f0f0'};border-radius:5px;margin:5px 0">
+      <strong>${idx + 1}. ${entry.name}</strong> - ${entry.score} очков
+    </div>`
+  ).join('');
+
+  statsDiv.innerHTML = `
+    <div style="text-align:center;margin-bottom:20px">
+      <div style="font-size:32px;font-weight:bold;color:#667eea">${progress.userScore} 🏆</div>
+      <div style="font-size:16px;color:#666">Уровень: <span style="color:#764ba2;font-weight:bold">${level.name}</span> (${level.range})</div>
+    </div>
+    ${leaderboardHtml ? `<div style="background:#f5f5f5;padding:10px;border-radius:10px;margin:10px 0">
+      <strong>Топ-5:</strong><br>${leaderboardHtml}
+    </div>` : ''}
+  `;
+}
+
+function showScoreNotification(points, message) {
+  const notification = document.createElement('div');
+  notification.innerHTML = `<div style="position:fixed;top:20px;right:20px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:15px 25px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.3);z-index:9999;animation:slideInUp 0.5s ease;text-align:center">
+    <div style="font-size:20px;font-weight:bold">${message}</div>
+    <div style="font-size:14px;margin-top:5px">+${points} очков</div>
+  </div>`;
+  document.body.appendChild(notification);
+  setTimeout(() => notification.remove(), 3000);
+}
+
+// ============================================================
+// ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+// ============================================================
+
+function showView(viewId, display = 'block') {
+  document.querySelectorAll('.card').forEach(card => card.style.display = 'none');
+  const view = document.getElementById(viewId);
+  if (view) view.style.display = display;
+  else console.error('View not found:', viewId);
+}
+
+// Переопределяем функцию markLetterComplete
+const originalMarkLetterComplete = window.markLetterComplete || (() => {});
+window.markLetterComplete = function(lang, letter) {
+  progress.markLetterComplete(lang, letter);
+  
+  // Обновляем UI
+  const status = progress.getLetterStatus(lang, letter);
+  const letterBtn = document.querySelector(`[data-letter="${letter}"]`);
+  if (letterBtn) {
+    letterBtn.classList.remove('locked', 'unlocked');
+    letterBtn.classList.add('completed');
+    letterBtn.style.background = '#d4edda';
+    letterBtn.style.color = '#155724';
+  }
+  
+  // Активируем кнопку слогоделения
+  const syllableBtn = document.getElementById('syllableBtn');
+  if (syllableBtn && status === 'completed') {
+    syllableBtn.style.opacity = '1';
+    syllableBtn.style.pointerEvents = 'auto';
+  }
+  
+  progress.addScore(5, 'Буква пройдена: +5 очков');
+};
+
 // Service Worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js');
 }
 
 loadStats();
+updateLevelDisplay();
