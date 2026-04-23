@@ -1089,20 +1089,22 @@ class ProgressSystem {
   }
 
   getLetterStatus(lang, letter) {
-    if (!this.completed[lang]) return 'locked';
-
-    const completedLetters = this.completed[lang];
     const alphabet = alphabets[lang] || [];
     const letterIndex = alphabet.findIndex(item => item.letter === letter);
 
     if (letterIndex === -1) return 'locked';
 
+    // Первая буква всегда доступна
+    if (letterIndex === 0) return 'unlocked';
+
+    if (!this.completed[lang]) return 'locked';
+
+    const completedLetters = this.completed[lang];
+
     // Буква пройдена
     if (completedLetters.includes(letter)) return 'completed';
 
-    // Буква доступна, если предыдущая буква пройдена (или это первая буква)
-    if (letterIndex === 0) return 'unlocked';
-
+    // Буква доступна, если предыдущая буква пройдена
     const prevLetter = alphabet[letterIndex - 1].letter;
     return completedLetters.includes(prevLetter) ? 'unlocked' : 'locked';
   }
@@ -1150,47 +1152,99 @@ const progress = new ProgressSystem();
 const gameVocabulary = {
   'ru': {
     syllables: [
+      { word: 'а', phonetic: 'a' },
+      { word: 'ба', phonetic: 'ba' },
+      { word: 'ба-ба', phonetic: 'baba' },
+      { word: 'да', phonetic: 'da' },
+      { word: 'ма', phonetic: 'ma' },
       { word: 'ма-ма', phonetic: 'mama' },
+      { word: 'па', phonetic: 'pa' },
       { word: 'па-па', phonetic: 'papa' },
+      { word: 'та', phonetic: 'ta' },
+      { word: 'га', phonetic: 'ga' },
       { word: 'ба-на-н', phonetic: 'banan' },
       { word: 'ви-но', phonetic: 'vino' },
+      { word: 'ва-та', phonetic: 'vata' },
+      { word: 'га-за', phonetic: 'gaza' },
       { word: 'ки-то-б', phonetic: 'kitob' },
       { word: 'лев', phonetic: 'lev' },
+      { word: 'ли-су', phonetic: 'lisu' },
       { word: 'лу-на', phonetic: 'luna' },
+      { word: 'ла-та', phonetic: 'lata' },
       { word: 'дом', phonetic: 'dom' },
-      { word: 'дер-е-во', phonetic: 'derevo' }
+      { word: 'до-на', phonetic: 'dona' },
+      { word: 'дер-е-во', phonetic: 'derevo' },
+      { word: 'ди-ва-н', phonetic: 'divan' },
+      { word: 'то-мат', phonetic: 'tomat' },
+      { word: 'та-та', phonetic: 'tata' },
+      { word: 'га-ла', phonetic: 'gala' }
     ],
-    words: ['ма', 'па', 'ба', 'он', 'она', 'вода', 'дом', 'лев', 'дерево'],
+    words: [
+      'а', 'ба', 'да', 'ма', 'па', 'та', 'га',
+      'ба-ба', 'ма-ма', 'па-па',
+      'ан', 'ан-та',
+      'дом', 'вода', 'лев', 'луна',
+      'он', 'она', 'ба', 'да', 'та'
+    ],
     sentences: [
       { sentence: 'Мама дома', words: ['Мама', 'дома'] },
+      { sentence: 'Папа дома', words: ['Папа', 'дома'] },
       { sentence: 'Папа и мама', words: ['Папа', 'и', 'мама'] },
-      { sentence: 'Вода холодная', words: ['Вода', 'холодная'] }
+      { sentence: 'Вода дома', words: ['Вода', 'дома'] },
+      { sentence: 'Лев в доме', words: ['Лев', 'в', 'доме'] },
+      { sentence: 'Луна светит', words: ['Луна', 'светит'] },
+      { sentence: 'Это мама', words: ['Это', 'мама'] },
+      { sentence: 'Это папа', words: ['Это', 'папа'] }
     ]
   },
   'en': {
     syllables: [
+      { word: 'a', phonetic: 'a' },
+      { word: 'at', phonetic: 'at' },
+      { word: 'bat', phonetic: 'bat' },
+      { word: 'cat', phonetic: 'cat' },
+      { word: 'dog', phonetic: 'dog' },
       { word: 'ba-na-na', phonetic: 'banana' },
       { word: 'ap-ple', phonetic: 'apple' },
-      { word: 'dog', phonetic: 'dog' },
-      { word: 'cat', phonetic: 'cat' },
-      { word: 'wa-ter', phonetic: 'water' }
+      { word: 'wa-ter', phonetic: 'water' },
+      { word: 'sun', phonetic: 'sun' },
+      { word: 'fun', phonetic: 'fun' }
     ],
-    words: ['cat', 'dog', 'a', 'an', 'is', 'the'],
+    words: [
+      'a', 'at', 'bat', 'cat', 'dog',
+      'an', 'and', 'is', 'the',
+      'apple', 'banana', 'water', 'sun', 'fun'
+    ],
     sentences: [
       { sentence: 'The cat is here', words: ['The', 'cat', 'is', 'here'] },
-      { sentence: 'A dog is big', words: ['A', 'dog', 'is', 'big'] }
+      { sentence: 'A dog is big', words: ['A', 'dog', 'is', 'big'] },
+      { sentence: 'I like cats', words: ['I', 'like', 'cats'] },
+      { sentence: 'This is fun', words: ['This', 'is', 'fun'] },
+      { sentence: 'Apple is red', words: ['Apple', 'is', 'red'] }
     ]
   },
   'tg': {
     syllables: [
+      { word: 'а', phonetic: 'a' },
+      { word: 'ба', phonetic: 'ba' },
+      { word: 'да', phonetic: 'da' },
+      { word: 'ма', phonetic: 'ma' },
+      { word: 'па', phonetic: 'pa' },
+      { word: 'та', phonetic: 'ta' },
+      { word: 'га', phonetic: 'ga' },
       { word: 'ма-ма', phonetic: 'mama' },
       { word: 'па-па', phonetic: 'papa' },
-      { word: 'ки-то-б', phonetic: 'kitob' },
-      { word: 'до-ни-шан-бе', phonetic: 'donishanbe' }
+      { word: 'ки-то-б', phonetic: 'kitob' }
     ],
-    words: ['ман', 'ту', 'вай', 'мо', 'шумо', 'онҳо'],
+    words: [
+      'ман', 'ту', 'вай', 'мо', 'шумо', 'онҳо',
+      'а', 'ба', 'да', 'ма', 'па',
+      'китоб', 'қалам'
+    ],
     sentences: [
-      { sentence: 'Ман дар Душанбе истода', words: ['Ман', 'дар', 'Душанбе', 'истода'] }
+      { sentence: 'Ман дар Душанбе истода', words: ['Ман', 'дар', 'Душанбе', 'истода'] },
+      { sentence: 'Ту китоб хони', words: ['Ту', 'китоб', 'хони'] },
+      { sentence: 'Вай дар дом аст', words: ['Вай', 'дар', 'дом', 'аст'] }
     ]
   }
 };
@@ -1202,22 +1256,21 @@ const gameVocabulary = {
 function startSyllableGame() {
   const lang = currentLanguage;
   const completedLetters = progress.getCompletedLetters(lang);
+  const alphabet = alphabets[lang] || [];
   
-  if (completedLetters.length === 0) {
-    alert('Сначала пройдите буквы!');
-    return;
-  }
-
+  // Если нет пройденных букв, берем первую букву
+  let availableLetters = completedLetters.length > 0 ? completedLetters : [alphabet[0]?.letter];
+  
   const vocab = gameVocabulary[lang] || gameVocabulary['ru'];
-  const syllableWords = vocab.syllables.filter(item => 
+  const syllableWords = (vocab.syllables || []).filter(item => 
     item.word.split('-').every(part => {
       const firstLetter = part[0].toUpperCase();
-      return completedLetters.includes(firstLetter);
+      return availableLetters.includes(firstLetter);
     })
   );
 
   if (syllableWords.length === 0) {
-    alert('Нет слов для этого уровня');
+    alert('Нет слов для этого уровня. Пройдите буквы!');
     return;
   }
 
@@ -1276,9 +1329,13 @@ function createSyllableGameView() {
 function startWordBuildingGame() {
   const lang = currentLanguage;
   const completedLetters = progress.getCompletedLetters(lang);
+  const alphabet = alphabets[lang] || [];
   
-  if (completedLetters.length < 3) {
-    alert('Сначала пройдите минимум 3 буквы!');
+  // Если нет пройденных букв, берем первые 3 буквы
+  const availableLetters = completedLetters.length > 0 ? completedLetters : alphabet.slice(0, 3).map(a => a.letter);
+  
+  if (availableLetters.length < 1) {
+    alert('Нет доступных букв!');
     return;
   }
 
@@ -1291,11 +1348,16 @@ let wordBuildingStreak = 0;
 function runWordBuildingGame() {
   const lang = currentLanguage;
   const completedLetters = progress.getCompletedLetters(lang);
+  const alphabet = alphabets[lang] || [];
+  
+  // Если нет пройденных букв, берем первые 3 буквы
+  const availableLetters = completedLetters.length > 0 ? completedLetters : alphabet.slice(0, 3).map(a => a.letter);
+  
   const vocab = gameVocabulary[lang] || gameVocabulary['ru'];
   
-  // Фильтруем слова только из пройденных букв
-  const availableWords = vocab.words.filter(word => 
-    word.split('').every(letter => completedLetters.includes(letter.toUpperCase()))
+  // Фильтруем слова только из доступных букв
+  const availableWords = (vocab.words || []).filter(word => 
+    word.split('').every(letter => availableLetters.includes(letter.toUpperCase()))
   );
 
   if (availableWords.length === 0) {
@@ -1379,9 +1441,20 @@ function createWordBuildingView() {
 function startSentenceGame() {
   const lang = currentLanguage;
   const completedLetters = progress.getCompletedLetters(lang);
+  const alphabet = alphabets[lang] || [];
   
-  if (completedLetters.length < 5) {
-    alert('Сначала пройдите минимум 5 букв!');
+  // Если нет пройденных букв, берем первые 5 букв
+  const availableLetters = completedLetters.length > 0 ? completedLetters : alphabet.slice(0, 5).map(a => a.letter);
+  
+  if (availableLetters.length < 1) {
+    alert('Нет доступных букв!');
+    return;
+  }
+
+  const vocab = gameVocabulary[lang] || gameVocabulary['ru'];
+  
+  if (!vocab.sentences || vocab.sentences.length === 0) {
+    alert('Нет предложений для вашего языка');
     return;
   }
 
@@ -1397,6 +1470,11 @@ function runSentenceGame() {
     alert('Нет предложений для вашего языка');
     return;
   }
+  
+  // Проверяем доступность предложения
+  const completedLetters = progress.getCompletedLetters(lang);
+  const alphabet = alphabets[lang] || [];
+  const availableLetters = completedLetters.length > 0 ? completedLetters : alphabet.slice(0, 5).map(a => a.letter);
 
   const sentenceObj = vocab.sentences[Math.floor(Math.random() * vocab.sentences.length)];
   const shuffledWords = [...sentenceObj.words].sort(() => Math.random() - 0.5);
