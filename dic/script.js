@@ -1152,99 +1152,93 @@ const progress = new ProgressSystem();
 const gameVocabulary = {
   'ru': {
     syllables: [
-      { word: 'а', phonetic: 'a' },
-      { word: 'ба', phonetic: 'ba' },
-      { word: 'ба-ба', phonetic: 'baba' },
-      { word: 'да', phonetic: 'da' },
-      { word: 'ма', phonetic: 'ma' },
-      { word: 'ма-ма', phonetic: 'mama' },
-      { word: 'па', phonetic: 'pa' },
-      { word: 'па-па', phonetic: 'papa' },
-      { word: 'та', phonetic: 'ta' },
-      { word: 'га', phonetic: 'ga' },
-      { word: 'ба-на-н', phonetic: 'banan' },
-      { word: 'ви-но', phonetic: 'vino' },
-      { word: 'ва-та', phonetic: 'vata' },
-      { word: 'га-за', phonetic: 'gaza' },
-      { word: 'ки-то-б', phonetic: 'kitob' },
-      { word: 'лев', phonetic: 'lev' },
-      { word: 'ли-су', phonetic: 'lisu' },
-      { word: 'лу-на', phonetic: 'luna' },
-      { word: 'ла-та', phonetic: 'lata' },
-      { word: 'дом', phonetic: 'dom' },
-      { word: 'до-на', phonetic: 'dona' },
-      { word: 'дер-е-во', phonetic: 'derevo' },
-      { word: 'ди-ва-н', phonetic: 'divan' },
-      { word: 'то-мат', phonetic: 'tomat' },
-      { word: 'та-та', phonetic: 'tata' },
-      { word: 'га-ла', phonetic: 'gala' }
+      // Очень простые слова для начинающих
+      { word: 'ма-ма', phonetic: 'mama', hint: 'Мама' },
+      { word: 'па-па', phonetic: 'papa', hint: 'Папа' },
+      { word: 'ба-ба', phonetic: 'baba', hint: 'Баба' },
+      { word: 'де-д', phonetic: 'ded', hint: 'Дед' },
+      { word: 'ба-нан', phonetic: 'banan', hint: 'Банан' },
+      { word: 'до-мик', phonetic: 'domik', hint: 'Домик' },
+      { word: 'ко-тик', phonetic: 'kotik', hint: 'Котик' },
+      { word: 'со-ник', phonetic: 'sonik', hint: 'Соник' },
+      { word: 'ле-вуш-ка', phonetic: 'levushka', hint: 'Лев' },
+      { word: 'ли-сич-ка', phonetic: 'lisichka', hint: 'Лиса' },
+      { word: 'во-да', phonetic: 'voda', hint: 'Вода' },
+      { word: 'со-лнце', phonetic: 'solnce', hint: 'Солнце' },
+      { word: 'лу-на', phonetic: 'luna', hint: 'Луна' },
+      { word: 'де-ре-во', phonetic: 'derevo', hint: 'Дерево' },
+      { word: 'ма-ши-на', phonetic: 'mashina', hint: 'Машина' },
+      { word: 'ра-ке-та', phonetic: 'raketa', hint: 'Ракета' },
+      { word: 'рыб-ка', phonetic: 'rybka', hint: 'Рыбка' },
+      { word: 'птич-ка', phonetic: 'ptichka', hint: 'Птичка' },
+      { word: 'цве-ток', phonetic: 'cvetok', hint: 'Цветок' },
+      { word: 'мяч', phonetic: 'myach', hint: 'Мяч' }
     ],
     words: [
-      'а', 'ба', 'да', 'ма', 'па', 'та', 'га',
-      'ба-ба', 'ма-ма', 'па-па',
-      'ан', 'ан-та',
-      'дом', 'вода', 'лев', 'луна',
-      'он', 'она', 'ба', 'да', 'та'
+      'мама', 'папа', 'баба', 'дед', 'дом', 'кот', 'сон', 'лев', 'лиса',
+      'вода', 'солнце', 'луна', 'дерево', 'машина', 'ракета', 'рыба', 'птица', 'цветок', 'мяч'
     ],
     sentences: [
       { sentence: 'Мама дома', words: ['Мама', 'дома'] },
       { sentence: 'Папа дома', words: ['Папа', 'дома'] },
       { sentence: 'Папа и мама', words: ['Папа', 'и', 'мама'] },
-      { sentence: 'Вода дома', words: ['Вода', 'дома'] },
-      { sentence: 'Лев в доме', words: ['Лев', 'в', 'доме'] },
-      { sentence: 'Луна светит', words: ['Луна', 'светит'] },
+      { sentence: 'Вода в чашке', words: ['Вода', 'в', 'чашке'] },
+      { sentence: 'Кот на диване', words: ['Кот', 'на', 'диване'] },
+      { sentence: 'Солнце светит', words: ['Солнце', 'светит'] },
       { sentence: 'Это мама', words: ['Это', 'мама'] },
       { sentence: 'Это папа', words: ['Это', 'папа'] }
     ]
   },
   'en': {
     syllables: [
-      { word: 'a', phonetic: 'a' },
-      { word: 'at', phonetic: 'at' },
-      { word: 'bat', phonetic: 'bat' },
-      { word: 'cat', phonetic: 'cat' },
-      { word: 'dog', phonetic: 'dog' },
-      { word: 'ba-na-na', phonetic: 'banana' },
-      { word: 'ap-ple', phonetic: 'apple' },
-      { word: 'wa-ter', phonetic: 'water' },
-      { word: 'sun', phonetic: 'sun' },
-      { word: 'fun', phonetic: 'fun' }
+      { word: 'mom', phonetic: 'mom', hint: 'mom' },
+      { word: 'dad', phonetic: 'dad', hint: 'dad' },
+      { word: 'cat', phonetic: 'cat', hint: 'cat' },
+      { word: 'dog', phonetic: 'dog', hint: 'dog' },
+      { word: 'sun', phonetic: 'sun', hint: 'sun' },
+      { word: 'moon', phonetic: 'moon', hint: 'moon' },
+      { word: 'star', phonetic: 'star', hint: 'star' },
+      { word: 'fish', phonetic: 'fish', hint: 'fish' },
+      { word: 'bird', phonetic: 'bird', hint: 'bird' },
+      { word: 'tree', phonetic: 'tree', hint: 'tree' },
+      { word: 'house', phonetic: 'house', hint: 'house' },
+      { word: 'ball', phonetic: 'ball', hint: 'ball' },
+      { word: 'book', phonetic: 'book', hint: 'book' },
+      { word: 'ap-ple', phonetic: 'apple', hint: 'apple' },
+      { word: 'wa-ter', phonetic: 'water', hint: 'water' },
+      { word: 'mo-on', phonetic: 'moon', hint: 'moon' }
     ],
     words: [
-      'a', 'at', 'bat', 'cat', 'dog',
-      'an', 'and', 'is', 'the',
-      'apple', 'banana', 'water', 'sun', 'fun'
+      'mom', 'dad', 'cat', 'dog', 'sun', 'moon', 'star', 'fish', 'bird', 'tree',
+      'house', 'ball', 'book', 'apple', 'water'
     ],
     sentences: [
+      { sentence: 'Mom is home', words: ['Mom', 'is', 'home'] },
+      { sentence: 'Dad is home', words: ['Dad', 'is', 'home'] },
       { sentence: 'The cat is here', words: ['The', 'cat', 'is', 'here'] },
       { sentence: 'A dog is big', words: ['A', 'dog', 'is', 'big'] },
-      { sentence: 'I like cats', words: ['I', 'like', 'cats'] },
-      { sentence: 'This is fun', words: ['This', 'is', 'fun'] },
-      { sentence: 'Apple is red', words: ['Apple', 'is', 'red'] }
+      { sentence: 'The sun is bright', words: ['The', 'sun', 'is', 'bright'] }
     ]
   },
   'tg': {
     syllables: [
-      { word: 'а', phonetic: 'a' },
-      { word: 'ба', phonetic: 'ba' },
-      { word: 'да', phonetic: 'da' },
-      { word: 'ма', phonetic: 'ma' },
-      { word: 'па', phonetic: 'pa' },
-      { word: 'та', phonetic: 'ta' },
-      { word: 'га', phonetic: 'ga' },
-      { word: 'ма-ма', phonetic: 'mama' },
-      { word: 'па-па', phonetic: 'papa' },
-      { word: 'ки-то-б', phonetic: 'kitob' }
+      { word: 'ма-ма', phonetic: 'mama', hint: 'мама' },
+      { word: 'па-па', phonetic: 'papa', hint: 'папа' },
+      { word: 'мо-да', phonetic: 'moda', hint: 'мода' },
+      { word: 'ки-то-б', phonetic: 'kitob', hint: 'китоб' },
+      { word: 'қа-лам', phonetic: 'qalam', hint: 'қалам' },
+      { word: 'хона', phonetic: 'xona', hint: 'хона' },
+      { word: 'об', phonetic: 'ob', hint: 'об' },
+      { word: 'о-фтоб', phonetic: 'oftob', hint: 'офтоб' }
     ],
     words: [
       'ман', 'ту', 'вай', 'мо', 'шумо', 'онҳо',
-      'а', 'ба', 'да', 'ма', 'па',
-      'китоб', 'қалам'
+      'мама', 'папа', 'китоб', 'қалам', 'хона', 'об', 'офтоб'
     ],
     sentences: [
-      { sentence: 'Ман дар Душанбе истода', words: ['Ман', 'дар', 'Душанбе', 'истода'] },
+      { sentence: 'Ман дар хона истода', words: ['Ман', 'дар', 'хона', 'истода'] },
       { sentence: 'Ту китоб хони', words: ['Ту', 'китоб', 'хони'] },
-      { sentence: 'Вай дар дом аст', words: ['Вай', 'дар', 'дом', 'аст'] }
+      { sentence: 'Вай дар хона аст', words: ['Вай', 'дар', 'хона', 'аст'] }
     ]
   }
 };
@@ -1258,10 +1252,12 @@ function startSyllableGame() {
   const completedLetters = progress.getCompletedLetters(lang);
   const alphabet = alphabets[lang] || [];
   
-  // Если нет пройденных букв, берем первую букву
-  let availableLetters = completedLetters.length > 0 ? completedLetters : [alphabet[0]?.letter];
+  // Берем все доступные буквы (минимум 10) для начинающих
+  let availableLetters = completedLetters.length > 0 ? completedLetters : alphabet.slice(0, 10).map(a => a.letter);
   
   const vocab = gameVocabulary[lang] || gameVocabulary['ru'];
+  
+  // Фильтруем слова - все части слова должны начинаться с доступных букв
   const syllableWords = (vocab.syllables || []).filter(item => 
     item.word.split('-').every(part => {
       const firstLetter = part[0].toUpperCase();
@@ -1270,38 +1266,60 @@ function startSyllableGame() {
   );
 
   if (syllableWords.length === 0) {
-    alert('Нет слов для этого уровня. Пройдите буквы!');
+    alert('Нет слов для этого уровня. Сначала выучи буквы!');
     return;
   }
 
-  showView('syllable-game', 'block');
+  // Выбираем случайное слово
   const currentWord = syllableWords[Math.floor(Math.random() * syllableWords.length)];
+  
+  // Показываем игру
+  showView('syllable-game', 'block');
   runSyllableGame(currentWord);
 }
 
 function runSyllableGame(wordObj) {
   const parts = wordObj.word.split('-');
   let selected = [];
+  let hintShown = false;
   
   const gameView = document.getElementById('syllable-game') || createSyllableGameView();
   const choicesDiv = gameView.querySelector('#syllable-choices');
   const instructionDiv = gameView.querySelector('#syllable-instruction');
   
-  instructionDiv.innerHTML = `<h3>Разделите слово на слоги, нажимая между ними:</h3><p style="font-size:24px;font-weight:bold;margin:20px 0">${wordObj.word.replace(/-/g, ' ')}</p>`;
+  // Показываем слово большими буквами
+  instructionDiv.innerHTML = `
+    <div style="text-align:center">
+      <h3 style="color:#667eea;margin:10px 0">📝 Раздели слово на слоги!</h3>
+      <p style="font-size:32px;font-weight:bold;margin:15px 0;color:#333">${wordObj.word.replace(/-/g, '   ')}</p>
+      <button id="hintBtn" onclick="this.style.display='none';document.getElementById('hintText').style.display='block'" 
+        style="padding:8px 20px;background:#FF9800;color:white;border:none;border-radius:8px;cursor:pointer;font-size:16px">
+        💡 Показать подсказку
+      </button>
+      <p id="hintText" style="font-size:20px;color:#4CAF50;margin:10px 0;display:none;font-weight:bold">
+        Подсказка: ${wordObj.hint || ''}
+      </p>
+    </div>
+  `;
   
   choicesDiv.innerHTML = '';
   parts.forEach((part, idx) => {
     const btn = document.createElement('button');
     btn.textContent = part;
+    btn.style.cssText = 'padding:15px 30px;font-size:24px;margin:5px;background:#667eea;color:white;border:none;border-radius:10px;cursor:pointer;transition:transform 0.2s';
+    btn.onmouseover = () => btn.style.transform = 'scale(1.1)';
+    btn.onmouseout = () => btn.style.transform = 'scale(1)';
     btn.onclick = () => {
       selected.push(idx);
       btn.style.background = '#4CAF50';
-      btn.style.color = 'white';
+      btn.style.transform = 'scale(1.1)';
       if (selected.length === parts.length) {
         setTimeout(() => {
-          progress.addScore(10, '✅ Слогоделение: +10 очков');
-          startSyllableGame();
-        }, 800);
+          progress.addScore(10, '✅ Молодец! +10 очков');
+          // Показываем красивое поздравление
+          choicesDiv.innerHTML = '<div style="text-align:center;padding:20px"><h2 style="color:#4CAF50">🎉 Отлично!</h2><p>Ты правильно разделил слово!</p></div>';
+          setTimeout(() => startSyllableGame(), 1500);
+        }, 500);
       }
     };
     choicesDiv.appendChild(btn);
