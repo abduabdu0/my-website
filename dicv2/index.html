@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Забономӯзӣ</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a1a2e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <button class="icon-btn" onclick="showLanguageSelect()" title="Сменить язык">
+      <span id="topLangIcon">🌍</span>
+    </button>
+    <div class="app-title">📚 <span>Забономӯзӣ</span></div>
+    <div class="score-pill" id="scorePill">⭐ 0</div>
+  </header>
+
+  <!-- PWA INSTALL BANNER -->
+  <div class="install-banner" id="installBanner">
+    <span>📲 Добавить приложение на экран</span>
+    <div class="install-actions">
+      <button id="installBtn" class="btn btn-sm btn-primary">Установить</button>
+      <button id="closeInstallBtn" class="btn btn-sm btn-ghost">✕</button>
+    </div>
+  </div>
+
+  <!-- SCREENS -->
+
+  <!-- ===== LANGUAGE SELECT ===== -->
+  <div class="screen" id="languageSelect" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goMenu()">← Назад</button>
+      <h2>Выберите язык</h2>
+    </div>
+    <div class="lang-grid" id="languageList"></div>
+  </div>
+
+  <!-- ===== MAIN MENU ===== -->
+  <div class="screen active" id="menu">
+    <!-- User Level Card -->
+    <div class="level-card" id="levelCard">
+      <div class="level-info">
+        <div class="level-badge" id="levelBadge">🌱</div>
+        <div>
+          <div class="level-name" id="levelName">Новичок</div>
+          <div class="level-xp" id="levelXP">0 / 100 XP</div>
+        </div>
+      </div>
+      <div class="xp-bar"><div class="xp-fill" id="xpFill" style="width:0%"></div></div>
+      <div class="streak-row" id="streakRow"></div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="stats-row" id="statsRow"></div>
+
+    <!-- Menu Sections -->
+    <div class="menu-section">
+      <div class="section-label">📖 Основное</div>
+      <div class="menu-grid">
+        <button class="menu-card" onclick="goAlphabet()" style="--c:#FF6B6B">
+          <span class="menu-icon">🔤</span>
+          <span class="menu-text">Алфавит</span>
+        </button>
+        <button class="menu-card" onclick="goLessons()" style="--c:#667eea">
+          <span class="menu-icon">📚</span>
+          <span class="menu-text">Уроки</span>
+        </button>
+        <button class="menu-card" onclick="showFlashCards()" style="--c:#10b981">
+          <span class="menu-icon">🃏</span>
+          <span class="menu-text">Карточки</span>
+        </button>
+        <button class="menu-card" onclick="showDailyChallenge()" style="--c:#f59e0b" id="dailyChallengeBtn">
+          <span class="menu-icon">🎯</span>
+          <span class="menu-text">Задание дня</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="menu-section">
+      <div class="section-label">🎮 Игры</div>
+      <div class="menu-grid">
+        <button class="menu-card" onclick="startSyllableGame()" style="--c:#FF9800">
+          <span class="menu-icon">📝</span>
+          <span class="menu-text">Слоги</span>
+        </button>
+        <button class="menu-card" onclick="startWordBuildingGame()" style="--c:#9C27B0">
+          <span class="menu-icon">🔡</span>
+          <span class="menu-text">Слова</span>
+        </button>
+        <button class="menu-card" onclick="startSentenceGame()" style="--c:#00BCD4">
+          <span class="menu-icon">📖</span>
+          <span class="menu-text">Предложения</span>
+        </button>
+        <button class="menu-card" onclick="startQuiz()" style="--c:#e91e63">
+          <span class="menu-icon">❓</span>
+          <span class="menu-text">Квиз</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="menu-section">
+      <div class="section-label">🏋️ Тренировки</div>
+      <div class="train-list">
+        <button class="train-btn" onclick="start('easy')"><span>🟢 Лёгкий</span><span class="train-tag">Начинающий</span></button>
+        <button class="train-btn" onclick="start('medium')"><span>🟡 Средний</span><span class="train-tag">Практика</span></button>
+        <button class="train-btn" onclick="start('hard')"><span>🔴 Сложный</span><span class="train-tag">Эксперт</span></button>
+        <button class="train-btn" onclick="start('all')"><span>⭐ Смешанный</span><span class="train-tag">Все уровни</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ALPHABET ===== -->
+  <div class="screen" id="alphabet" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goMenu()">← Меню</button>
+      <h2>Алфавит</h2>
+    </div>
+    <div class="alphabet-progress-bar">
+      <div class="alph-prog-fill" id="alphProgFill" style="width:0%"></div>
+    </div>
+    <div class="alph-stats" id="alphStats"></div>
+    <div class="alphabet-grid" id="alphabetGrid"></div>
+  </div>
+
+  <!-- ===== LETTER CARD ===== -->
+  <div class="screen" id="letterCard" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goAlphabet()">← Алфавит</button>
+      <div class="letter-nav">
+        <button class="icon-btn" id="prevLetterBtn" onclick="navigateLetter(-1)">‹</button>
+        <span id="letterNavPos"></span>
+        <button class="icon-btn" id="nextLetterBtn" onclick="navigateLetter(1)">›</button>
+      </div>
+    </div>
+
+    <div class="letter-hero">
+      <div class="letter-big" id="letterDisplay"></div>
+      <div class="letter-emoji" id="letterImage"></div>
+    </div>
+
+    <div class="letter-info-card">
+      <div class="letter-name" id="letterName"></div>
+      <div class="letter-sound-badge" id="letterSound"></div>
+
+      <div class="letter-actions">
+        <button class="action-btn listen-btn" onclick="playLetterSound()">🔊 Слушать</button>
+        <button class="action-btn record-btn" onclick="startRecording()" id="recordBtn">🎤 Записать</button>
+        <button class="action-btn stop-btn" onclick="stopRecording()" id="stopBtn" style="display:none">⏹️ Стоп</button>
+      </div>
+
+      <div class="recording-result" id="recordingResult" style="display:none">
+        <p id="resultText"></p>
+      </div>
+    </div>
+
+    <div class="letter-examples">
+      <div class="examples-title">Примеры слов</div>
+      <div id="examplesDiv"></div>
+    </div>
+
+    <div class="letter-footer-actions">
+      <button class="btn btn-success" onclick="markLetterComplete(currentLanguage, alphabets[currentLanguage][currentLetterIdx].letter)">
+        ✅ Пройдено
+      </button>
+      <button class="btn btn-warning" onclick="startSyllableGame()">
+        📝 Слоги
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== LESSONS LIST ===== -->
+  <div class="screen" id="lessons" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goMenu()">← Меню</button>
+      <h2>Уроки</h2>
+    </div>
+    <div class="lessons-list" id="lessonsList"></div>
+  </div>
+
+  <!-- ===== THEORY ===== -->
+  <div class="screen" id="theory-view" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goLessons()">← Уроки</button>
+      <h2 id="theoryTitle"></h2>
+    </div>
+    <div id="theoryContent" class="theory-content"></div>
+    <button class="btn btn-primary btn-full" onclick="startLesson()">Начать упражнения →</button>
+  </div>
+
+  <!-- ===== GAME / EXERCISE ===== -->
+  <div class="screen" id="game" style="display:none">
+    <div class="game-topbar">
+      <button class="icon-btn" onclick="goMenu()">✕</button>
+      <div class="game-progress-wrap">
+        <div class="game-progress-bar"><div class="game-progress-fill" id="gameProgFill"></div></div>
+        <span id="progress" class="game-prog-text"></span>
+      </div>
+      <button class="icon-btn" onclick="toggleAudio()" title="Слушать">🔊</button>
+    </div>
+
+    <div class="game-card">
+      <div id="sentence" class="sentence"></div>
+      <div id="choices" class="choices-area"></div>
+      <div id="result" class="result-area"></div>
+    </div>
+
+    <div class="game-actions">
+      <button class="btn btn-ghost" onclick="showAnswer()">💡 Подсказка</button>
+      <button class="btn btn-primary" onclick="check()">✅ Проверить</button>
+      <button class="btn btn-secondary" onclick="next()">➡️ Далее</button>
+    </div>
+  </div>
+
+  <!-- ===== RESULTS ===== -->
+  <div class="screen" id="results" style="display:none">
+    <div class="results-hero" id="resultsHero"></div>
+    <div class="results-stats" id="resultStats"></div>
+    <div class="results-actions">
+      <button class="btn btn-primary" onclick="goMenu()">🏠 В меню</button>
+      <button class="btn btn-secondary" onclick="retryCurrentSet()">🔄 Повторить</button>
+    </div>
+  </div>
+
+  <!-- ===== SYLLABLE GAME ===== -->
+  <div class="screen" id="syllable-game" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goMenu()">← Меню</button>
+      <h2>Слогоделение</h2>
+    </div>
+    <div id="syllable-instruction"></div>
+    <div id="syllable-choices" class="syllable-choices"></div>
+  </div>
+
+  <!-- ===== WORD BUILDING ===== -->
+  <div class="screen" id="word-building-game" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goMenu()">← Меню</button>
+      <h2>Создание слов</h2>
+    </div>
+    <div id="word-instruction" class="word-instruction"></div>
+    <div id="word-choices" class="word-choices"></div>
+    <div id="word-result" class="word-result"></div>
+  </div>
+
+  <!-- ===== SENTENCE GAME ===== -->
+  <div class="screen" id="sentence-game" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goMenu()">← Меню</button>
+      <h2>Предложения</h2>
+    </div>
+    <div id="sentence-instruction" class="sentence-instruction"></div>
+    <div id="sentence-drop-zone" class="drop-zone"></div>
+    <div id="sentence-choices" class="sentence-choices"></div>
+    <div id="sentence-result" class="sentence-result"></div>
+  </div>
+
+  <!-- ===== FLASH CARDS ===== -->
+  <div class="screen" id="flash-cards" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goMenu()">← Меню</button>
+      <h2>Карточки</h2>
+    </div>
+    <div id="flashcard-container" class="flashcard-container"></div>
+    <div id="flashcard-actions" class="flashcard-actions"></div>
+  </div>
+
+  <!-- ===== DAILY CHALLENGE ===== -->
+  <div class="screen" id="daily-challenge" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goMenu()">← Меню</button>
+      <h2>🎯 Задание дня</h2>
+    </div>
+    <div id="daily-content"></div>
+  </div>
+
+  <!-- ===== QUIZ ===== -->
+  <div class="screen" id="quiz-screen" style="display:none">
+    <div class="screen-header">
+      <button class="back-btn" onclick="goMenu()">← Меню</button>
+      <h2>❓ Квиз</h2>
+    </div>
+    <div id="quiz-content"></div>
+  </div>
+
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast"></div>
+
+<!-- SCORE POPUP -->
+<div class="score-popup" id="scorePopup"></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
