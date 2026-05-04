@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Портфолио — StudioPro</title>
+  <meta name="description" content="Избранные фото и видео работы студии StudioPro. Свадебная, портретная и коммерческая съёмка.">
+  <meta name="theme-color" content="#0d0c0b">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Masonry-like columns */
+    .masonry {
+      columns: 4 200px;
+      column-gap: 10px;
+      margin-top: 24px;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--cream);
+      position: relative;
+    }
+    .masonry-item img {
+      width: 100%;
+      display: block;
+      transition: transform .5s cubic-bezier(.4,0,.2,1);
+    }
+    .masonry-item:hover img { transform: scale(1.04); }
+    .masonry-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,12,11,.35) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .masonry-item:hover::after { opacity: 1; }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(13,12,11,.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    #lightbox.open { opacity: 1; pointer-events: all; }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+    #lb-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      background: none;
+      border: 1px solid rgba(255,255,255,.3);
+      color: #fff;
+      font-size: 1.4rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: border-color .3s;
+    }
+    #lb-close:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Filter tabs */
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .filter-tab {
+      padding: 8px 18px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: transparent;
+      font-family: 'Jost', sans-serif;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      cursor: pointer;
+      transition: all .25s;
+      color: var(--ink);
+    }
+    .filter-tab:hover, .filter-tab.active {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+
+<div class="offline-bar">Нет соединения — работаем в офлайн-режиме</div>
+<div style="position:fixed;inset:0;z-index:-1;background:linear-gradient(135deg,#faf8f5 0%,#f0ebe0 100%);"></div>
+
+<header class="container header">
+  <div class="brand">
+    <div class="logo"><img src="assets/images/circlelogo.jpg" alt="StudioPro" width="56" height="56"></div>
+    <div>
+      <div class="brand-name">StudioPro</div>
+      <div class="brand-sub">Портфолио</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="services.html">Услуги</a>
+    <a href="portfolio.html">Портфолио</a>
+    <a href="price.html">Цены</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+  <div class="header_burger"><span></span></div>
+  <div class="header_menu"></div>
+</header>
+
+<main class="container" style="padding-block:48px 80px">
+
+  <div class="fade-in">
+    <div class="section-label">Наши работы</div>
+    <h1>Избранные <em class="accent">проекты</em></h1>
+    <div class="gold-line"></div>
+    <p style="max-width:520px">Каждый снимок — история. Замените изображения в папке <code>assets/images</code> на свои реальные фотографии.</p>
+  </div>
+
+  <!-- Filter tabs -->
+  <div class="filter-tabs fade-in">
+    <button class="filter-tab active" data-filter="all">Все работы</button>
+    <button class="filter-tab" data-filter="wedding">Свадьбы</button>
+    <button class="filter-tab" data-filter="portrait">Портреты</button>
+    <button class="filter-tab" data-filter="commercial">Коммерция</button>
+    <button class="filter-tab" data-filter="nature">Природа</button>
+  </div>
+
+  <!-- Masonry grid -->
+  <div class="masonry fade-in" id="gallery">
+    <div class="masonry-item" data-cat="wedding"><img src="assets/images/1124a2f08db011eea99abadf81d486ab_upscaled.jpg" alt="Свадьба — Анна и Илья" loading="lazy"></div>
+    <div class="masonry-item" data-cat="commercial"><img src="assets/images/c14a59906b6a11ee8675b646b2a0ffc1_upscaled.jpg" alt="Коммерческая съёмка" loading="lazy"></div>
+    <div class="masonry-item" data-cat="nature"><img src="assets/images/pexels-pixabay-50594.jpg" alt="Пейзаж" loading="lazy"></div>
+    <div class="masonry-item" data-cat="portrait"><img src="assets/images/pexels-darwisalwan-1212045.jpg" alt="Портрет" loading="lazy"></div>
+    <div class="masonry-item" data-cat="nature"><img src="assets/images/pexels-michal-pech-213601-1632044.jpg" alt="Природа" loading="lazy"></div>
+    
+  </div>
+
+  <div style="text-align:center;margin-top:48px" class="fade-in">
+    <a class="primary" href="contacts.html">Заказать съёмку</a>
+  </div>
+</main>
+
+<footer class="container footer">
+  <div class="small">© 2025 StudioPro · Исфара, Таджикистан</div>
+  <div class="small">Смотреть работы и отзывы — по запросу</div>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <button id="lb-close" aria-label="Закрыть">×</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<div id="install-banner">
+  <div class="install-text"><strong>Установить приложение</strong>Добавьте на главный экран</div>
+  <button id="install-btn" class="primary">Установить</button>
+  <button id="dismiss-btn" aria-label="Закрыть">×</button>
+</div>
+
+<script src="assets/main.js"></script>
+<script>
+  // Filter tabs
+  const tabs = document.querySelectorAll('.filter-tab');
+  const items = document.querySelectorAll('.masonry-item');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const f = tab.dataset.filter;
+      items.forEach(item => {
+        const show = f === 'all' || item.dataset.cat === f;
+        item.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  // Lightbox
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  document.querySelectorAll('.masonry-item img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('open'));
+  lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+</script>
+</body>
+</html>

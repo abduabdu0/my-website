@@ -1,0 +1,21 @@
+{
+  "name": "StudioPro — фото и видеосъёмка",
+  "short_name": "StudioPro",
+  "description": "Профессиональная фото- и видеосъёмка в Исфаре",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#faf8f5",
+  "theme_color": "#0d0c0b",
+  "orientation": "any",
+  "lang": "ru",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "screenshots": [],
+  "categories": ["photography", "business"],
+  "shortcuts": [
+    { "name": "Контакты", "url": "/contacts.html", "description": "Связаться со студией" },
+    { "name": "Портфолио", "url": "/portfolio.html", "description": "Наши работы" }
+  ]
+}

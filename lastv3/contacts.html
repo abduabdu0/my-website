@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Контакты — StudioPro</title>
+  <meta name="description" content="Свяжитесь со студией StudioPro в Исфаре. Телефон, email, адрес и форма обратной связи.">
+  <meta name="theme-color" content="#0d0c0b">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="offline-bar">Нет соединения — работаем в офлайн-режиме</div>
+<div style="position:fixed;inset:0;z-index:-1;background:linear-gradient(135deg,#faf8f5 0%,#f0ebe0 100%);"></div>
+
+<header class="container header">
+  <div class="brand">
+    <div class="logo"><img src="assets/images/circlelogo.jpg" alt="StudioPro" width="56" height="56"></div>
+    <div>
+      <div class="brand-name">StudioPro</div>
+      <div class="brand-sub">Контакты</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="services.html">Услуги</a>
+    <a href="portfolio.html">Портфолио</a>
+    <a href="price.html">Цены</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+  <div class="header_burger"><span></span></div>
+  <div class="header_menu"></div>
+</header>
+
+<main class="container" style="padding-block:48px 80px">
+
+  <div class="fade-in" style="text-align:center;max-width:520px;margin:0 auto 48px">
+    <div class="section-label">Будем рады помочь</div>
+    <h1>Свяжитесь <em class="accent">с нами</em></h1>
+    <div class="gold-line" style="margin-inline:auto"></div>
+    <p>Заполните форму, позвоните или напишите — ответим в течение часа.</p>
+  </div>
+
+  <div class="contact-grid">
+    <!-- Form -->
+    <div class="card fade-in">
+      <div class="section-label">Форма обратной связи</div>
+      <h2 style="font-size:1.6rem">Напишите нам</h2>
+      <p class="small" style="margin-top:6px;margin-bottom:4px">Сохраним заявку и свяжемся с вами.</p>
+      <form id="contactForm">
+        <input class="input" name="name" placeholder="Ваше имя" required>
+        <input class="input" name="phone" placeholder="Телефон или email" required>
+        <textarea class="input" name="note" rows="6" placeholder="Опишите задачу: тип съёмки, дата, место..."></textarea>
+        <div class="btn-row">
+          <button class="primary" type="submit">Отправить заявку</button>
+          <a class="cta" href="price.html">Цены</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Sidebar -->
+    <aside>
+      <!-- Map -->
+      <div class="card fade-in">
+        <div class="section-label">Мы здесь</div>
+        <h3>На карте</h3>
+        <div class="gold-line" style="margin-block:10px 14px"></div>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190.6760113642102!2d70.62059208340068!3d40.124099765255956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ba7ab527886e31%3A0xbc721904020b2370!2z0KbQniDQutC-0LzQv9Cw0L3QuNC4IFRjZWxsINCyINCzLiDQmNGB0YTQsNGA0LA!5e0!3m2!1sru!2s!4v1761741770750!5m2!1sru!2s"
+            width="100%" height="100%"
+            style="border:0" allowfullscreen loading="lazy"
+            title="Карта StudioPro">
+          </iframe>
+        </div>
+        <p class="small" style="margin-top:10px">📍 г. Исфара, ул. Маркази, 21, Таджикистан</p>
+      </div>
+
+      <!-- Contacts info -->
+      <div class="card fade-in" style="margin-top:14px">
+        <div class="section-label">Прямые контакты</div>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:10px">
+          <a href="tel:+992928747070" style="display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;padding:12px;border:1px solid var(--border);border-radius:10px;transition:border-color .3s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+            <span style="font-size:1.4rem">📞</span>
+            <div>
+              <div style="font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em">Телефон</div>
+              <div style="font-weight:500">+992 (92) 874‑70‑70</div>
+            </div>
+          </a>
+          <a href="mailto:mirzoevsaidjon@simopro.com" style="display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;padding:12px;border:1px solid var(--border);border-radius:10px;transition:border-color .3s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+            <span style="font-size:1.4rem">✉️</span>
+            <div>
+              <div style="font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em">Email</div>
+              <div style="font-weight:500;font-size:.88rem">mirzoevsaidjon@simopro.com</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="card fade-in" style="margin-top:14px">
+        <div class="section-label">Соцсети</div>
+        <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+          <a href="https://www.instagram.com/simo_isfara?igsh=MTRoNjF5N2xsZ2p5dA==" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;border:1px solid var(--border);font-size:.8rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink);transition:all .3s"
+             onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+             onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--ink)'">
+            📸 Instagram
+          </a>
+          <a href="#"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;border:1px solid var(--border);font-size:.8rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink);transition:all .3s"
+             onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+             onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--ink)'">
+            ✈️ Telegram
+          </a>
+          <a href="#"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;border:1px solid var(--border);font-size:.8rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink);transition:all .3s"
+             onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+             onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--ink)'">
+            💬 VK
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+</main>
+
+<footer class="container footer">
+  <div class="small">© 2025 StudioPro · Исфара, Таджикистан</div>
+  <div class="small">Тел: <a href="tel:+992928747070">+992 (92) 874‑70‑70</a></div>
+</footer>
+
+<div id="install-banner">
+  <div class="install-text"><strong>Установить приложение</strong>Добавьте на главный экран</div>
+  <button id="install-btn" class="primary">Установить</button>
+  <button id="dismiss-btn" aria-label="Закрыть">×</button>
+</div>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
