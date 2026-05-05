@@ -1,142 +1,371 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>StudioPro — Фото и Видеосъёмка</title>
-  <meta name="description" content="Профессиональная фото- и видеосъёмка в Исфаре. Свадебная, портретная, коммерческая съёмка.">
-  <meta name="theme-color" content="#0d0c0b">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimoPro — Профессиональная фото- и видеосъёмка</title>
+  <meta name="description" content="Профессиональная фото- и видеосъёмка в Исфаре. Свадьбы, портреты, коммерческая съёмка. Качественный монтаж и цветокоррекция.">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="has-hero">
-
-<!-- Offline bar -->
-<div class="offline-bar">Нет соединения — работаем в офлайн-режиме</div>
-
-
-
-<!-- Header -->
-<header class="container header">
-  <div class="brand">
-    <div class="logo"><img src="assets/images/circlelogo.jpg" alt="StudioPro" width="56" height="56"></div>
-    <div>
-      <div class="brand-name">StudioPro</div>
-      <div class="brand-sub">Фото &amp; Видео</div>
+<body>
+  <!-- PWA Install Hint -->
+  <div id="installHint" class="install-hint hidden">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+      <div style="font-size: 14px; font-weight: 600; text-align: center;">📲 Нажми «Установить» и добавь на рабочий стол</div>
+      <button id="installBtn" class="install-hint__button" onclick="startInstall()">Установить</button>
     </div>
+    <div id="installProgress" style="display: none; width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; overflow: hidden; margin-top: 12px;">
+      <div class="bar" style="height: 100%; background: linear-gradient(90deg, #ff6b9d, #ff4f81); width: 0%; transition: width 0.3s ease;"></div>
+    </div>
+    <div id="installStatus" style="font-size: 12px; text-align: center; color: rgba(255,255,255,0.8); margin-top: 10px;">Готово к установке</div>
   </div>
-  <nav class="nav">
-    <a href="index.html">Главная</a>
-    <a href="services.html">Услуги</a>
-    <a href="portfolio.html">Портфолио</a>
-    <a href="price.html">Цены</a>
-    <a href="contacts.html">Контакты</a>
-  </nav>
-  <div class="header_burger"><span></span></div>
-  <div class="header_menu"></div>
-</header>
 
-<!-- Hero -->
-<main class="container hero">
-  <div class="left">
-    <div class="card hero-card">
-      <div class="section-label">Исфара · Таджикистан</div>
-      <h1>Каждый момент —<br><em class="accent">история навсегда</em></h1>
-      <div class="gold-line"></div>
-      <p class="small" style="max-width:420px">Тёплый, лёгкий и элегантный подход к каждой съёмке. Свадьбы, портреты, коммерческая съёмка.</p>
-      <div class="btn-row">
-        <a class="primary" href="contacts.html">Заказать съёмку</a>
-        <a class="cta" href="portfolio.html">Смотреть работы</a>
-      </div>
-      <div class="features">
-        <div class="feature">
-          <strong>Фото</strong>
-          <div class="small">Романтичные портреты и репортаж</div>
+  <!-- Offline Indicator -->
+  <div id="offlineBar" class="offline-bar">
+    📡 Нет соединения — работаем в офлайн-режиме
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">
+        <div class="logo">
+          <span class="logo__text">Pro</span>
         </div>
-        <div class="feature">
-          <strong>Видео</strong>
-          <div class="small">Клипы и полнометражные ролики</div>
-        </div>
-        <div class="feature">
-          <strong>Монтаж</strong>
-          <div class="small">Плавный монтаж, цветокоррекция</div>
+        <div class="logo__text-group">
+          <h1 class="logo__brand">SimoPro</h1>
+          <p class="logo__sub">Фото & Видео</p>
         </div>
       </div>
+
+      <!-- Desktop Menu -->
+      <nav class="nav">
+        <a href="index.html" class="nav__link active">Главная</a>
+        <a href="services.html" class="nav__link">Услуги</a>
+        <a href="portfolio.html" class="nav__link">Портфолио</a>
+        <a href="price.html" class="nav__link">Цены</a>
+        <a href="contacts.html" class="nav__link cta">Контакты</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="menu-btn" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </header>
 
-    <section class="card fade-in" style="margin-top:18px">
-      <div class="section-label">Избранные работы</div>
-      <h2>Наши проекты</h2>
-      <div class="portfolio-grid" style="margin-top:16px">
-        <div class="portfolio-item">
-          <video autoplay muted loop playsinline src="assets/video/4174213-hd_1920_1080_30fps.mp4"></video>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link active">Главная</a>
+      <a href="services.html" class="mobile-menu__link">Услуги</a>
+      <a href="portfolio.html" class="mobile-menu__link">Портфолио</a>
+      <a href="price.html" class="mobile-menu__link">Цены</a>
+      <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__container">
+        <div class="hero__content">
+          <div class="hero__label">
+            <span class="badge">Исфара · Таджикистан</span>
+          </div>
+          <h1 class="hero__title">Каждый <span class="gradient-text">момент</span> — это история навсегда</h1>
+          <p class="hero__description">
+            Профессиональная съёмка свадеб, портретов и коммерческого контента. 
+            Мы превращаем ваши важные моменты в прекрасные истории.
+          </p>
+          
+          <div class="hero__cta">
+            <a href="contacts.html" class="btn btn--primary">Заказать съёмку</a>
+            <a href="portfolio.html" class="btn btn--secondary">Смотреть портфолио</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat">
+              <div class="stat__number">500+</div>
+              <div class="stat__label">Проектов</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number">1K+</div>
+              <div class="stat__label">Довольных клиентов</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number">8+</div>
+              <div class="stat__label">Лет опыта</div>
+            </div>
+          </div>
         </div>
-        <div class="portfolio-item">
-          <video autoplay muted loop playsinline src="assets/video/8776122-uhd_3840_2160_25fps.mp4"></video>
+
+        <div class="hero__media">
+          <div class="hero__image-wrapper">
+            <img src="assets/images/iphone17promax.jpg" alt="Работы SimoPro" class="hero__image">
+          </div>
         </div>
-        <div class="portfolio-item">
-          <video autoplay muted loop playsinline src="assets/video/8775885-uhd_3840_2160_25fps.mp4"></video>
-        </div>
-        <div class="portfolio-item">
-          <img src="assets/images/iphone17promax.jpg" alt="Репортаж" loading="lazy">
-        </div>
-      </div>
-      <div style="margin-top:16px">
-        <a class="cta" href="portfolio.html">Смотреть всё портфолио →</a>
       </div>
     </section>
-  </div>
 
-  <aside>
-    <div class="card fade-in">
-      <div class="section-label">Быстрая заявка</div>
-      <h3>Напишите нам</h3>
-      <p class="small" style="margin-top:6px">Ответим в течение 1 часа</p>
-      <form id="contactForm">
-        <input class="input" name="name" placeholder="Ваше имя" required>
-        <input class="input" name="phone" placeholder="Телефон или email" required>
-        <textarea class="input" name="note" rows="4" placeholder="Опишите задачу..."></textarea>
-        <div class="btn-row">
-          <button class="primary" type="submit">Отправить</button>
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Наши услуги</h2>
+          <p class="section-description">Полный спектр профессиональной съёмки и обработки</p>
         </div>
-      </form>
-    </div>
 
-    <div class="card fade-in" style="margin-top:14px">
-      <h4>Контакты</h4>
-      <div class="gold-line" style="width:32px;margin-block:12px"></div>
-      <div class="small" style="margin-bottom:6px">📞 <a href="tel:+992928747070">+992 (92) 874‑70‑70</a></div>
-      <div class="small" style="margin-bottom:12px">✉️ <a href="mailto:mirzoevsaidjon@simopro.com">mirzoevsaidjon@simopro.com</a></div>
-      <div class="small">
-        <a href="https://www.instagram.com/simo_isfara" target="_blank" rel="noopener">Instagram</a>
-        &nbsp;·&nbsp; <a href="#">Telegram</a>
-        &nbsp;·&nbsp; <a href="#">VK</a>
+        <div class="services__grid">
+          <div class="service-card">
+            <div class="service-card__icon">📸</div>
+            <h3>Фотосъёмка</h3>
+            <p>Свадебная, портретная, коммерческая фотосъёмка. Ретушь и обработка всех кадров.</p>
+            <a href="services.html#photo" class="link-arrow">Узнать больше →</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">🎬</div>
+            <h3>Видеосъёмка</h3>
+            <p>Профессиональные видеоролики, свадебные клипы, коммерческие видео высокого качества.</p>
+            <a href="services.html#video" class="link-arrow">Узнать больше →</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">✨</div>
+            <h3>Монтаж & Дизайн</h3>
+            <p>Художественный монтаж, цветокоррекция, спецэффекты и добавление музыки.</p>
+            <a href="services.html#editing" class="link-arrow">Узнать больше →</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">🎥</div>
+            <h3>Дроны & 3D</h3>
+            <p>Аэросъёмка дронами, 3D-визуализация и панорамные снимки.</p>
+            <a href="services.html#drones" class="link-arrow">Узнать больше →</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">🎵</div>
+            <h3>Звук & Музыка</h3>
+            <p>Подбор и редактирование звука, добавление профессиональной музыки к проектам.</p>
+            <a href="services.html#sound" class="link-arrow">Узнать больше →</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">💬</div>
+            <h3>Консультация</h3>
+            <p>Свободная консультация о вашем проекте, рекомендации и план съёмки.</p>
+            <a href="contacts.html" class="link-arrow">Связаться →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Preview Section -->
+    <section class="portfolio-preview">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Избранные работы</h2>
+          <p class="section-description">Примеры наших лучших проектов</p>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="assets/images/1124a2f08db011eea99abadf81d486ab_upscaled.jpg" alt="Свадьба" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/c14a59906b6a11ee8675b646b2a0ffc1_upscaled.jpg" alt="Коммерческая съёмка" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/pexels-darwisalwan-1212045.jpg" alt="Портретная съёмка" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/iphone17promax.jpg" alt="Портрет" loading="lazy">
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 40px;">
+          <a href="portfolio.html" class="btn btn--primary">Смотреть всё портфолио</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Contact Section -->
+    <section class="quick-contact">
+      <div class="container">
+        <div class="quick-contact__wrapper">
+          <div class="quick-contact__content">
+            <h2>Готовы начать?</h2>
+            <p>Отправьте быструю заявку, и мы свяжемся с вами в течение часа</p>
+          </div>
+
+          <form id="quickContactForm" class="contact-form">
+            <div class="form-group">
+              <input 
+                type="text" 
+                class="form-control" 
+                name="name" 
+                placeholder="Ваше имя" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <input 
+                type="tel" 
+                class="form-control" 
+                name="phone" 
+                placeholder="Номер телефона" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <textarea 
+                class="form-control" 
+                name="message" 
+                placeholder="Опишите вашу задачу..." 
+                rows="4"
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Отправить на WhatsApp</button>
+              <button type="button" class="btn btn--outline" id="telegramBtn">Отправить на Telegram</button>
+            </div>
+
+            <p class="form-notice">
+              ✓ Ваши данные не передаются третьим лицам. Мы свяжемся с вами в течение 1 часа.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Почему выбирают нас</h2>
+          <p class="section-description">Опыт, качество и надёжность</p>
+        </div>
+
+        <div class="reasons-grid">
+          <div class="reason-card">
+            <div class="reason-card__number">01</div>
+            <h3>Профессиональное оборудование</h3>
+            <p>Работаем с новейшей профессиональной техникой: камеры 4K, дроны, стабилизаторы.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__number">02</div>
+            <h3>Опытная команда</h3>
+            <p>Наша команда имеет более 8 лет опыта в съёмке и монтаже высокого качества.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__number">03</div>
+            <h3>Индивидуальный подход</h3>
+            <p>Каждый проект уникален. Мы учитываем все ваши пожелания и идеи.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__number">04</div>
+            <h3>Быстрая доставка</h3>
+            <p>Обработанные материалы доставляем максимум за 2 недели после съёмки.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__number">05</div>
+            <h3>Гарантия качества</h3>
+            <p>Переснимаем бесплатно, если результат не соответствует вашим ожиданиям.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__number">06</div>
+            <h3>Конкурентные цены</h3>
+            <p>Лучшее качество по справедливым ценам. Гибкие пакеты под любой бюджет.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-final">
+      <div class="container">
+        <h2>Начните свою историю сегодня</h2>
+        <p>Свяжитесь с нами для обсуждения вашего проекта</p>
+        <div class="cta-buttons">
+          <a href="contacts.html" class="btn btn--primary btn--large">Заказать съёмку</a>
+          <a href="tel:+992928747070" class="btn btn--secondary btn--large">Позвонить</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__section">
+          <h3>SimoPro</h3>
+          <p>Профессиональная фото- и видеосъёмка в Исфаре</p>
+          <div class="social-links">
+            <a href="https://t.me/simo_isfara" title="Telegram" target="_blank">Telegram</a>
+            <a href="https://wa.me/992928747070" title="WhatsApp" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="footer__section">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="portfolio.html">Портфолио</a></li>
+            <li><a href="price.html">Цены</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="https://wa.me/992928747070">WhatsApp</a></li>
+            <li><a href="https://t.me/simo_isfara">Telegram</a></li>
+            <li><a href="mailto:info@Simopro.tj">Email</a></li>
+            <li><a href="tel:+992928747070">+992 92 874 7070</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4>Информация</h4>
+          <ul>
+            <li><a href="contacts.html">О нас</a></li>
+            <li><a href="contacts.html">Политика конфиденциальности</a></li>
+            <li><a href="contacts.html">Условия использования</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2024 SimoPro. Все права защищены.</p>
+        <p>Разработано с ❤️ для вас</p>
       </div>
     </div>
-  </aside>
-</main>
+  </footer>
 
-<!-- Footer -->
-<footer class="container footer">
-  <div class="small">© 2025 StudioPro · Исфара, Таджикистан</div>
-  <div class="footer-links">
-    <a href="services.html">Услуги</a>
-    <a href="portfolio.html">Портфолио</a>
-    <a href="contacts.html">Контакты</a>
-  </div>
-</footer>
-
-<!-- PWA Install Banner -->
-<div id="install-banner">
-  <div class="install-text">
-    <strong>Установить приложение</strong>
-    Добавьте StudioPro на главный экран
-  </div>
-  <button id="install-btn" class="primary">Установить</button>
-  <button id="dismiss-btn" aria-label="Закрыть">×</button>
-</div>
-
-<script src="assets/main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

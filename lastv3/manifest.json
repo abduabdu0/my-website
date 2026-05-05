@@ -1,21 +1,60 @@
 {
-  "name": "StudioPro — фото и видеосъёмка",
-  "short_name": "StudioPro",
-  "description": "Профессиональная фото- и видеосъёмка в Исфаре",
+  "name": "StudioPro — Профессиональная фото- и видеосъёмка",
+  "short_name": "SimoPro",
+  "description": "Профессиональная фото- и видеосъёмка в Исфаре. Свадьбы, портреты, коммерческая съёмка.",
   "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#faf8f5",
-  "theme_color": "#0d0c0b",
-  "orientation": "any",
-  "lang": "ru",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    {
+      "src": "assets/images/simopro.jpg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/simopro.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ],
-  "screenshots": [],
+  "screenshots": [
+    {
+      "src": "assets/images/iphone17promax.jpg",
+      "sizes": "540x720",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
   "categories": ["photography", "business"],
   "shortcuts": [
-    { "name": "Контакты", "url": "/contacts.html", "description": "Связаться со студией" },
-    { "name": "Портфолио", "url": "/portfolio.html", "description": "Наши работы" }
+    {
+      "name": "Контакты",
+      "short_name": "Контакты",
+      "description": "Связаться со студией",
+      "url": "/contacts.html",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Портфолио",
+      "short_name": "Портфолио",
+      "description": "Наши работы",
+      "url": "/portfolio.html",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
   ]
 }

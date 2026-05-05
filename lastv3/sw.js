@@ -7,8 +7,8 @@ const ASSETS = [
   '/portfolio.html',
   '/price.html',
   '/contacts.html',
-  '/assets/style.css',
-  '/assets/main.js',
+  '/style.css',
+  '/main.js',
   '/manifest.json',
 ];
 

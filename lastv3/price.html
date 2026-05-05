@@ -8,14 +8,14 @@
   <meta name="theme-color" content="#0d0c0b">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="offline-bar">Нет соединения — работаем в офлайн-режиме</div>
 <div style="position:fixed;inset:0;z-index:-1;background:linear-gradient(135deg,#faf8f5 0%,#f0ebe0 100%);"></div>
 
-<header class="container header">
+<header class="header container">
   <div class="brand">
     <div class="logo"><img src="assets/images/circlelogo.jpg" alt="StudioPro" width="56" height="56"></div>
     <div>
@@ -23,6 +23,13 @@
       <div class="brand-sub">Цены</div>
     </div>
   </div>
+  
+ <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="menu-btn" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
   <nav class="nav">
     <a href="index.html">Главная</a>
     <a href="services.html">Услуги</a>
@@ -30,10 +37,17 @@
     <a href="price.html">Цены</a>
     <a href="contacts.html">Контакты</a>
   </nav>
-  <div class="header_burger"><span></span></div>
-  <div class="header_menu"></div>
 </header>
-
+<!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link active">Главная</a>
+      <a href="services.html" class="mobile-menu__link">Услуги</a>
+      <a href="portfolio.html" class="mobile-menu__link">Портфолио</a>
+      <a href="price.html" class="mobile-menu__link">Цены</a>
+      <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+    </nav>
+  </div>
 <main class="container" style="padding-block:48px 80px">
 
   <div class="fade-in" style="text-align:center;max-width:560px;margin:0 auto 48px">
@@ -132,16 +146,21 @@
 </main>
 
 <footer class="container footer">
-  <div class="small">© 2025 StudioPro · Исфара, Таджикистан</div>
+  <div class="small">© 2025 SimoPro · Исфара, Таджикистан</div>
   <div class="small">Цены указаны ориентировочно</div>
 </footer>
 
-<div id="install-banner">
-  <div class="install-text"><strong>Установить приложение</strong>Добавьте на главный экран</div>
-  <button id="install-btn" class="primary">Установить</button>
-  <button id="dismiss-btn" aria-label="Закрыть">×</button>
+<div id="installHint" class="install-hint hidden">
+  <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+    <div style="font-size: 14px; font-weight: 600; text-align: center;">📲 Нажми «Установить» и добавь на рабочий стол</div>
+    <button id="installBtn" class="install-hint__button" onclick="startInstall()">Установить</button>
+  </div>
+  <div id="installProgress" style="display: none; width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; overflow: hidden; margin-top: 12px;">
+    <div class="bar" style="height: 100%; background: linear-gradient(90deg, #ff6b9d, #ff4f81); width: 0%; transition: width 0.3s ease;"></div>
+  </div>
+  <div id="installStatus" style="font-size: 12px; text-align: center; color: rgba(255,255,255,0.8); margin-top: 10px;">Готово к установке</div>
 </div>
 
-<script src="assets/main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
