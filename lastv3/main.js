@@ -115,86 +115,8 @@ function initActiveNavLink() {
 // ================================================================
 // PWA INSTALL PROMPT HANDLING
 // ================================================================
-let deferredInstallPrompt = null;
-let installHintShown = false;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredInstallPrompt = e;
-  showInstallHint();
-});
-
-window.addEventListener('appinstalled', () => {
-  localStorage.setItem('appInstalled', '1');
-  const installHint = document.getElementById('installHint');
-  if (installHint) {
-    installHint.classList.add('hidden');
-  }
-  deferredInstallPrompt = null;
-});
-
-function isStandaloneMode() {
-  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-}
-
-function showInstallHint() {
-  if (localStorage.getItem('appInstalled') === '1') return;
-  if (installHintShown) return;
-  if (isStandaloneMode()) return;
-
-  installHintShown = true;
-  const installHint = document.getElementById('installHint');
-  if (installHint) {
-    installHint.classList.remove('hidden');
-  }
-}
-
-function startInstall() {
-  const button = document.getElementById('installBtn');
-  const progressRow = document.getElementById('installProgress');
-  const bar = document.querySelector('#installProgress .bar');
-  const status = document.getElementById('installStatus');
-
-  if (button) button.disabled = true;
-
-  if (deferredInstallPrompt) {
-    deferredInstallPrompt.prompt();
-    deferredInstallPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        status.innerText = 'Приложение установлено! 🎉';
-        localStorage.setItem('appInstalled', '1');
-        setTimeout(() => {
-          document.getElementById('installHint').classList.add('hidden');
-        }, 800);
-      } else {
-        status.innerText = 'Установка отменена';
-        if (button) button.disabled = false;
-      }
-      deferredInstallPrompt = null;
-    });
-  } else {
-    if (progressRow) progressRow.style.display = 'block';
-    if (status) status.innerText = 'Установка...';
-
-    let value = 0;
-    const timer = setInterval(() => {
-      value += Math.floor(Math.random() * 12) + 7;
-      if (value > 100) value = 100;
-      if (bar) bar.style.width = value + '%';
-
-      if (value >= 100) {
-        clearInterval(timer);
-        if (status) status.innerText = 'Установлено! 🎉';
-        localStorage.setItem('appInstalled', '1');
-        setTimeout(() => {
-          const hint = document.getElementById('installHint');
-          if (hint) hint.classList.add('hidden');
-        }, 800);
-      }
-    }, 350);
-  }
-}
-
+// PWA logic is loaded from pwa-install.js, which provides
+// showInstallHint(), startInstall(), and the install prompt listeners.
 function initPWABanner() {
   showInstallHint();
 }
