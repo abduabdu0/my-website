@@ -1,0 +1,60 @@
+{
+  "name": "StudioPro — Профессиональная фото- и видеосъёмка",
+  "short_name": "SimoPro",
+  "description": "Профессиональная фото- и видеосъёмка в Исфаре. Свадьбы, портреты, коммерческая съёмка.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "img/simopro.jpg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/simopro.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "img/iphone17promax.jpg",
+      "sizes": "540x720",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
+  "categories": ["photography", "business"],
+  "shortcuts": [
+    {
+      "name": "Контакты",
+      "short_name": "Контакты",
+      "description": "Связаться со студией",
+      "url": "/contacts.html",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Портфолио",
+      "short_name": "Портфолио",
+      "description": "Наши работы",
+      "url": "/portfolio.html",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЗАФАР v14.0 - ИСФАРА</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root { 
+            --main-red: #b22222; 
+            --gold: #d4af37; 
+            --dark: #121212; 
+            --light: #ffffff;
+            --gray: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-main: #222;
+        }
+
+        body.dark-mode { 
+            --gray: #0a0a0a; 
+            --text-main: #f5f5f5; 
+            --card-bg: #1e1e1e;
+            --dark: #000000;
+        }
+
+        * { box-sizing: border-box; transition: 0.3s; }
+
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
+            background: var(--gray); 
+            color: var(--text-main); 
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page-section { 
+            display: none; 
+            padding: 20px; 
+            margin-top: 10px;
+            animation: fadeIn 0.4s ease forwards;
+        }
+        .page-section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            color: white; 
+            text-align: center; 
+            padding: 70px 20px; 
+            border-bottom: 5px solid var(--gold); 
+            position: relative; 
+        }
+
+        .menu-dots {
+            position: absolute; top: 20px; left: 20px; font-size: 24px;
+            color: white; cursor: pointer; z-index: 1001;
+            background: rgba(0,0,0,0.4); width: 45px; height: 45px;
+            display: flex; align-items: center; justify-content: center; border-radius: 50%;
+        }
+
+        .sidebar {
+            position: fixed; top: 0; left: -280px; width: 280px; height: 100%;
+            background: var(--dark); color: white; z-index: 2000;
+            padding-top: 60px; box-shadow: 5px 0 15px rgba(0,0,0,0.5); transition: 0.4s ease;
+        }
+        .sidebar.active { left: 0; }
+        .sidebar a {
+            display: block; padding: 15px 25px; color: white;
+            text-decoration: none; font-size: 18px; border-bottom: 1px solid #333;
+        }
+        .sidebar a:hover { background: var(--main-red); color: var(--gold); }
+
+        .sidebar-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); display: none; z-index: 1500;
+        }
+        .sidebar-overlay.active { display: block; }
+
+        .container { padding: 15px; max-width: 1100px; margin: auto; flex: 1; width: 100%; }
+        
+        .search-input, .book-input, .review-input { 
+            width: 100%; padding: 12px 20px; border-radius: 25px; 
+            border: 2px solid var(--gold); background: var(--card-bg); 
+            color: var(--text-main); margin-bottom: 20px; outline: none;
+        }
+
+        .menu-grid { 
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; 
+        }
+
+        .food-card { 
+            background: var(--card-bg); border-radius: 15px; overflow: hidden; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; flex-direction: column;
+        }
+
+        .food-img { width: 100%; height: 140px; object-fit: cover; border-bottom: 2px solid var(--gold); }
+        .food-info { padding: 12px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .food-name { font-weight: bold; font-size: 1rem; min-height: 40px; display: flex; align-items: center; justify-content: center; }
+        .price-tag { color: var(--main-red); font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; }
+
+        .btn-add { 
+            background: var(--main-red); color: white; border: none; padding: 10px; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; 
+        }
+        .btn-add:active { transform: scale(0.95); }
+
+        .review-card {
+            background: var(--card-bg); padding: 15px; border-radius: 15px; margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 4px solid var(--gold);
+        }
+        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .review-name { font-weight: bold; color: var(--main-red); }
+        .stars { color: #ffcc00; font-size: 0.9rem; }
+
+        .cart-section { 
+            background: var(--dark); color: white; padding: 20px; border-radius: 20px; margin-top: 40px; border: 2px solid var(--gold);
+        }
+
+        .cart-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #333; font-size: 0.95rem; }
+        
+        footer {
+            background: var(--dark); color: #888; text-align: center; padding: 30px; margin-top: 40px; border-top: 3px solid var(--gold);
+        }
+
+        .theme-btn { position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.4); border: none; color: white; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; }
+
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+
+        @media (max-width: 600px) { 
+            .menu-grid { grid-template-columns: 1fr 1fr; gap: 10px; } 
+            header { padding: 50px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+<div class="sidebar" id="sidebar">
+    <a href="javascript:void(0)" onclick="showPage('menu')"><i class="fas fa-utensils"></i> Меню</a>
+    <a href="javascript:void(0)" onclick="showPage('booking')"><i class="fas fa-calendar-check"></i> Банд кардани мизҳо</a>
+    <a href="javascript:void(0)" onclick="showPage('reviews')"><i class="fas fa-star"></i> Фикру мулоҳизаҳо</a>
+    <a href="javascript:void(0)" onclick="showPage('about')"><i class="fas fa-info-circle"></i> Дар бораи мо</a>
+    <a href="javascript:void(0)" onclick="showPage('contacts')"><i class="fas fa-phone-alt"></i> Контактҳо</a>
+</div>
+
+<header>
+    <div class="menu-dots" onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
+    <button class="theme-btn" onclick="toggleTheme()"><i class="fas fa-adjust"></i></button>
+    <h1 style="margin:0; font-size: 2.8em; letter-spacing: 3px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">ЗАФАР</h1>
+    <div style="height: 2px; width: 60px; background: var(--gold); margin: 15px auto;"></div>
+    <p style="color: var(--gold); font-weight: bold; text-transform: uppercase; font-size: 1.1em; letter-spacing: 1px;">Таомҳои Миллӣ ва Исфарагӣ</p>
+    <p style="font-size: 0.9em; opacity: 0.9;">ИСФАРА назди бозори Маркази</p>
+</header>
+
+<div class="container">
+    
+    <div id="page-menu" class="page-section active">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Ҷустуҷӯи таом..." onkeyup="filterMenu()">
+        <h2 style="border-left: 5px solid var(--main-red); padding-left: 15px; font-size: 1.4rem;">🥘 Менюи мо</h2>
+        
+        <div class="menu-grid" id="food-list"></div>
+
+        <div class="cart-section" id="order-cart">
+            <h3><i class="fas fa-shopping-basket"></i> Сабади фармоиш</h3>
+            <select id="table-no" style="width:100%; padding:12px; border-radius:12px; margin-bottom:15px; background:#222; color:white; border:1px solid #444;">
+                <option value="0">Рақами миз ё Дастрасӣ</option>
+                <option value="Доставка">🏠 Дастрасӣ (Доставка)</option>
+                <script>for(let i=1; i<=15; i++) document.write(`<option value="${i}">Миз №${i}</option>`);</script>
+            </select>
+            <div id="cart-items-list"></div>
+            <div style="text-align:right; margin-top:20px; border-top:1px solid #444; padding-top:10px;">
+                <p style="font-size: 0.9rem; color: #aaa; margin: 0;">Хизматрасонӣ: 10%</p>
+                <h2 style="color:var(--gold); margin: 5px 0;">Ҳамагӣ: <span id="final-total">0</span> с.</h2>
+            </div>
+            <button class="btn-add" style="background:var(--gold); color:black; font-size: 1.1rem; padding: 18px;" onclick="sendOrder()">ТАСДИҚИ ФАРМОИШ</button>
+        </div>
+    </div>
+
+    <div id="page-booking" class="page-section">
+        <h2 style="border-left: 5px solid var(--gold); padding-left: 15px;">📅 Брони кардани миз</h2>
+        <div style="background: var(--card-bg); padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <label>Интихоби миз:</label>
+            <select id="book-table" class="search-input" style="border-radius: 10px;">
+                <script>for(let i=1; i<=15; i++) document.write(`<option value="${i}">Миз №${i} (Барои 4-6 нафар)</option>`);</script>
+            </select>
+            <label>Номи шумо:</label>
+            <input type="text" id="book-name" class="search-input" style="border-radius: 10px;" placeholder="Номи худро нависед">
+            <label>Вақт ва Сана:</label>
+            <input type="datetime-local" id="book-time" class="search-input" style="border-radius: 10px;">
+            <button class="btn-add" style="background:var(--gold); color:black; padding: 18px; font-size: 1.1rem;" onclick="sendBooking()">ТАСДИҚИ БРОН</button>
+        </div>
+    </div>
+
+    <div id="page-reviews" class="page-section">
+        <h2 style="border-left: 5px solid var(--main-red); padding-left: 15px;">⭐ Фикру мулоҳизаҳо</h2>
+        <div style="background: var(--card-bg); padding: 20px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <h4>Фикри худро нависед:</h4>
+            <input type="text" id="rev-name" class="review-input" placeholder="Номи шумо">
+            <textarea id="rev-text" class="review-input" style="border-radius: 15px; height: 100px; resize: none;" placeholder="Таассуроти шумо..."></textarea>
+            <button class="btn-add" onclick="addReview()">ФИРИСТОДАН</button>
+        </div>
+        <div id="reviews-container">
+            <div class="review-card">
+                <div class="review-header"><span class="review-name">Зафар</span><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                <div class="review-body">Беҳтарин оши Девзира дар ИСФАРА</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-about" class="page-section">
+        <h2 style="border-left: 5px solid var(--main-red); padding-left: 15px;">ℹ️ Дар бораи мо</h2>
+        <div style="background: var(--card-bg); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Интерьер" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 25px;">
+                <h3 style="color: var(--main-red); margin-top: 0;">Тарабхонаи "ЗАФАР"</h3>
+                <p style="line-height: 1.6;">
+                    Мо кӯшиш кардем, ки фарҳанги меҳмоннавозии <b>Исфара</b>-ро бо санъати баланди ошпазии муосир омехта кунем. 
+                    Ҳамаи таомҳои мо аз маҳсулоти тару тоза ва бо риояи қоидаҳои <b>Ҳалол</b> омода мешаванд.
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0;">
+                    <div style="background: var(--gray); padding: 10px; border-radius: 10px; text-align: center;">
+                        <i class="fas fa-utensils" style="color: var(--gold);"></i><br><b>Болаззат</b>
+                    </div>
+                    <div style="background: var(--gray); padding: 10px; border-radius: 10px; text-align: center;">
+                        <i class="fas fa-heart" style="color: var(--main-red);"></i><br><b>Бо меҳр</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-contacts" class="page-section">
+        <h2 style="border-left: 5px solid var(--gold); padding-left: 15px;">📞 Контактҳо</h2>
+        <div style="background: var(--card-bg); padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+            <p><i class="fas fa-map-marker-alt" style="color: var(--main-red); width: 25px;"></i> <b>Суроға:</b> <br>
+               Шаҳри ИСФАРА назди бозори маркази</p>
+            <p><i class="fas fa-phone-alt" style="color: #25D366; width: 25px;"></i> <b>Телефон барои тамос:</b> <br>
+               <a href="tel:920091176" style="text-decoration: none; color: var(--main-red); font-weight: bold; font-size: 1.3rem;">☎️ 92 009 11 76</a></p>
+            <p><i class="fas fa-clock" style="color: var(--gold); width: 25px;"></i> <b>Вақти корӣ:</b> <br>
+               10:00 - 23:00 (Ҳамарӯза)</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 ЗАФАР ИСФАРА.Таъомҳои миллӣ.</p>
+    <p style="color: var(--gold); font-size: 0.9em;">Created by: Khaloqov</p>
+</footer>
+
+<script>
+const menu = [
+    {n:"Оши Сӯфии Исфара", p:35, img:"https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400"},
+    {n:"Кабоби махсуси Зафар", p:50, img:"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400"},
+    {n:"Ширбиринҷи Исфара", p:15, img:"https://images.unsplash.com/photo-1517697471339-4aa32003c11d?w=400"},
+    {n:"Манту (1 дона)", p:6, img:"https://i.ibb.co/LdsXWq2/manty.jpg"}, 
+    {n:"Самбӯсаи варақӣ", p:10, img:"https://images.unsplash.com/photo-1601050633647-8f524ad43edf?w=400"},
+    {n:"Табакаи хонагӣ", p:45, img:"https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=400"},
+    {n:"Шӯрбои Гӯсфандӣ", p:22, img:"https://i.ibb.co/nC1R8fS/shurpo.jpg"}, 
+    {n:"Ҷиз-биз (Исфара)", p:40, img:"https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400"},
+    {n:"Шашлыки Гӯсфандӣ", p:25, img:"https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400"},
+    {n:"Нони Исфара", p:5, img:"https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400"},
+    {n:"Чойи Кабуд/Сиёҳ", p:4, img:"https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=400"},
+    {n:"Қаҳва (Coffee)", p:10, img:"https://images.unsplash.com/photo-1541167760496-162955ed8a9f?w=400"}
+];
+
+let cart = [];
+const WHATSAPP_PHONE = "992005990620"; // Рақами нави шумо барои фармоиш
+
+function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('overlay').classList.toggle('active');
+}
+
+function showPage(pageId) {
+    document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+    document.getElementById('page-' + pageId).classList.add('active');
+    if(document.getElementById('sidebar').classList.contains('active')) toggleSidebar();
+    window.scrollTo(0,0);
+}
+
+function initMenu() {
+    const list = document.getElementById("food-list");
+    list.innerHTML = "";
+    menu.forEach((f, idx) => {
+        list.innerHTML += `
+        <div class="food-card" data-name="${f.n.toLowerCase()}">
+            <img src="${f.img}" class="food-img" alt="${f.n}">
+            <div class="food-info">
+                <div class="food-name">${f.n}</div>
+                <div class="price-tag">${f.p} с.</div>
+                <button class="btn-add" onclick="addToCart(${idx})"><i class="fas fa-plus"></i> Илова</button>
+            </div>
+        </div>`;
+    });
+}
+
+function filterMenu() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    document.querySelectorAll('.food-card').forEach(card => {
+        card.style.display = card.getAttribute('data-name').includes(input) ? "flex" : "none";
+    });
+}
+
+function addToCart(index) {
+    cart.push(menu[index]);
+    renderCart();
+}
+
+function removeFromCart(i) {
+    cart.splice(i, 1);
+    renderCart();
+}
+
+function renderCart() {
+    const container = document.getElementById("cart-items-list");
+    container.innerHTML = "";
+    let total = 0;
+    cart.forEach((item, i) => {
+        total += item.p;
+        container.innerHTML += `
+        <div class="cart-item">
+            <span>${item.n}</span>
+            <span><b>${item.p}с</b> <i class="fas fa-trash-alt" style="color:var(--main-red); cursor:pointer; margin-left:10px;" onclick="removeFromCart(${i})"></i></span>
+        </div>`;
+    });
+    document.getElementById("final-total").innerText = (total * 1.1).toFixed(1);
+}
+
+function sendOrder() {
+    const table = document.getElementById("table-no").value;
+    if(table === "0") return alert("Лутфан рақами миз ё Доставкаро интихоб кунед!");
+    if(cart.length === 0) return alert("Сабади шумо холӣ аст!");
+    
+    let text = `*ФАРМОИШИ НАВ (ЗАФАР)*\n📍 ${table === 'Доставка' ? '🏠 ДОСТАВКА' : 'Миз №: ' + table}\n------------------\n`;
+    cart.forEach((item, i) => { text += `${i+1}. ${item.n} - ${item.p}с\n`; });
+    text += `------------------\n💰 *Ҳамагӣ бо 10%: ${document.getElementById("final-total").innerText} сомонӣ*`;
+    
+    window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`);
+}
+
+function sendBooking() {
+    const tableNo = document.getElementById("book-table").value;
+    const name = document.getElementById("book-name").value;
+    const time = document.getElementById("book-time").value;
+    if(!name || !time) return alert("Лутфан ном ва вақтро ворид кунед!");
+    
+    let text = `*БРОНИ МИЗ (ЗАФАР)*\n🪑 Миз №${tableNo}\n👤 Мизоҷ: ${name}\n⏰ Вақт: ${time.replace('T', ' ')}`;
+    window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`);
+}
+
+function addReview() {
+    const name = document.getElementById("rev-name").value;
+    const text = document.getElementById("rev-text").value;
+    if(!name || !text) return alert("Лутфан ном ва фикри худро нависед!");
+
+    const container = document.getElementById("reviews-container");
+    const div = document.createElement("div");
+    div.className = "review-card";
+    div.innerHTML = `
+        <div class="review-header"><span class="review-name">${name}</span><span class="stars">⭐⭐⭐⭐⭐</span></div>
+        <div class="review-body">${text}</div>
+    `;
+    container.prepend(div);
+    document.getElementById("rev-name").value = "";
+    document.getElementById("rev-text").value = "";
+    alert("Ташаккур барои фикратон!");
+}
+
+function toggleTheme() {
+    document.body.classList.toggle("dark-mode");
+}
+
+initMenu();
+</script>
+</body>
+</html>

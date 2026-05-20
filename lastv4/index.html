@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimoPro — Профессиональная фото- и видеосъёмка</title>
+  <meta name="description" content="Профессиональная фото- и видеосъёмка в Исфаре. Свадьбы, портреты, коммерческая съёмка. Качественный монтаж и цветокоррекция.">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- PWA Install Hint -->
+  <div id="installHint" class="install-hint hidden">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+      <div style="font-size: 14px; font-weight: 600; text-align: center;">📲 Нажми «Установить» и добавь на рабочий стол</div>
+      <button id="installBtn" class="install-hint__button" onclick="startInstall()">Установить</button>
+    </div>
+    <div id="installProgress" style="display: none; width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; overflow: hidden; margin-top: 12px;">
+      <div class="bar" style="height: 100%; background: linear-gradient(90deg, #ff6b9d, #ff4f81); width: 0%; transition: width 0.3s ease;"></div>
+    </div>
+    <div id="installStatus" style="font-size: 12px; text-align: center; color: rgba(255,255,255,0.8); margin-top: 10px;">Готово к установке</div>
+  </div>
+
+  <!-- Offline Indicator -->
+  <div id="offlineBar" class="offline-bar">
+    📡 Нет соединения — работаем в офлайн-режиме
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">
+        <div class="logo">
+          <span class="logo__text">Pro</span>
+        </div>
+        <div class="logo__text-group">
+          <h1 class="logo__brand">SimoPro</h1>
+          <p class="logo__sub">Фото & Видео</p>
+        </div>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="nav">
+        <a href="index.html" class="nav__link active">Главная</a>
+        <a href="services.html" class="nav__link">Услуги</a>
+        <a href="portfolio.html" class="nav__link">Портфолио</a>
+        <a href="price.html" class="nav__link">Цены</a>
+        <a href="contacts.html" class="nav__link cta">Контакты</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="menu-btn" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link active">Главная</a>
+      <a href="services.html" class="mobile-menu__link">Услуги</a>
+      <a href="portfolio.html" class="mobile-menu__link">Портфолио</a>
+      <a href="price.html" class="mobile-menu__link">Цены</a>
+      <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__container">
+        <div class="hero__content">
+          <div class="hero__label">
+            <span class="badge">Исфара · Таджикистан</span>
+          </div>
+          <h1 class="hero__title">Каждый <span class="gradient-text">момент</span> — это история навсегда</h1>
+          <p class="hero__description">
+            Профессиональная съёмка свадеб, портретов и коммерческого контента. 
+            Мы превращаем ваши важные моменты в прекрасные истории.
+          </p>
+          
+          <div class="hero__cta">
+            <a href="contacts.html" class="btn btn--primary">Заказать съёмку</a>
+            <a href="portfolio.html" class="btn btn--secondary">Смотреть портфолио</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat">
+              <div class="stat__number">500+</div>
+              <div class="stat__label">Проектов</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number">1K+</div>
+              <div class="stat__label">Довольных клиентов</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number">8+</div>
+              <div class="stat__label">Лет опыта</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <div class="hero__image-wrapper">
+            <img src="img/iphone17promax.jpg" alt="Работы SimoPro" class="hero__image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Наши услуги</h2>
+          <p class="section-description">Полный спектр профессиональной съёмки и обработки</p>
+        </div>
+
+        <div class="services__grid">
+          <div class="service-card">
+            <div class="service-card__icon">📸</div>
+            <h3>Фотосъёмка</h3>
+            <p>Свадебная, портретная, коммерческая фотосъёмка. Ретушь и обработка всех кадров.</p>
+            <a href="services.html#photo" class="link-arrow">Узнать больше →</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">🎬</div>
+            <h3>Видеосъёмка</h3>
+            <p>Профессиональные видеоролики, свадебные клипы, коммерческие видео высокого качества.</p>
+            <a href="services.html#video" class="link-arrow">Узнать больше →</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">✨</div>
+            <h3>Монтаж & Дизайн</h3>
+            <p>Художественный монтаж, цветокоррекция, спецэффекты и добавление музыки.</p>
+            <a href="services.html#editing" class="link-arrow">Узнать больше →</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">🎥</div>
+            <h3>Дроны & 3D</h3>
+            <p>Аэросъёмка дронами, 3D-визуализация и панорамные снимки.</p>
+            <a href="services.html#drones" class="link-arrow">Узнать больше →</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">🎵</div>
+            <h3>Звук & Музыка</h3>
+            <p>Подбор и редактирование звука, добавление профессиональной музыки к проектам.</p>
+            <a href="services.html#sound" class="link-arrow">Узнать больше →</a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">💬</div>
+            <h3>Консультация</h3>
+            <p>Свободная консультация о вашем проекте, рекомендации и план съёмки.</p>
+            <a href="contacts.html" class="link-arrow">Связаться →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Preview Section -->
+    <section class="portfolio-preview">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Избранные работы</h2>
+          <p class="section-description">Примеры наших лучших проектов</p>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="img/1124a2f08db011eea99abadf81d486ab_upscaled.jpg" alt="Свадьба" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="img/c14a59906b6a11ee8675b646b2a0ffc1_upscaled.jpg" alt="Коммерческая съёмка" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="img/pexels-darwisalwan-1212045.jpg" alt="Портретная съёмка" loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="img/iphone17promax.jpg" alt="Портрет" loading="lazy">
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 40px;">
+          <a href="portfolio.html" class="btn btn--primary">Смотреть всё портфолио</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Contact Section -->
+    <section class="quick-contact">
+      <div class="container">
+        <div class="quick-contact__wrapper">
+          <div class="quick-contact__content">
+            <h2>Готовы начать?</h2>
+            <p>Отправьте быструю заявку, и мы свяжемся с вами в течение часа</p>
+          </div>
+
+          <form id="quickContactForm" class="contact-form">
+            <div class="form-group">
+              <input 
+                type="text" 
+                class="form-control" 
+                name="name" 
+                placeholder="Ваше имя" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <input 
+                type="tel" 
+                class="form-control" 
+                name="phone" 
+                placeholder="Номер телефона" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <textarea 
+                class="form-control" 
+                name="message" 
+                placeholder="Опишите вашу задачу..." 
+                rows="4"
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Отправить на WhatsApp</button>
+              <button type="button" class="btn btn--outline" id="telegramBtn">Отправить на Telegram</button>
+            </div>
+
+            <p class="form-notice">
+              ✓ Ваши данные не передаются третьим лицам. Мы свяжемся с вами в течение 1 часа.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Почему выбирают нас</h2>
+          <p class="section-description">Опыт, качество и надёжность</p>
+        </div>
+
+        <div class="reasons-grid">
+          <div class="reason-card">
+            <div class="reason-card__number">01</div>
+            <h3>Профессиональное оборудование</h3>
+            <p>Работаем с новейшей профессиональной техникой: камеры 4K, дроны, стабилизаторы.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__number">02</div>
+            <h3>Опытная команда</h3>
+            <p>Наша команда имеет более 8 лет опыта в съёмке и монтаже высокого качества.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__number">03</div>
+            <h3>Индивидуальный подход</h3>
+            <p>Каждый проект уникален. Мы учитываем все ваши пожелания и идеи.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__number">04</div>
+            <h3>Быстрая доставка</h3>
+            <p>Обработанные материалы доставляем максимум за 2 недели после съёмки.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__number">05</div>
+            <h3>Гарантия качества</h3>
+            <p>Переснимаем бесплатно, если результат не соответствует вашим ожиданиям.</p>
+          </div>
+
+          <div class="reason-card">
+            <div class="reason-card__number">06</div>
+            <h3>Конкурентные цены</h3>
+            <p>Лучшее качество по справедливым ценам. Гибкие пакеты под любой бюджет.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-final">
+      <div class="container">
+        <h2>Начните свою историю сегодня</h2>
+        <p>Свяжитесь с нами для обсуждения вашего проекта</p>
+        <div class="cta-buttons">
+          <a href="contacts.html" class="btn btn--primary btn--large">Заказать съёмку</a>
+          <a href="tel:+992928747070" class="btn btn--secondary btn--large">Позвонить</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__section">
+          <h3>SimoPro</h3>
+          <p>Профессиональная фото- и видеосъёмка в Исфаре</p>
+          <div class="social-links">
+            <a href="https://t.me/simo_isfara" title="Telegram" target="_blank">Telegram</a>
+            <a href="https://wa.me/992928747070" title="WhatsApp" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="footer__section">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="portfolio.html">Портфолио</a></li>
+            <li><a href="price.html">Цены</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="https://wa.me/992928747070">WhatsApp</a></li>
+            <li><a href="https://t.me/simo_isfara">Telegram</a></li>
+            <li><a href="mailto:info@Simopro.tj">Email</a></li>
+            <li><a href="tel:+992928747070">+992 92 874 7070</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4>Информация</h4>
+          <ul>
+            <li><a href="contacts.html">О нас</a></li>
+            <li><a href="contacts.html">Политика конфиденциальности</a></li>
+            <li><a href="contacts.html">Условия использования</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2024 SimoPro. Все права защищены.</p>
+        <p>Разработано с ❤️ для вас</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+/**
+ * StudioPro — Main JavaScript
+ * Mobile Menu, PWA Install, Form Integration
+ */
+
+// ═══════════════════════════════════════════════════════
+// ═ CONFIGURATION
+// ═══════════════════════════════════════════════════════
+const CONFIG = {
+  whatsapp: '+992005990620', // Номер WhatsApp
+  telegram: 'M_A_910',   // Telegram username или ID чата
+};
+
+const LEGACY_CONTACT_WHATSAPP = '992005990620'; // Номер для contacts.html в формате wa.me
+
+// ═══════════════════════════════════════════════════════
+// ═ MOBILE MENU
+// ═══════════════════════════════════════════════════════
+function initMobileMenu() {
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = document.querySelectorAll('.mobile-menu__link');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        menuBtn.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  const legacyBurger = document.querySelector('.header_burger');
+  const legacyMenu = document.querySelector('.header_menu');
+  const legacyNav = document.querySelector('.nav');
+
+  if (legacyBurger && legacyMenu && legacyNav) {
+    if (legacyMenu.children.length === 0) {
+      legacyNav.querySelectorAll('a').forEach(a => {
+        const clone = a.cloneNode(true);
+        legacyMenu.appendChild(clone);
+      });
+    }
+
+    legacyBurger.addEventListener('click', () => {
+      legacyBurger.classList.toggle('open');
+      legacyMenu.classList.toggle('open');
+      document.body.style.overflow = legacyMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    legacyMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        legacyBurger.classList.remove('open');
+        legacyMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!legacyBurger.contains(e.target) && !legacyMenu.contains(e.target)) {
+        legacyBurger.classList.remove('open');
+        legacyMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// ═ HEADER SCROLL EFFECT
+// ═══════════════════════════════════════════════════════
+function initHeaderScroll() {
+  const header = document.querySelector('.header');
+  
+  if (!header) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }, { passive: true });
+}
+
+// ═══════════════════════════════════════════════════════
+// ═ SET ACTIVE NAV LINK
+// ═══════════════════════════════════════════════════════
+function initActiveNavLink() {
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav__link, .mobile-menu__link, .nav a, .header_menu a');
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// ================================================================
+// PWA INSTALL PROMPT HANDLING
+// ================================================================
+// PWA logic is loaded from pwa-install.js, which provides
+// showInstallHint(), startInstall(), and the install prompt listeners.
+function initPWABanner() {
+  showInstallHint();
+}
+
+// ═══════════════════════════════════════════════════════
+// ═ OFFLINE DETECTION
+// ═══════════════════════════════════════════════════════
+function initOfflineDetection() {
+  const offlineBar = document.getElementById('offlineBar');
+
+  if (!offlineBar) return;
+
+  function updateOnlineStatus() {
+    if (navigator.onLine) {
+      offlineBar.classList.remove('show');
+    } else {
+      offlineBar.classList.add('show');
+    }
+  }
+
+  window.addEventListener('online', updateOnlineStatus);
+  window.addEventListener('offline', updateOnlineStatus);
+
+  // Проверить начальный статус
+  updateOnlineStatus();
+}
+
+// ═══════════════════════════════════════════════════════
+// ═ FORM SUBMISSION
+// ═══════════════════════════════════════════════════════
+function initFormSubmission() {
+  const form = document.getElementById('quickContactForm');
+  const telegramBtn = document.getElementById('telegramBtn');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      sendToWhatsApp();
+    });
+
+    if (telegramBtn) {
+      telegramBtn.addEventListener('click', () => {
+        sendToTelegram();
+      });
+    }
+  }
+
+  initLegacyContactForm();
+}
+
+function initLegacyContactForm() {
+  const legacyForm = document.getElementById('contactForm');
+  if (!legacyForm) return;
+
+  legacyForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    sendLegacyContactToWhatsApp();
+  });
+}
+
+function getLegacyFormData() {
+  const legacyForm = document.getElementById('contactForm');
+  const name = legacyForm.querySelector('input[name="name"]').value.trim();
+  const phone = legacyForm.querySelector('input[name="phone"]').value.trim();
+  const note = legacyForm.querySelector('textarea[name="note"]').value.trim();
+
+  return { name, phone, note };
+}
+
+function getFormData() {
+  const form = document.getElementById('quickContactForm');
+  const name = form.querySelector('input[name="name"]').value;
+  const phone = form.querySelector('input[name="phone"]').value;
+  const message = form.querySelector('textarea[name="message"]').value;
+
+  return { name, phone, message };
+}
+
+function sendLegacyContactToWhatsApp() {
+  const { name, phone, note } = getLegacyFormData();
+  if (!name || !phone) {
+    showToast('Пожалуйста, заполните имя и контакт.');
+    return;
+  }
+
+  const text = `Заявка с контактов StudioPro\n\n👤 Имя: ${name}\n📱 Контакт: ${phone}\n💬 Задача: ${note}`;
+  const encodedText = encodeURIComponent(text);
+  const whatsappLink = `https://wa.me/${LEGACY_CONTACT_WHATSAPP}?text=${encodedText}`;
+
+  const newWindow = window.open(whatsappLink, '_blank');
+  if (!newWindow) {
+    window.location.href = whatsappLink;
+  }
+
+  showToast('✓ Отправляем вас в WhatsApp...');
+  document.getElementById('contactForm').reset();
+}
+
+function sendToWhatsApp() {
+  const { name, phone, message } = getFormData();
+  
+  const text = `Заявка от сайта StudioPro\n\n👤 Имя: ${name}\n📱 Контакт: ${phone}\n💬 Сообщение: ${message}`;
+  const encodedText = encodeURIComponent(text);
+  const whatsappLink = `https://wa.me/${CONFIG.whatsapp}?text=${encodedText}`;
+
+  const newWindow = window.open(whatsappLink, '_blank');
+  if (!newWindow) {
+    window.location.href = whatsappLink;
+  }
+
+  showToast('✓ Отправляем вас в WhatsApp...');
+  
+  // Очистить форму
+  document.getElementById('quickContactForm').reset();
+}
+
+function sendToTelegram() {
+  const { name, phone, message } = getFormData();
+  
+  const text = `Заявка от сайта StudioPro\n\n👤 Имя: ${name}\n📱 Контакт: ${phone}\n💬 Сообщение: ${message}`;
+  const encodedText = encodeURIComponent(text);
+  const telegramLink = `https://t.me/${CONFIG.telegram}?text=${encodedText}`;
+
+  window.open(telegramLink, '_blank');
+  showToast('✓ Отправляем вас в Telegram...');
+  
+  // Очистить форму
+  document.getElementById('quickContactForm').reset();
+}
+
+// ═══════════════════════════════════════════════════════
+// ═ TOAST NOTIFICATION
+// ═══════════════════════════════════════════════════════
+function showToast(message, duration = 3000) {
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  // Показать тост
+  setTimeout(() => {
+    toast.classList.add('show');
+  }, 10);
+
+  // Удалить тост
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, duration);
+}
+
+// Добавляем стили для toast
+const toastStyles = `
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  z-index: 2000;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+`;
+
+const styleSheet = document.createElement('style');
+styleSheet.textContent = toastStyles;
+document.head.appendChild(styleSheet);
+
+// ═══════════════════════════════════════════════════════
+// ═ SERVICE WORKER REGISTRATION
+// ═══════════════════════════════════════════════════════
+function initServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(err => {
+      console.log('Service Worker registration failed:', err);
+    });
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// ═ INITIALIZATION
+// ═══════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileMenu();
+  initHeaderScroll();
+  initActiveNavLink();
+  initPWABanner();
+  initOfflineDetection();
+  initFormSubmission();
+  initServiceWorker();
+  
+  // Smooth scroll для якорей
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});
+
+// ═══════════════════════════════════════════════════════
+// ═ DARK MODE SUPPORT (Optional)
+// ═══════════════════════════════════════════════
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  // Сайт будет автоматически адаптироваться к светлой теме
+}
+
+</script>
+<script>
+// Переменная для отложенного промпта установки
+let deferredInstallPrompt = null;
+
+// Обработчик события beforeinstallprompt
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    showInstallHint();
+});
+
+// Обработчик события appinstalled
+window.addEventListener('appinstalled', () => {
+    localStorage.setItem('appInstalled', '1');
+    const installHint = document.getElementById('installHint');
+    if (installHint) {
+        installHint.classList.add('hidden');
+    }
+});
+
+// Функция для проверки, запущено ли приложение в standalone режиме
+function isStandaloneMode() {
+    return window.matchMedia('(display-mode: standalone)').matches ||
+           window.navigator.standalone === true ||
+           document.referrer.startsWith('android-app://');
+}
+
+// Флаг, показана ли подсказка установки
+let installHintShown = false;
+
+// Функция для показа подсказки установки
+function showInstallHint() {
+    if (localStorage.getItem("appInstalled") === "1") return;
+    if (installHintShown) return;
+    if (isStandaloneMode()) return;
+
+    installHintShown = true;
+    const installHint = document.getElementById('installHint');
+    if (installHint) {
+        installHint.classList.remove('hidden');
+    }
+}
+
+// Функция для начала установки
+function startInstall() {
+    const button = document.getElementById("installBtn");
+    const progressRow = document.getElementById("installProgress");
+    const bar = document.querySelector("#installProgress .bar");
+    const status = document.getElementById("installStatus");
+
+    button.disabled = true;
+
+    if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        deferredInstallPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                status.innerText = "Приложение установлено! 🎉";
+                localStorage.setItem("appInstalled", "1");
+                setTimeout(() => {
+                    document.getElementById("installHint").classList.add("hidden");
+                }, 800);
+            } else {
+                status.innerText = "Установка отменена";
+                button.disabled = false;
+            }
+            deferredInstallPrompt = null;
+        });
+    } else {
+        progressRow.style.display = "block";
+        status.innerText = "Установка...";
+
+        let value = 0;
+        const timer = setInterval(() => {
+            value += Math.floor(Math.random() * 12) + 7;
+            if (value > 100) value = 100;
+            bar.style.width = value + "%";
+
+            if (value >= 100) {
+                clearInterval(timer);
+                status.innerText = "Установлено! 🎉";
+                localStorage.setItem("appInstalled", "1");
+                setTimeout(() => {
+                    document.getElementById("installHint").classList.add("hidden");
+                }, 800);
+            }
+        }, 350);
+    }
+}
+
+// HTML элементы для подсказки установки (добавьте в ваш HTML):
+/*
+<div id="installHint" class="hidden">
+    <div class="hint-row">
+        <div class="hint-text">
+            <strong>Установить приложение?</strong><br>
+            Добавьте на главный экран для быстрого доступа
+        </div>
+        <button id="installBtn" onclick="startInstall()">Установить</button>
+    </div>
+    <div id="installProgress" style="display: none;">
+        <div class="bar"></div>
+    </div>
+    <div id="installStatus"></div>
+</div>
+*/
+
+// CSS стили для подсказки установки (добавьте в ваш CSS):
+/*
+#installHint {
+    position: fixed;
+    left: 50%;
+    bottom: 96px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.82);
+    padding: 16px 18px;
+    border-radius: 22px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    color: white;
+    z-index: 10005;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 92%;
+    width: fit-content;
+    min-width: 280px;
+}
+
+#installHint.hidden {
+    display: none;
+}
+
+.hint-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.hint-text {
+    font-size: 15px;
+    line-height: 1.35;
+    text-align: left;
+}
+
+#installProgress {
+    display: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+#installProgress .bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff4f81 100%);
+    transition: width 0.25s ease;
+}
+
+#installBtn {
+    padding: 11px 18px;
+    border-radius: 16px;
+    border: none;
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff4f81 100%);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    min-width: 108px;
+}
+
+#installBtn:active {
+    opacity: 0.9;
+}
+*/
+
+// Manifest.json должен содержать:
+/*
+{
+  "name": "Ваше приложение",
+  "short_name": "Короткое имя",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#цвет фона",
+  "theme_color": "#цвет темы",
+  "icons": [
+    {
+      "src": "путь/к/иконке.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "путь/к/иконке.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+*/
+
+// Service Worker (sw.js) должен содержать базовую регистрацию и кэширование</content>
+<parameter name="filePath">d:\MA\marifat\marifatv7\pwa-install.js
+</script>
+</body>
+</html>

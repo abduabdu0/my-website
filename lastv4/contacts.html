@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Контакты — StudioPro</title>
+  <meta name="description" content="Свяжитесь со студией StudioPro в Исфаре. Телефон, email, адрес и форма обратной связи.">
+  <meta name="theme-color" content="#0d0c0b">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="offline-bar">Нет соединения — работаем в офлайн-режиме</div>
+<div style="position:fixed;inset:0;z-index:-1;background:linear-gradient(135deg,#faf8f5 0%,#f0ebe0 100%);"></div>
+
+<header class="header container">
+  <div class="brand">
+    <div class="logo"><img src="img/circlelogo.jpg" alt="SimoPro" width="56" height="56"></div>
+    <div>
+      <div class="brand-name">Simo Pro</div>
+      <div class="brand-sub">Контакты</div>
+    </div>
+  </div>
+    
+  <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="menu-btn" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+  <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="services.html">Услуги</a>
+    <a href="portfolio.html">Портфолио</a>
+    <a href="price.html">Цены</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+</header>
+<!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link active">Главная</a>
+      <a href="services.html" class="mobile-menu__link">Услуги</a>
+      <a href="portfolio.html" class="mobile-menu__link">Портфолио</a>
+      <a href="price.html" class="mobile-menu__link">Цены</a>
+      <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+    </nav>
+  </div>
+<main class="container" style="padding-block:48px 80px">
+
+  <div class="fade-in" style="text-align:center;max-width:520px;margin:0 auto 48px">
+    <div class="section-label">Будем рады помочь</div>
+    <h1>Свяжитесь <em class="accent">с нами</em></h1>
+    <div class="gold-line" style="margin-inline:auto"></div>
+    <p>Заполните форму, позвоните или напишите — ответим в течение часа.</p>
+  </div>
+
+  <div class="contact-grid">
+    <!-- Form -->
+    <div class="card fade-in">
+      <div class="section-label">Форма обратной связи</div>
+      <h2 style="font-size:1.6rem">Напишите нам</h2>
+      <p class="small" style="margin-top:6px;margin-bottom:4px">Сохраним заявку и свяжемся с вами.</p>
+      <form id="contactForm">
+        <input class="input" name="name" placeholder="Ваше имя" required>
+        <input class="input" name="phone" placeholder="Телефон или email" required>
+        <textarea class="input" name="note" rows="6" placeholder="Опишите задачу: тип съёмки, дата, место..."></textarea>
+        <div class="btn-row">
+          <button class="primary" type="submit">Отправить заявку</button>
+          <a class="cta" href="price.html">Цены</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Sidebar -->
+    <aside>
+      <!-- Map -->
+      <div class="card fade-in">
+        <div class="section-label">Мы здесь</div>
+        <h3>На карте</h3>
+        <div class="gold-line" style="margin-block:10px 14px"></div>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190.6760113642102!2d70.62059208340068!3d40.124099765255956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ba7ab527886e31%3A0xbc721904020b2370!2z0KbQniDQutC-0LzQv9Cw0L3QuNC4IFRjZWxsINCyINCzLiDQmNGB0YTQsNGA0LA!5e0!3m2!1sru!2s!4v1761741770750!5m2!1sru!2s"
+            width="100%" height="100%"
+            style="border:0" allowfullscreen loading="lazy"
+            title="Карта StudioPro">
+          </iframe>
+        </div>
+        <p class="small" style="margin-top:10px">📍 г. Исфара, ул. Маркази, 21, Таджикистан</p>
+      </div>
+
+      <!-- Contacts info -->
+      <div class="card fade-in" style="margin-top:14px">
+        <div class="section-label">Прямые контакты</div>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:10px">
+          <a href="tel:+992928747070" style="display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;padding:12px;border:1px solid var(--border);border-radius:10px;transition:border-color .3s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+            <span style="font-size:1.4rem">📞</span>
+            <div>
+              <div style="font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em">Телефон</div>
+              <div style="font-weight:500">+992 (92) 874‑70‑70</div>
+            </div>
+          </a>
+          <a href="mailto:mirzoevsaidjon@simopro.com" style="display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;padding:12px;border:1px solid var(--border);border-radius:10px;transition:border-color .3s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+            <span style="font-size:1.4rem">✉️</span>
+            <div>
+              <div style="font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em">Email</div>
+              <div style="font-weight:500;font-size:.88rem">mirzoevsaidjon@simopro.com</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="card fade-in" style="margin-top:14px">
+        <div class="section-label">Соцсети</div>
+        <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+          <a href="https://www.instagram.com/simo_isfara?igsh=MTRoNjF5N2xsZ2p5dA==" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;border:1px solid var(--border);font-size:.8rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink);transition:all .3s"
+             onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+             onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--ink)'">
+            📸 Instagram
+          </a>
+          <a href="#"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;border:1px solid var(--border);font-size:.8rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink);transition:all .3s"
+             onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+             onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--ink)'">
+            ✈️ Telegram
+          </a>
+          <a href="#"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;border:1px solid var(--border);font-size:.8rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink);transition:all .3s"
+             onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'"
+             onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--ink)'">
+            💬 VK
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+</main>
+
+<footer class="container footer">
+  <div class="small">© 2025 StudioPro · Исфара, Таджикистан</div>
+  <div class="small">Тел: <a href="tel:+992928747070">+992 (92) 874‑70‑70</a></div>
+</footer>
+
+<div id="installHint" class="install-hint hidden">
+  <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+    <div style="font-size: 14px; font-weight: 600; text-align: center;">📲 Нажми «Установить» и добавь на рабочий стол</div>
+    <button id="installBtn" class="install-hint__button" onclick="startInstall()">Установить</button>
+  </div>
+  <div id="installProgress" style="display: none; width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; overflow: hidden; margin-top: 12px;">
+    <div class="bar" style="height: 100%; background: linear-gradient(90deg, #ff6b9d, #ff4f81); width: 0%; transition: width 0.3s ease;"></div>
+  </div>
+  <div id="installStatus" style="font-size: 12px; text-align: center; color: rgba(255,255,255,0.8); margin-top: 10px;">Готово к установке</div>
+</div>
+
+<script>
+// Встроенный JS (из index/services) — инициализация и обработчики форм
+/* StudioPro — Main JavaScript
+ * Mobile Menu, PWA Install, Form Integration
+ */
+
+// ═══════════════════════════════════════════════════════
+// ═ CONFIGURATION
+// ═══════════════════════════════════════════════════════
+const CONFIG = {
+  whatsapp: '+992005990620', // Номер WhatsApp
+  telegram: 'M_A_910',   // Telegram username или ID чата
+};
+
+const LEGACY_CONTACT_WHATSAPP = '992005990620'; // Номер для contacts.html в формате wa.me
+
+// (далее — все вспомогательные функции: initMobileMenu, initHeaderScroll, initActiveNavLink,
+// initPWABanner, initOfflineDetection, формы, showToast, initServiceWorker и т.д.)
+
+function initMobileMenu() {
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = document.querySelectorAll('.mobile-menu__link');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        menuBtn.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  const legacyBurger = document.querySelector('.header_burger');
+  const legacyMenu = document.querySelector('.header_menu');
+  const legacyNav = document.querySelector('.nav');
+
+  if (legacyBurger && legacyMenu && legacyNav) {
+    if (legacyMenu.children.length === 0) {
+      legacyNav.querySelectorAll('a').forEach(a => {
+        const clone = a.cloneNode(true);
+        legacyMenu.appendChild(clone);
+      });
+    }
+
+    legacyBurger.addEventListener('click', () => {
+      legacyBurger.classList.toggle('open');
+      legacyMenu.classList.toggle('open');
+      document.body.style.overflow = legacyMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    legacyMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        legacyBurger.classList.remove('open');
+        legacyMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!legacyBurger.contains(e.target) && !legacyMenu.contains(e.target)) {
+        legacyBurger.classList.remove('open');
+        legacyMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+}
+
+function initHeaderScroll() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+  }, { passive: true });
+}
+
+function initActiveNavLink() {
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav__link, .mobile-menu__link, .nav a, .header_menu a');
+  navLinks.forEach(link => { const href = link.getAttribute('href'); if (href === currentPage || (currentPage === '' && href === 'index.html')) link.classList.add('active'); });
+}
+
+function initPWABanner() { if (typeof showInstallHint === 'function') showInstallHint(); }
+
+function initOfflineDetection() {
+  const offlineBar = document.querySelector('.offline-bar') || document.getElementById('offlineBar');
+  if (!offlineBar) return;
+  function updateOnlineStatus() { if (navigator.onLine) offlineBar.classList.remove('show'); else offlineBar.classList.add('show'); }
+  window.addEventListener('online', updateOnlineStatus); window.addEventListener('offline', updateOnlineStatus); updateOnlineStatus();
+}
+
+function initFormSubmission() {
+  const form = document.getElementById('contactForm') || document.getElementById('quickContactForm');
+  const telegramBtn = document.getElementById('telegramBtn');
+  if (form && form.id === 'quickContactForm') {
+    form.addEventListener('submit', (e) => { e.preventDefault(); sendToWhatsApp(); });
+    if (telegramBtn) telegramBtn.addEventListener('click', sendToTelegram);
+  }
+  initLegacyContactForm();
+}
+
+function initLegacyContactForm() {
+  const legacyForm = document.getElementById('contactForm'); if (!legacyForm) return; legacyForm.addEventListener('submit', (e) => { e.preventDefault(); sendLegacyContactToWhatsApp(); });
+}
+
+function getLegacyFormData() {
+  const legacyForm = document.getElementById('contactForm'); if (!legacyForm) return {name:'',phone:'',note:''};
+  const name = legacyForm.querySelector('input[name="name"]').value.trim();
+  const phone = legacyForm.querySelector('input[name="phone"]').value.trim();
+  const note = legacyForm.querySelector('textarea[name="note"]').value.trim();
+  return { name, phone, note };
+}
+
+function getFormData() { const form = document.getElementById('quickContactForm'); if (!form) return {name:'',phone:'',message:''}; const name = form.querySelector('input[name="name"]').value; const phone = form.querySelector('input[name="phone"]').value; const message = form.querySelector('textarea[name="message"]').value; return { name, phone, message }; }
+
+function sendLegacyContactToWhatsApp() {
+  const { name, phone, note } = getLegacyFormData(); if (!name || !phone) { showToast('Пожалуйста, заполните имя и контакт.'); return; }
+  const text = `Заявка с контактов StudioPro\n\n👤 Имя: ${name}\n📱 Контакт: ${phone}\n💬 Задача: ${note}`;
+  const encodedText = encodeURIComponent(text);
+  const whatsappLink = `https://wa.me/${LEGACY_CONTACT_WHATSAPP}?text=${encodedText}`;
+  const newWindow = window.open(whatsappLink, '_blank'); if (!newWindow) window.location.href = whatsappLink;
+  showToast('✓ Отправляем вас в WhatsApp...'); document.getElementById('contactForm').reset();
+}
+
+function sendToWhatsApp() { const { name, phone, message } = getFormData(); const text = `Заявка от сайта StudioPro\n\n👤 Имя: ${name}\n📱 Контакт: ${phone}\n💬 Сообщение: ${message}`; const encodedText = encodeURIComponent(text); const whatsappLink = `https://wa.me/${CONFIG.whatsapp}?text=${encodedText}`; const newWindow = window.open(whatsappLink, '_blank'); if (!newWindow) window.location.href = whatsappLink; showToast('✓ Отправляем вас в WhatsApp...'); if (document.getElementById('quickContactForm')) document.getElementById('quickContactForm').reset(); }
+
+function sendToTelegram() { const { name, phone, message } = getFormData(); const text = `Заявка от сайта StudioPro\n\n👤 Имя: ${name}\n📱 Контакт: ${phone}\n💬 Сообщение: ${message}`; const encodedText = encodeURIComponent(text); const telegramLink = `https://t.me/${CONFIG.telegram}?text=${encodedText}`; window.open(telegramLink, '_blank'); showToast('✓ Отправляем вас в Telegram...'); if (document.getElementById('quickContactForm')) document.getElementById('quickContactForm').reset(); }
+
+function showToast(message, duration = 3000) { const toast = document.createElement('div'); toast.className = 'toast'; toast.textContent = message; document.body.appendChild(toast); setTimeout(() => { toast.classList.add('show'); }, 10); setTimeout(() => { toast.classList.remove('show'); setTimeout(() => { toast.remove(); }, 300); }, duration); }
+
+const toastStyles = `
+.toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: linear-gradient(135deg, #6366f1, #ec4899); color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; z-index: 2000; opacity: 0; transition: all 0.3s ease-out; pointer-events: none; white-space: nowrap; font-size: 0.95rem; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+`;
+const styleSheet = document.createElement('style'); styleSheet.textContent = toastStyles; document.head.appendChild(styleSheet);
+
+function initServiceWorker() { if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(err => { console.log('Service Worker registration failed:', err); }); } }
+
+document.addEventListener('DOMContentLoaded', () => { initMobileMenu(); initHeaderScroll(); initActiveNavLink(); initPWABanner(); initOfflineDetection(); initFormSubmission(); initServiceWorker(); document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { const href = this.getAttribute('href'); if (href === '#') return; e.preventDefault(); const target = document.querySelector(href); if (target) target.scrollIntoView({ behavior: 'smooth' }); }); }); });
+
+// PWA install handlers
+let deferredInstallPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredInstallPrompt = e; showInstallHint(); });
+window.addEventListener('appinstalled', () => { localStorage.setItem('appInstalled', '1'); const installHint = document.getElementById('installHint'); if (installHint) installHint.classList.add('hidden'); });
+function isStandaloneMode() { return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true || document.referrer.startsWith('android-app://'); }
+let installHintShown = false;
+function showInstallHint() { if (localStorage.getItem('appInstalled') === '1') return; if (installHintShown) return; if (isStandaloneMode()) return; installHintShown = true; const installHint = document.getElementById('installHint'); if (installHint) installHint.classList.remove('hidden'); }
+function startInstall() { const button = document.getElementById('installBtn'); const progressRow = document.getElementById('installProgress'); const bar = document.querySelector('#installProgress .bar'); const status = document.getElementById('installStatus'); if (button) button.disabled = true; if (deferredInstallPrompt) { deferredInstallPrompt.prompt(); deferredInstallPrompt.userChoice.then((choiceResult) => { if (choiceResult.outcome === 'accepted') { if (status) status.innerText = 'Приложение установлено! 🎉'; localStorage.setItem('appInstalled', '1'); setTimeout(() => { const ih = document.getElementById('installHint'); if (ih) ih.classList.add('hidden'); }, 800); } else { if (status) status.innerText = 'Установка отменена'; if (button) button.disabled = false; } deferredInstallPrompt = null; }); } else if (progressRow && bar && status) { progressRow.style.display = 'block'; status.innerText = 'Установка...'; let value = 0; const timer = setInterval(() => { value += Math.floor(Math.random() * 12) + 7; if (value > 100) value = 100; bar.style.width = value + '%'; if (value >= 100) { clearInterval(timer); status.innerText = 'Установлено! 🎉'; localStorage.setItem('appInstalled', '1'); setTimeout(() => { const ih = document.getElementById('installHint'); if (ih) ih.classList.add('hidden'); }, 800); } }, 350); }
+}
+</script>
+
+</body>
+</html>
