@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><title>Расписание 403а · 203а</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f4f5fb;--c:#fff;--t:#1d2033;--m:#6b7089;--a:#5b5bd6;--l:#e6e8f2;--now:#e8f7ee;--nb:#1f9d55}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#12131c;--c:#1c1e2b;--t:#ecedf5;--m:#9a9fb8;--a:#8b8bff;--l:#2b2e41;--now:#16301f;--nb:#3ecf7a}}
+:root[data-theme=dark]{--bg:#12131c;--c:#1c1e2b;--t:#ecedf5;--m:#9a9fb8;--a:#8b8bff;--l:#2b2e41;--now:#16301f;--nb:#3ecf7a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:640px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:8px}
+h1{font-size:22px;margin:0}small{color:var(--m)}
+button{font:inherit;color:inherit;cursor:pointer}
+.th{border:1px solid var(--l);background:var(--c);border-radius:10px;padding:6px 10px}
+.seg{display:flex;gap:6px;margin:14px 0 10px;background:var(--l);padding:4px;border-radius:12px}
+.seg button{flex:1;border:0;background:none;padding:8px;border-radius:9px;font-weight:600;color:var(--m)}
+.seg button.on{background:var(--c);color:var(--a);box-shadow:0 1px 3px #0002}
+.days{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px}
+.days button{flex:1 0 auto;min-width:52px;border:1px solid var(--l);background:var(--c);border-radius:12px;padding:8px 6px;text-align:center}
+.days button b{display:block;font-size:15px}.days button span{font-size:11px;color:var(--m)}
+.days button.on{background:var(--a);border-color:var(--a);color:#fff}.days button.on span{color:#fffc}
+.days button.td b::after{content:"•";margin-left:3px}
+h2{font-size:15px;margin:18px 0 8px;color:var(--m);text-transform:uppercase;letter-spacing:.04em}
+.card{display:flex;gap:12px;background:var(--c);border:1px solid var(--l);border-left:5px solid var(--k);border-radius:14px;padding:12px;margin-bottom:10px}
+.card.now{background:var(--now);border-color:var(--nb)}
+.tm{min-width:62px;font-variant-numeric:tabular-nums;font-weight:700}.tm small{display:block;font-weight:400}
+.nm{font-weight:650}.meta{color:var(--m);font-size:14px;margin-top:2px}
+.ch{display:inline-block;font-size:12px;font-weight:700;padding:1px 8px;border-radius:99px;background:var(--k);color:#fff;margin-right:6px}
+.bd{display:inline-block;font-size:12px;background:var(--nb);color:#fff;border-radius:99px;padding:1px 8px;margin-left:6px}
+.nx{background:var(--a);color:#fff;border-radius:14px;padding:12px 14px;margin:12px 0 0;font-size:15px}.nx small{color:#fffc}
+.win{background:var(--c);border:1px dashed var(--nb);border-radius:14px;padding:10px 14px;margin:12px 0 0;font-size:14px}.win b{color:var(--nb)}
+.wk{background:var(--c);border:1px solid var(--l);border-radius:14px;padding:10px 12px;margin-bottom:10px}.wk.td{border-color:var(--a)}.wk h3{margin:0 0 6px;font-size:15px}
+.wk div{font-size:13px;display:flex;gap:6px;margin:3px 0}.wk i{font-style:normal;color:var(--m);min-width:86px;font-variant-numeric:tabular-nums}.wk em{font-style:normal;font-weight:700;color:var(--a);min-width:30px}
+.empty{text-align:center;color:var(--m);padding:40px 0;background:var(--c);border-radius:14px;border:1px dashed var(--l)}
+</style></head><body><main>
+<header><div><h1>📅 Расписание</h1><small id="sub"></small></div><button class="th" id="th">🌓</button></header>
+<div class="seg" id="g"></div><div class="seg" id="v"></div><div class="days" id="d"></div><div id="nx"></div><div id="o"></div>
+</main><script>
+const DATA={"203":{"0":[{"n":"Фалсафа (л)","r":"526","t":"Норбобоев Б.","s":"8:00","e":"9:45","p1":1,"p2":2,"y":"л"},{"n":"Педагогика (л)","r":"526","t":"Расулова А.","s":"9:50","e":"11:40","p1":3,"p2":4,"y":"л"},{"n":"Фалсафа (л)","r":"526","t":"Норбобоев Б.","s":"11:45","e":"12:35","p1":5,"p2":5,"y":"л"}],"1":[{"n":"Барномасозӣ (а)","r":"537","t":"Ҳаитова М.","s":"13:35","e":"15:20","p1":7,"p2":8,"y":"а"},{"n":"Анализи мат. (л)","r":"521","t":"Баротов Р.","s":"15:30","e":"18:10","p1":9,"p2":11,"y":"л"}],"2":[{"n":"Педагогика (л)","r":"515","t":"Расулова А.","s":"13:35","e":"16:20","p1":7,"p2":9,"y":"л"},{"n":"Фалсафа (л)","r":"515","t":"Норбобоев Б.","s":"16:25","e":"18:10","p1":10,"p2":11,"y":"л"}],"3":[{"n":"Психология (л)","r":"516","t":"Нуматов М.","s":"8:00","e":"8:50","p1":1,"p2":1,"y":"л"},{"n":"Барномасозӣ (лаб)","r":"532","t":"Ҳаитова М.","s":"8:55","e":"11:40","p1":2,"p2":4,"y":"лаб"},{"n":"Психология (л)","r":"529","t":"Нуматов М.","s":"11:45","e":"13:30","p1":5,"p2":6,"y":"л"}],"4":[{"n":"Кураторский час","r":"","t":"Ҳаитова М.","s":"12:40","e":"13:30","p1":6,"p2":6,"y":"к"},{"n":"Барномасозӣ (кмро)","r":"530","t":"Ҳаитова М.","s":"13:35","e":"15:20","p1":7,"p2":8,"y":"кмро"},{"n":"Анализи мат. (кмро)","r":"521","t":"Баротов Р.","s":"15:30","e":"18:10","p1":9,"p2":11,"y":"кмро"}],"5":[{"n":"Ф.И.(Этика ва Эст.) (л)","r":"514","t":"Акилова М.","s":"8:00","e":"8:50","p1":1,"p2":1,"y":"л"},{"n":"Барномасозӣ (кмро)","r":"505","t":"Ҳаитова М.","s":"8:55","e":"10:40","p1":2,"p2":3,"y":"кмро"},{"n":"Ф.И.(Этика ва Эст.) (а)","r":"514","t":"Акилова М.","s":"10:50","e":"12:35","p1":4,"p2":5,"y":"а"}]},"403":{"0":[{"n":"Ана. Ҳалли масъ бар.(а)","r":"532","t":"Тухлиев Д.","s":"8:00","e":"9:45","p1":1,"p2":2,"y":"а"},{"n":"Ана. Ҳалли масъ бар.(а)","r":"533","t":"Тухлиев Д.","s":"9:50","e":"10:40","p1":3,"p2":3,"y":"а"},{"n":"Амалия ҳал.масъ.мат.(а)","r":"532","t":"Ғуфрони Н.","s":"10:50","e":"13:30","p1":4,"p2":6,"y":"а"}],"1":[{"n":"Амалии ҳал.масъ.мат.(а)","r":"530","t":"Ғуфрони Н.","s":"8:00","e":"9:45","p1":1,"p2":2,"y":"а"},{"n":"Ана. Ҳалли масъ бар.(а)","r":"530","t":"Тухлиев Д.","s":"9:50","e":"13:30","p1":3,"p2":6,"y":"а"}],"2":[{"n":"Ф.И.(Назария.Иқтисодӣ)(а)","r":"526","t":"Холматова Д.","s":"8:00","e":"10:40","p1":1,"p2":3,"y":"а"},{"n":"Сис.наз.рақ.таъ(лаб)","r":"532","t":"Ходжаева В.","s":"10:50","e":"13:30","p1":4,"p2":6,"y":"лаб"}],"3":[{"n":"Амалияи ҳал.масъ.мат.(а)","r":"511","t":"Ғуфроин Н.","s":"8:00","e":"10:40","p1":1,"p2":3,"y":"а"},{"n":"Ф.И.(Тарз.корҳои.беруна)(а)","r":"511","t":"Рашидов А.","s":"10:50","e":"13:30","p1":4,"p2":6,"y":"а"}],"4":[{"n":"Кураторский час","r":"","t":"Ҳайдаров","s":"12:40","e":"13:30","p1":6,"p2":6,"y":"к"},{"n":"Сис.итт.рав.таъ(лаб)","r":"530","t":"Ходжаева В.","s":"13:35","e":"15:20","p1":7,"p2":8,"y":"лаб"},{"n":"Усулҳои ададӣ (а)","r":"530","t":"Тухлиев Д.","s":"15:30","e":"16:20","p1":9,"p2":9,"y":"а"},{"n":"Усулҳои ададӣ (лаб)","r":"530","t":"Тухлиев Д.","s":"16:25","e":"18:10","p1":10,"p2":11,"y":"лаб"}],"5":[{"n":"Усулҳои ададӣ (кмро)","r":"537","t":"Тухлиев Д.","s":"10:50","e":"13:30","p1":4,"p2":6,"y":"кмро"},{"n":"Сис.итт.рав.таъ.(кмро)","r":"537","t":"Ходжаева Д.","s":"13:35","e":"16:20","p1":7,"p2":9,"y":"кмро"}]}};
+const DN=['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],SH=['Пн','Вт','Ср','Чт','Пт','Сб'];
+const TY={'л':['Лекция','#7c5cff'],'а':['Практика','#2b8cff'],'лаб':['Лаб.','#e08a00'],'кмро':['КМРО','#d6457a'],'к':['Кураторский час','#12a39a']};
+const GR={'403':'403а · я','203':'203а · жена','both':'Вместе'};
+const LK=(k,v)=>{try{return v===undefined?localStorage.getItem(k):localStorage.setItem(k,v)}catch(e){return null}};
+const now=new Date(),wd=(now.getDay()+6)%7,tod=wd;
+let view='d',grp=LK('grp')||'403',day=Math.min(wd,5);
+const mins=s=>{const[a,b]=s.split(':');return+a*60+ +b},cur=now.getHours()*60+now.getMinutes();
+function card(x,show){const ty=TY[x.y]||['','#888'],on=day==tod&&cur>=mins(x.s)&&cur<=mins(x.e);
+return `<div class="card${on?' now':''}" style="--k:${ty[1]}"><div class="tm">${x.s}<small>${x.e}</small></div><div><div class="nm">${x.n.replace(/\s*\([^()]*\)\s*$/,'')}${on?'<span class="bd">идёт сейчас</span>':''}</div><div class="meta">${ty[0]?`<span class="ch">${ty[0]}</span>`:''}${x.r?'ауд. '+x.r:''}${x.r&&x.t?' · ':''}${x.t||''} · пары ${x.p1==x.p2?x.p1:x.p1+'–'+x.p2}</div></div></div>`}
+function sec(g,t){const L=DATA[g][day];return (t?`<h2>${t}</h2>`:'')+(L.length?L.map(card).join(''):'<div class="empty">Занятий нет 🎉</div>')}
+function next(){
+ if(day!=tod)return'';const g=grp=='both'?'403':grp,L=DATA[g][day];
+ const c=L.find(x=>cur>=mins(x.s)&&cur<=mins(x.e));
+ if(c)return`<div class="nx">Идёт: <b>${c.n.replace(/\s*\([^()]*\)\s*$/,'')}</b><br><small>закончится через ${mins(c.e)-cur} мин</small></div>`;
+ const n=L.find(x=>mins(x.s)>cur);
+ if(!n)return L.length?'<div class="nx">На сегодня всё, можно отдыхать 🎉</div>':'';
+ const m=mins(n.s)-cur,h=Math.floor(m/60);
+ return`<div class="nx">Дальше: <b>${n.n.replace(/\s*\([^()]*\)\s*$/,'')}</b><br><small>через ${h?h+' ч ':''}${m%60} мин · ${n.s}${n.r?' · ауд. '+n.r:''}</small></div>`}
+const f=m=>Math.floor(m/60)+':'+String(m%60).padStart(2,'0');
+function wins(){
+ const A=[...DATA['403'][day],...DATA['203'][day]].map(x=>[mins(x.s),mins(x.e)]).sort((a,b)=>a[0]-b[0]);
+ if(!A.length)return'';let r=[],e=A[0][1];
+ for(const[s,en]of A.slice(1)){if(s-e>=20)r.push(f(e)+'–'+f(s)+' ('+(s-e)+' мин)');e=Math.max(e,en)}
+ return`<div class="win">🤝 Вместе свободны: ${r.length?r.map(x=>'<b>'+x+'</b>').join(', ')+'; ':''}после <b>${f(e)}</b> — оба освободились</div>`}
+function week(){const gs=grp=='both'?['403','203']:[grp];
+ return DN.map((n,i)=>`<div class="wk${i==tod?' td':''}"><h3>${n}</h3>${gs.map(g=>{const L=DATA[g][i];return `<div>${gs.length>1?'<em>'+g+'</em>':''}<span>${L.length?L.map(x=>`<div><i>${x.s}–${x.e}</i><span>${x.n.replace(/\s*\([^()]*\)\s*$/,'')}${x.r?' · '+x.r:''}</span></div>`).join(''):'<small>нет занятий</small>'}</span></div>`}).join('')}</div>`).join('')}
+function draw(){
+ v.innerHTML=[['d','День'],['w','Неделя']].map(([k,l])=>`<button class="${k==view?'on':''}" data-v="${k}">${l}</button>`).join('');
+ d.style.display=nx.style.display=view=='w'?'none':'';
+ nx.innerHTML=next();
+ g.innerHTML=Object.keys(GR).map(k=>`<button class="${k==grp?'on':''}" data-k="${k}">${GR[k]}</button>`).join('');
+ d.innerHTML=SH.map((s,i)=>`<button class="${i==day?'on':''}${i==tod?' td':''}" data-i="${i}"><b>${s}</b><span>${DATA[grp=='both'?'403':grp][i].length||'—'}</span></button>`).join('');
+ sub.textContent=view=='w'?'вся неделя':DN[day]+(day==tod?' · сегодня':'');
+ o.innerHTML=view=='w'?week():grp=='both'?wins()+sec('403','403а · я')+sec('203','203а · жена'):sec(grp)}
+v.onclick=e=>{const k=e.target.dataset.v;if(k){view=k;draw()}};
+g.onclick=e=>{const k=e.target.dataset.k;if(k){grp=k;LK('grp',k);draw()}};
+d.onclick=e=>{const b=e.target.closest('button');if(b){day=+b.dataset.i;draw()}};
+th.onclick=()=>{const r=document.documentElement,dk=getComputedStyle(r).getPropertyValue('--bg').trim()=='#12131c';r.dataset.theme=dk?'light':'dark'};
+let x0=0;document.body.ontouchstart=e=>x0=e.touches[0].clientX;document.body.ontouchend=e=>{const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>70){day=Math.max(0,Math.min(5,day+(dx<0?1:-1)));draw()}};
+draw();setInterval(draw,60000);
+</script></body></html>
